@@ -1,0 +1,15 @@
+﻿  String Utility Assignment.cpp
+  StringClass.cpp
+  Generating Code...
+C:\Users\s233264\Desktop\Document Version Control Task\Version-Control-Assessment\Task 1 - String Utility Class\String Utility Assignment\String Utility Assignment\StringClass.cpp(28): error C4716: 'String::CharacterAt': must return a value
+C:\Users\s233264\Desktop\Document Version Control Task\Version-Control-Assessment\Task 1 - String Utility Class\String Utility Assignment\String Utility Assignment\StringClass.cpp(48): error C4716: 'String::Prepend': must return a value
+C:\Users\s233264\Desktop\Document Version Control Task\Version-Control-Assessment\Task 1 - String Utility Class\String Utility Assignment\String Utility Assignment\StringClass.cpp(43): error C4716: 'String::Append': must return a value
+C:\Users\s233264\Desktop\Document Version Control Task\Version-Control-Assessment\Task 1 - String Utility Class\String Utility Assignment\String Utility Assignment\StringClass.cpp(33): error C4716: 'String::CharacterAt': must return a value
+C:\Users\s233264\Desktop\Document Version Control Task\Version-Control-Assessment\Task 1 - String Utility Class\String Utility Assignment\String Utility Assignment\StringClass.cpp(63): error C4716: 'String::ToUpper': must return a value
+C:\Users\s233264\Desktop\Document Version Control Task\Version-Control-Assessment\Task 1 - String Utility Class\String Utility Assignment\String Utility Assignment\StringClass.cpp(58): error C4716: 'String::ToLower': must return a value
+C:\Users\s233264\Desktop\Document Version Control Task\Version-Control-Assessment\Task 1 - String Utility Class\String Utility Assignment\String Utility Assignment\StringClass.cpp(78): error C4716: 'String::Replace': must return a value
+C:\Users\s233264\Desktop\Document Version Control Task\Version-Control-Assessment\Task 1 - String Utility Class\String Utility Assignment\String Utility Assignment\StringClass.cpp(83): error C4716: 'String::ReadFromConsole': must return a value
+C:\Users\s233264\Desktop\Document Version Control Task\Version-Control-Assessment\Task 1 - String Utility Class\String Utility Assignment\String Utility Assignment\StringClass.cpp(88): error C4716: 'String::WriteToConsole': must return a value
+C:\Users\s233264\Desktop\Document Version Control Task\Version-Control-Assessment\Task 1 - String Utility Class\String Utility Assignment\String Utility Assignment\StringClass.cpp(103): error C4716: 'String::operator=': must return a value
+C:\Users\s233264\Desktop\Document Version Control Task\Version-Control-Assessment\Task 1 - String Utility Class\String Utility Assignment\String Utility Assignment\StringClass.cpp(108): error C4716: 'String::operator[]': must return a value
+C:\Users\s233264\Desktop\Document Version Control Task\Version-Control-Assessment\Task 1 - String Utility Class\String Utility Assignment\String Utility Assignment\StringClass.cpp(113): error C4716: 'String::operator[]': must return a value

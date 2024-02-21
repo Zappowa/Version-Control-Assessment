@@ -1,7 +1,10 @@
-#include <iostream>
+#include "StringClass.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	char name[50];
+	cin >> name;
+
+
 }
 

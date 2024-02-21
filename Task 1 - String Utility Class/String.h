@@ -1,13 +1,13 @@
 #pragma once
-#ifndef CUSTOM_STRING_HEADER
-#define CUSTOM_STRING_HEADER
 
+// Creating a class called String
 class String
 {
 public:
-	String();
-	String(const char* _str);
 
+	String();
+
+	String(const char* _str);
 	String(const String& _other);
 
 	~String();
@@ -36,18 +36,16 @@ public:
 	String& WriteToConsole();
 
 public:
-	bool operator==(const String& _other);
-	bool operator!=(const String& _other);
+	bool operator ==(const String& _other);
+	bool operator !=(const String& _other);
 
-	String& operator=(const String& _str);
+	String& operator = (const String& _str);
 
-	char& operator[](size_t _index);
-	const char& operator[](size_t _index) const;
+	char& operator [] (size_t _index);
+	const char& operator [] (size_t _index) const;
 
 private:
-/*
-* Put your internal data structures and members here
-*/
-};
 
-#endif
+//Put your internal data structures and members here
+
+};
