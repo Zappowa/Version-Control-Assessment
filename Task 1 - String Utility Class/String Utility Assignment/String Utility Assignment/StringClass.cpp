@@ -11,7 +11,11 @@ using namespace std;
 String::String() {};
 String::~String() {};
 
-String::String(const char* _str) {}
+String::String(const char* _str) 
+{
+
+}
+
 String::String(const String& _other) {}
 
 size_t String::Length(char* _str) const
@@ -30,18 +34,26 @@ const char& String::CharacterAt(size_t _index)
 
 bool String::EqualTo(const String& _other) const
 {
-	
-
-	for (int i = 0; i < strlen)
-
-	if (strcmp(this->cStr, _other.cStr) == 0)
+	if (strlen(this->cStr) != strlen(_other.cStr))
 	{
-		cout << "true: ";
-		return true;
+		cout << "Error! Different Lengths\n";
+		return false;
 	}
-	cout << "false: ";
-	return false;
-	
+
+	for (int i = 0; i < strlen(this->cStr); i++)
+	{
+		cout << "\n-- " << i << endl;
+		cout << "\nThis: " << this->cStr;
+		cout << "\nOther: " << _other.cStr;
+
+		if (strcmp(this->cStr, _ot) == 1)
+		{
+			cout << "Error! These Strings Don't Match\n";
+			return false;
+		}
+	}
+	cout << "It's a Match!!\n";
+	return true;
 }
 /*
 String& String::Append(const String& _str)

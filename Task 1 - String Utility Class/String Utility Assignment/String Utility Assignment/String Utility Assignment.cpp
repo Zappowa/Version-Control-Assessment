@@ -36,6 +36,7 @@ int main()
 	cin >> str01->cStr;
 	cout << "2: ";
 	cin >> str02->cStr;
+	cout << "\n";
 
 	cout << str01->EqualTo(*str02);
 

@@ -49,6 +49,6 @@ public:
 
 public:
 
-	char cStr[12];
+	char* cStr[];
 
 };
