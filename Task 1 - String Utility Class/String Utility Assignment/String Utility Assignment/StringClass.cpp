@@ -1,45 +1,53 @@
+// Global Includes
+#include <iostream>
+#include <string>
 #include "StringClass.h"
 
-String::String()
+using namespace std;
+
+
+
+// Constructor & Destructor Definitions
+String::String() {};
+String::~String() {};
+
+String::String(const char* _str) {}
+String::String(const String& _other) {}
+
+size_t String::Length(char* _str) const
 {
+	size_t chtr = strlen(_str);
+	cout << "Your word has a length of " << chtr << endl;
+	return chtr;
 }
 
-String::String(const char* _str)
+const char& String::CharacterAt(size_t _index)
 {
-}
-
-String::String(const String& _other)
-{
-}
-
-String::~String()
-{
-}
-
-size_t String::Length() const
-{
-	
-	return size_t();
-}
-
-char& String::CharacterAt(size_t _index)
-{
-	// TODO: insert return statement here
-}
-
-const char& String::CharacterAt(size_t _index) const
-{
-	// TODO: insert return statement here
+	char locate[8] = "Morning";
+	cout << "At index " << _index << ", char = " << locate[_index];
+	return locate[_index];
 }
 
 bool String::EqualTo(const String& _other) const
 {
-	return false;
-}
+	
 
+	for (int i = 0; i < strlen)
+
+	if (strcmp(this->cStr, _other.cStr) == 0)
+	{
+		cout << "true: ";
+		return true;
+	}
+	cout << "false: ";
+	return false;
+	
+}
+/*
 String& String::Append(const String& _str)
 {
 	// TODO: insert return statement here
+	
 }
 
 String& String::Prepend(const String& _str)
@@ -111,3 +119,5 @@ const char& String::operator[](size_t _index) const
 {
 	// TODO: insert return statement here
 }
+*/
+

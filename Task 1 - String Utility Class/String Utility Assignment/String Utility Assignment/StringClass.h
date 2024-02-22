@@ -1,32 +1,27 @@
 // Prevents overlaps in calling the header file
 #pragma once
 
-// Global Includes
-#include <iostream>
-#include <string>
-
-using namespace std;
-
-
 // Creating a class called String
 class String
 {
 public:
 
+	// Constructor & Destructor Initialize
 	String();
+	~String();
 
+	// Overloaded Constructors
 	String(const char* _str);
 	String(const String& _other);
 
-	~String();
+public: // Public Area for Initialising the Utilities 
 
-public:
-	size_t Length() const;
-	char& CharacterAt(size_t _index);
-	const char& CharacterAt(size_t _index) const;
-
+	size_t Length(char* _str) const;
+	const char& CharacterAt(size_t _index);
 	bool EqualTo(const String& _other) const;
 
+
+	/*
 	String& Append(const String& _str);
 	String& Prepend(const String& _str);
 
@@ -50,10 +45,10 @@ public:
 	String& operator = (const String& _str);
 
 	char& operator [] (size_t _index);
-	const char& operator [] (size_t _index) const;
+	const char& operator [] (size_t _index) const;*/
 
-private:
+public:
 
-	//Put your internal data structures and members here
+	char cStr[12];
 
 };
