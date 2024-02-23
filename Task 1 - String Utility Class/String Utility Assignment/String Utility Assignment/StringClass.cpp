@@ -9,16 +9,22 @@ using namespace std;
 
 
 // Constructor & Destructor Definitions
-String::String() { cout << "-- Constructor Active --\n\n"; }
+String::String() 
+{ 
+	cout << "-- Constructor Active --\n\n";
+	mStr = new char[1];
+	mStr[0] = '\0';
+}
+
 String::~String() { cout << "-- Destructor Active --\n\n"; }
 
 // Overloaded Constructor Definitions 
 String::String(const char* _str) 
 {
-	/*cout << "-- Overloaded Constructor --";
-	int size = strlen(_str);
+	cout << "-- Overloaded Constructor --";
+	size_t size = strlen(_str);
 	mStr = new char[size + 1];
-	strcpy(mStr, _str);*/
+	strcpy(mStr, _str);
 }
 
 String::String(const String& _other)
@@ -71,32 +77,47 @@ bool String::EqualTo(const String& _other)
 	return true;
 }
 
-/*
 String& String::Append(const String& _str)
 {
-	// TODO: insert return statement here
-	
+	strcat(mStr, " ");
+	strcat(mStr, _str.mStr);
+
+	cout << "\nYou're Concatenated Word is: " << mStr << endl;
+	return *this;
 }
 
 String& String::Prepend(const String& _str)
 {
-	// TODO: insert return statement here
+	strcat(_str.mStr, " ");
+	strcat(_str.mStr, mStr);
+
+	cout << "\nYour Chosen Phrase is: " << _str.mStr << endl;
+	return *this;
 }
 
 const char* String::CStr() const
 {
-	return nullptr;
+	return mStr;
 }
 
 String& String::ToLower()
 {
-	// TODO: insert return statement here
+	cout << "\nInput: " << mStr;
+	for (int i = 0; i < strlen(mStr); i++)
+	{
+		mStr[i] = tolower(mStr[i]);
+	}
+	cout << "\nLowered: " << mStr;
+	return *this;
 }
 
 String& String::ToUpper()
 {
-	// TODO: insert return statement here
+	return *this;
 }
+
+/*
+
 
 size_t String::Find(const String& _str)
 {
