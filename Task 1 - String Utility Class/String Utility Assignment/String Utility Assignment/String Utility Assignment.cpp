@@ -28,14 +28,11 @@ int main()
 
 	String* str01 = new String();
 	String* str02 = new String();
-	
-	char inp01[12];
-	char inp02[12];
 
-	cout << "I will compare two strings!!\n" << "1: ";
-	cin >> str01->cStr;
+	cout << "\nI will compare two strings!!\n" << "1: ";
+	cin >> str01->mStr;
 	cout << "2: ";
-	cin >> str02->cStr;
+	cin >> str02->mStr;
 	cout << "\n";
 
 	cout << str01->EqualTo(*str02);

@@ -18,7 +18,7 @@ public: // Public Area for Initialising the Utilities
 
 	size_t Length(char* _str) const;
 	const char& CharacterAt(size_t _index);
-	bool EqualTo(const String& _other) const;
+	bool EqualTo(const String& _other);
 
 
 	/*
@@ -47,8 +47,8 @@ public:
 	char& operator [] (size_t _index);
 	const char& operator [] (size_t _index) const;*/
 
-public:
+public: // Private Variables
 
-	char* cStr[];
-
+	// Poiner to a Dymanic Array 
+	char* mStr = new char[0];
 };

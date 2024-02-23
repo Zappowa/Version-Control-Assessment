@@ -1,4 +1,5 @@
 // Global Includes
+#define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include <string>
 #include "StringClass.h"
@@ -8,22 +9,38 @@ using namespace std;
 
 
 // Constructor & Destructor Definitions
-String::String() {};
-String::~String() {};
+String::String() { cout << "-- Constructor Active --\n\n"; }
+String::~String() { cout << "-- Destructor Active --\n\n"; }
 
+// Overloaded Constructor Definitions 
 String::String(const char* _str) 
 {
-
+	/*cout << "-- Overloaded Constructor --";
+	int size = strlen(_str);
+	mStr = new char[size + 1];
+	strcpy(mStr, _str);*/
 }
 
-String::String(const String& _other) {}
+String::String(const String& _other)
+{
+	cout << "-- Overloaded Constructor --"; 
+	mStr = new char[Length(_other.mStr) + 1];
+	strcpy(mStr, _other.mStr);
+}
+
+// String Utility Class //
+
+
+// ---- Length() ---- \\
 
 size_t String::Length(char* _str) const
 {
 	size_t chtr = strlen(_str);
-	cout << "Your word has a length of " << chtr << endl;
+	//cout << "Your word has a length of " << chtr << endl;
 	return chtr;
 }
+
+// ---- CharacterAt() ---- \\
 
 const char& String::CharacterAt(size_t _index)
 {
@@ -32,29 +49,28 @@ const char& String::CharacterAt(size_t _index)
 	return locate[_index];
 }
 
-bool String::EqualTo(const String& _other) const
-{
-	if (strlen(this->cStr) != strlen(_other.cStr))
+// ---- EqualTo() ---- \\
+
+bool String::EqualTo(const String& _other)
+{ 
+	if (Length(mStr) != Length(_other.mStr))
 	{
 		cout << "Error! Different Lengths\n";
 		return false;
 	}
 
-	for (int i = 0; i < strlen(this->cStr); i++)
+	for (int i = 0; i < Length(mStr); i++)
 	{
-		cout << "\n-- " << i << endl;
-		cout << "\nThis: " << this->cStr;
-		cout << "\nOther: " << _other.cStr;
-
-		if (strcmp(this->cStr, _ot) == 1)
+		if (mStr[i] != _other.mStr[i])
 		{
-			cout << "Error! These Strings Don't Match\n";
+			cout << "\nError! These Strings Don't Match\n";
 			return false;
 		}
 	}
-	cout << "It's a Match!!\n";
+	cout << "\nIt's a Match!!\n";
 	return true;
 }
+
 /*
 String& String::Append(const String& _str)
 {

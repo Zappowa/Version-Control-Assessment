@@ -1,5 +1,2 @@
 ﻿  StringClass.cpp
-C:\Users\s233264\Desktop\Document Version Control Task\Version-Control-Assessment\Task 1 - String Utility Class\String Utility Assignment\String Utility Assignment\StringClass.cpp(33,10): error C2664: 'size_t String::Length(char *) const': cannot convert argument 1 from 'const char [12]' to 'char *'
-C:\Users\s233264\Desktop\Document Version Control Task\Version-Control-Assessment\Task 1 - String Utility Class\String Utility Assignment\String Utility Assignment\StringClass.cpp(33,23): message : Conversion loses qualifiers
-C:\Users\s233264\Desktop\Document Version Control Task\Version-Control-Assessment\Task 1 - String Utility Class\String Utility Assignment\String Utility Assignment\StringClass.cpp(17,16): message : see declaration of 'String::Length'
-C:\Users\s233264\Desktop\Document Version Control Task\Version-Control-Assessment\Task 1 - String Utility Class\String Utility Assignment\String Utility Assignment\StringClass.cpp(33,10): message : while trying to match the argument list '(const char [12])'
+  String Utility Assignment.vcxproj -> C:\Users\s233264\Desktop\Document Version Control Task\Version-Control-Assessment\Task 1 - String Utility Class\String Utility Assignment\x64\Debug\String Utility Assignment.exe
