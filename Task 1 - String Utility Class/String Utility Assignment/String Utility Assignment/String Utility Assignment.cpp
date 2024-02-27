@@ -31,54 +31,52 @@ int main()
 
 	// ------------------ EqualTo(str)
 
-	/*String* str01 = new String();
-	String* str02 = new String();
+	/*String* str01 = new String("Hello");
+	String* str02 = new String("Hello");
 
-	cout << "\nI will compare two strings!!\n\n" << "1: ";
-	cin >> str01->mStr;
-	cout << "2: ";
-	cin >> str02->mStr;
+	cout << "\nI will compare two strings!!\n\n";
+	cout << "1: " << str01->CStr() << "\n2: " << str02->CStr() << endl;
 
 	cout << str01->EqualTo(*str02);*/
 
 	// ------------------ Append(str)
 	
-	/*String* phrase = new String("Hello");
-	String* input = new String();
+	/*String* phrase01 = new String("Hello");
+	String* phrase02 = new String("World!");
 
-	cout << "Make the Phrase!! -- Hello ";
-	cin >> input->mStr;
-
-	phrase->Append(*input);*/
+	cout << "\nFirst Phrase: " << phrase01->CStr() << "\nSecond Phrase: " << phrase02->CStr() << endl;
+	phrase01->Append(*phrase02);*/
 
 	// ------------------ Prepend(str)
-	//String empty;
 
-	//String* init = new String("World!");
-	//String* str = new String();
+	/*String* word01 = new String("Hello");
+	String* word02 = new String("World!");
 
-	//cout << "Make the Phrase!! -- ??? World!" << endl << "- ";
-	//cin >> str->mStr;
-
-	//init->Prepend(*str);
+	cout << "\nFirst Phrase: " << word01->CStr() << "\nSecond Phrase: " << word02->CStr() << endl;
+	word01->Prepend(*word02);*/
 
 	// ------------------ CStr()
 	
-	// Fill in ig
+	/*String blank;
+	String contain("Hello");
+
+	cout << "\nI am blank: (" << blank.CStr() << ")";
+	cout << "\nI am not blank: (" << contain.CStr() << ")\n";*/
 
 	// ------------------ ToLower()
 
-	/*String* user = new String();
+	/*String* upper = new String("I AM UPPERCASE");
 	
-	cout << "I will Lower your Word! ";
-	cin >> user->mStr;
-
-	String normal();
-	normal.ToLower();*/
+	cout << "\nOriginal: " << upper->CStr() << endl;
+	upper->ToLower();*/
+	
 
 	// ------------------ ToUpper()
 	
+	/*String* lower = new String("i am lowercase");
 
+	cout << "\nOriginal: " << lower->CStr() << endl;
+	lower->ToUpper();*/
 
 	// ------------------ Find(findString)
 	// ------------------ Find(startIndex, findString)

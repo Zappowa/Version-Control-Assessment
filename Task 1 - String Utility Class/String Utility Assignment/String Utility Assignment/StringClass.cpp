@@ -90,7 +90,7 @@ String& String::Prepend(const String& _str)
 	strcat(_str.mStr, " ");
 	strcat(_str.mStr, mStr);
 
-	cout << "\nYour Chosen Phrase is: " << _str.mStr << endl;
+	cout << "\nYou're Concatenated Word is: " << _str.mStr << endl;
 	return *this;
 }
 
@@ -101,17 +101,21 @@ const char* String::CStr() const
 
 String& String::ToLower()
 {
-	cout << "\nInput: " << mStr;
 	for (int i = 0; i < strlen(mStr); i++)
 	{
 		mStr[i] = tolower(mStr[i]);
 	}
-	cout << "\nLowered: " << mStr;
+	cout << "Lowered: " << mStr << endl;
 	return *this;
 }
 
 String& String::ToUpper()
 {
+	for (int i = 0; i < strlen(mStr); i++)
+	{
+		mStr[i] = toupper(mStr[i]);
+	}
+	cout << "Uppered: " << mStr << endl;
 	return *this;
 }
 
