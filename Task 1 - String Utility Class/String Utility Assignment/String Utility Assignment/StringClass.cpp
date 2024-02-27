@@ -11,17 +11,17 @@ using namespace std;
 // Constructor & Destructor Definitions
 String::String() 
 { 
-	cout << "-- Constructor Active --\n\n";
+	cout << "-- Constructor Active --\n";
 	mStr = new char[1];
 	mStr[0] = '\0';
 }
 
-String::~String() { cout << "-- Destructor Active --\n\n"; }
+String::~String() { cout << "\n\n-- Destructor Active --\n\n"; }
 
 // Overloaded Constructor Definitions 
 String::String(const char* _str) 
 {
-	cout << "-- Overloaded Constructor --";
+	cout << "-- Overloaded Constructor --\n";
 	size_t size = strlen(_str);
 	mStr = new char[size + 1];
 	strcpy(mStr, _str);
@@ -29,7 +29,7 @@ String::String(const char* _str)
 
 String::String(const String& _other)
 {
-	cout << "-- Overloaded Constructor --"; 
+	cout << "-- Overloaded Constructor --\n"; 
 	mStr = new char[Length(_other.mStr) + 1];
 	strcpy(mStr, _other.mStr);
 }
@@ -42,7 +42,6 @@ String::String(const String& _other)
 size_t String::Length(char* _str) const
 {
 	size_t chtr = strlen(_str);
-	//cout << "Your word has a length of " << chtr << endl;
 	return chtr;
 }
 

@@ -47,7 +47,7 @@ public:
 	char& operator [] (size_t _index);
 	const char& operator [] (size_t _index) const;*/
 
-private: // Private Variables
+public: // Private Variables
 
 	// Poiner to a Dymanic Array 
 	char* mStr = new char[1];

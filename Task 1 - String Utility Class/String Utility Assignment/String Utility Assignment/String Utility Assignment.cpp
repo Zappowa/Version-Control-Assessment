@@ -5,6 +5,10 @@ using namespace std;
 
 int main()
 {
+	cout << "\nStart of Code!\n";
+	cout << "===========================================\n";
+
+
 	// ------------------ Length()
 	/*char str_Input[50];
 
@@ -12,7 +16,8 @@ int main()
 	cin >> str_Input;
 
 	String* fLength = new String();
-	fLength->Length(str_Input);*/
+	int out = fLength->Length(str_Input);
+	cout << "Your word has a length of " << out << endl;*/
 
 	// ------------------ CharacterAt(Index)
 
@@ -29,11 +34,10 @@ int main()
 	/*String* str01 = new String();
 	String* str02 = new String();
 
-	cout << "\nI will compare two strings!!\n" << "1: ";
+	cout << "\nI will compare two strings!!\n\n" << "1: ";
 	cin >> str01->mStr;
 	cout << "2: ";
 	cin >> str02->mStr;
-	cout << "\n";
 
 	cout << str01->EqualTo(*str02);*/
 
@@ -88,4 +92,7 @@ int main()
 	// ------------------ Plus Operator(+)
 	// ------------------ Plus Equals operator (+=)
 	
+	
+	cout << "\n===========================================";
+	cout << "\nEnd of Code!";
 }
