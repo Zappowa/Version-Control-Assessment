@@ -11,17 +11,21 @@ using namespace std;
 // Constructor & Destructor Definitions
 String::String() 
 { 
-	cout << "-- Constructor Active --\n";
+	cout << "\n-- Constructor Active --\n";
 	mStr = new char[1];
 	mStr[0] = '\0';
 }
 
-String::~String() { cout << "\n\n-- Destructor Active --\n\n"; }
+String::~String() 
+{ 
+	cout << "\n\n-- Destructor Active --"; 
+	delete[] mStr;
+}
 
 // Overloaded Constructor Definitions 
 String::String(const char* _str) 
 {
-	cout << "-- Overloaded Constructor --\n";
+	cout << "\n-- Overloaded Constructor --\n";
 	size_t size = strlen(_str);
 	mStr = new char[size + 1];
 	strcpy(mStr, _str);
@@ -29,7 +33,7 @@ String::String(const char* _str)
 
 String::String(const String& _other)
 {
-	cout << "-- Overloaded Constructor --\n"; 
+	cout << "\n-- Overloaded Constructor --\n"; 
 	mStr = new char[Length(_other.mStr) + 1];
 	strcpy(mStr, _other.mStr);
 }
@@ -119,24 +123,51 @@ String& String::ToUpper()
 	return *this;
 }
 
-/*
-
-
 size_t String::Find(const String& _str)
 {
-	return size_t();
+	char* founds = strstr(mStr, _str.mStr);
+
+	if (founds == nullptr)
+	{
+		cout << "\nNo Instance of '" << _str.mStr << "' found!";
+		return -1;
+	}
+	return founds - mStr;
 }
 
 size_t String::Find(size_t _startIndex, const String& _str)
 {
-	return size_t();
+	if (_startIndex < 0 || _startIndex >= Length(mStr))
+	{
+		cout << "You've Exceeded the Range Provided! ";
+		return -1;
+	}
+
+	char* found = strstr(mStr + _startIndex, _str.mStr);
+	if (found == nullptr)
+	{
+		cout << "\nNo Instance of '" << _str.mStr << "' found!";
+		return -1;
+	}
+	return found - mStr;
 }
 
 String& String::Replace(const String& _find, const String& _replace)
 {
-	// TODO: insert return statement here
+	size_t sPos = 0;
+
+	while (sPos != -1)
+	{
+		sPos = Find(sPos, _find.mStr);
+		
+		cout << "\n\n -- " << _find.mStr - sPos;
+
+		sPos = -1;
+	}
+	return *this;
 }
 
+/*
 String& String::ReadFromConsole()
 {
 	// TODO: insert return statement here

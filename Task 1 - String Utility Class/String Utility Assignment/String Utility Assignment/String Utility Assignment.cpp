@@ -65,22 +65,42 @@ int main()
 
 	// ------------------ ToLower()
 
-	/*String* upper = new String("I AM UPPERCASE");
+	/*String upper("I AM UPPERCASE");
 	
-	cout << "\nOriginal: " << upper->CStr() << endl;
-	upper->ToLower();*/
+	cout << "\nOriginal: " << upper.CStr() << endl;
+	upper.ToLower();*/
 	
-
 	// ------------------ ToUpper()
 	
-	/*String* lower = new String("i am lowercase");
+	/*String lower("i am lowercase");
 
-	cout << "\nOriginal: " << lower->CStr() << endl;
-	lower->ToUpper();*/
+	cout << "\nOriginal: " << lower.CStr() << endl;
+	lower.ToUpper();*/
 
 	// ------------------ Find(findString)
+	
+	/*String strTest("Please Test This String!");
+	String strFind("T");
+
+	cout << "\n" << "Location - " << strTest.Find(strFind);*/
+
 	// ------------------ Find(startIndex, findString)
+	
+	/*String test("Please Test This String!");
+
+	const int Pos = 0;
+	String findStr("T");
+
+	cout << "\n" << "Location - " << test.Find(Pos, findStr);*/
+
 	// ------------------ Replace(findString, replaceString)
+	
+	String testSubject("Replace Stuff Inside Me!");
+	String find("l");
+	String change("M");
+
+	testSubject.Replace(find, change);
+
 	// ------------------ ReadFromConsole()
 	// ------------------ WriteToConsole()
 	// ------------------ Equality Operator(==)
@@ -91,6 +111,6 @@ int main()
 	// ------------------ Plus Equals operator (+=)
 	
 	
-	cout << "\n===========================================";
+	cout << "\n\n===========================================";
 	cout << "\nEnd of Code!";
 }
