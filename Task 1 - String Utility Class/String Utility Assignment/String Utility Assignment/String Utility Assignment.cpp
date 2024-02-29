@@ -10,6 +10,7 @@ int main()
 
 
 	// ------------------ Length()
+
 	/*char str_Input[50];
 
 	cout << "Enter: ";
@@ -31,13 +32,13 @@ int main()
 
 	// ------------------ EqualTo(str)
 
-	/*String* str01 = new String("Hello");
+	/*String* str01 = new String("Helloo");
 	String* str02 = new String("Hello");
 
 	cout << "\nI will compare two strings!!\n\n";
 	cout << "1: " << str01->CStr() << "\n2: " << str02->CStr() << endl;
 
-	cout << str01->EqualTo(*str02);*/
+	str01->EqualTo(*str02);*/
 
 	// ------------------ Append(str)
 	
@@ -57,25 +58,25 @@ int main()
 
 	// ------------------ CStr()
 	
-	/*String blank;
-	String contain("Hello");
+	/*String* blank = new String();
+	String* contain = new String("Hello");
 
-	cout << "\nI am blank: (" << blank.CStr() << ")";
-	cout << "\nI am not blank: (" << contain.CStr() << ")\n";*/
+	cout << "\nI am blank: (" << blank->CStr() << ")";
+	cout << "\nI am not blank: (" << contain->CStr() << ")\n";*/
 
 	// ------------------ ToLower()
 
-	/*String upper("I AM UPPERCASE");
+	/*String* upper = new String("I AM UPPERCASE");
 	
-	cout << "\nOriginal: " << upper.CStr() << endl;
-	upper.ToLower();*/
+	cout << "\nOriginal: " << upper->CStr() << endl;
+	upper->ToLower();*/
 	
 	// ------------------ ToUpper()
 	
-	/*String lower("i am lowercase");
+	/*String* lower = new String("i am lowercase");
 
-	cout << "\nOriginal: " << lower.CStr() << endl;
-	lower.ToUpper();*/
+	cout << "\nOriginal: " << lower->CStr() << endl;
+	lower->ToUpper();*/
 
 	// ------------------ Find(findString)
 	
@@ -86,26 +87,61 @@ int main()
 
 	// ------------------ Find(startIndex, findString)
 	
-	/*String test("Please Test This String!");
+	/*String* test = new String("Please Test This String!");
 
 	const int Pos = 0;
 	String findStr("T");
 
-	cout << "\n" << "Location - " << test.Find(Pos, findStr);*/
+	cout << "\n" << "Location - " << test->Find(Pos, findStr);*/
 
 	// ------------------ Replace(findString, replaceString)
 	
-	String testSubject("Replace Stuff Inside Me!");
-	String find("l");
-	String change("M");
+	/*String* testSubject = new String("Replace stuff inside me!");
+	String* find = new String("e");
+	String* change = new String("M");
 
-	testSubject.Replace(find, change);
+	testSubject->Replace(*find, *change);*/
 
 	// ------------------ ReadFromConsole()
+	
+	/*String* input = new String();
+
+	input->ReadFromConsole();
+	cout << input->CStr();*/
+
 	// ------------------ WriteToConsole()
+	
+	/*String* output = new String("Hello World!");
+
+	output->WriteToConsole();*/
+
 	// ------------------ Equality Operator(==)
+	
+	/*String* Eq_lhs = new String("World");
+	String* Eq_rhs = new String("World");
+
+	Eq_lhs->operator==(*Eq_rhs);
+	if (*Eq_lhs == *Eq_rhs) {}*/
+	
 	// ------------------ Subscript Operator([])
+	
+	/*String* Su_lhs = new String("Hello");
+	String* Su_rhs = new String("HelZo");
+
+	Su_lhs->operator!=(*Su_rhs);
+	if (*Su_lhs != *Su_rhs) {}*/
+
 	// ------------------ Assignment Operator(=)
+		
+	String* As_lhs = new String("Left Side");
+	String* As_rhs = new String("Right Side");
+	String* aux_side = new String();
+	
+	As_rhs = aux_side;
+	As_lhs = As_rhs;
+	As_rhs = aux_side;
+	
+
 	// ------------------ LessThan Operator(<)
 	// ------------------ Plus Operator(+)
 	// ------------------ Plus Equals operator (+=)

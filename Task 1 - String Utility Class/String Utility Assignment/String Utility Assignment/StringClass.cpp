@@ -6,8 +6,6 @@
 
 using namespace std;
 
-
-
 // Constructor & Destructor Definitions
 String::String() 
 { 
@@ -38,7 +36,8 @@ String::String(const String& _other)
 	strcpy(mStr, _other.mStr);
 }
 
-// String Utility Class //
+
+// ---------- String Utility Class ---------- //
 
 
 // ---- Length() ---- \\
@@ -62,23 +61,16 @@ const char& String::CharacterAt(size_t _index)
 
 bool String::EqualTo(const String& _other)
 { 
-	if (Length(mStr) != Length(_other.mStr))
+	if (strcmp(mStr, _other.mStr) == 0)
 	{
-		cout << "Error! Different Lengths\n";
-		return false;
+		cout << "\nIt's a Match!!\n";
+		return true;
 	}
-
-	for (int i = 0; i < Length(mStr); i++)
-	{
-		if (mStr[i] != _other.mStr[i])
-		{
-			cout << "\nError! These Strings Don't Match\n";
-			return false;
-		}
-	}
-	cout << "\nIt's a Match!!\n";
-	return true;
+	cout << "\nError! These Strings Don't Match\n";
+	return false;
 }
+
+// ---- Append() ---- \\
 
 String& String::Append(const String& _str)
 {
@@ -89,6 +81,8 @@ String& String::Append(const String& _str)
 	return *this;
 }
 
+// ---- Prepend() ---- \\
+
 String& String::Prepend(const String& _str)
 {
 	strcat(_str.mStr, " ");
@@ -98,10 +92,14 @@ String& String::Prepend(const String& _str)
 	return *this;
 }
 
+// ---- CStr() ---- \\
+
 const char* String::CStr() const
 {
 	return mStr;
 }
+
+// ---- ToLower() ---- \\
 
 String& String::ToLower()
 {
@@ -113,6 +111,8 @@ String& String::ToLower()
 	return *this;
 }
 
+// ---- ToUpper() ---- \\
+
 String& String::ToUpper()
 {
 	for (int i = 0; i < strlen(mStr); i++)
@@ -122,6 +122,8 @@ String& String::ToUpper()
 	cout << "Uppered: " << mStr << endl;
 	return *this;
 }
+
+// ---- Find() ---- \\
 
 size_t String::Find(const String& _str)
 {
@@ -135,6 +137,8 @@ size_t String::Find(const String& _str)
 	return founds - mStr;
 }
 
+// ---- Find(w/ Start Index) ---- \\
+
 size_t String::Find(size_t _startIndex, const String& _str)
 {
 	if (_startIndex < 0 || _startIndex >= Length(mStr))
@@ -146,52 +150,78 @@ size_t String::Find(size_t _startIndex, const String& _str)
 	char* found = strstr(mStr + _startIndex, _str.mStr);
 	if (found == nullptr)
 	{
-		cout << "\nNo Instance of '" << _str.mStr << "' found!";
+		//cout << "\nNo Instance of '" << _str.mStr << "' found!";
 		return -1;
 	}
 	return found - mStr;
 }
 
+// ---- Replace() ---- \\
+
 String& String::Replace(const String& _find, const String& _replace)
 {
 	size_t sPos = 0;
-
 	while (sPos != -1)
 	{
 		sPos = Find(sPos, _find.mStr);
-		
-		cout << "\n\n -- " << _find.mStr - sPos;
-
-		sPos = -1;
+		mStr[sPos] = *_replace.mStr;
 	}
+	cout << "\n\n" << mStr;
+	return *this;
+}
+
+// ---- ReadFromConsole() ---- \\
+
+String& String::ReadFromConsole()
+{
+	cin >> mStr;
+	return *this;
+}
+
+// ---- WriteToConsole() ---- \\
+
+String& String::WriteToConsole()
+{
+	cout << "\n" << mStr;
+	return *this;
+}
+
+// ---- Operator ==() ---- \\
+
+bool String::operator==(const String& _other)
+{
+	if (strcmp(mStr, _other.mStr) == 0)
+	{
+		cout << "\nTrue";
+		return true;
+	}
+	cout << "\nFalse";
+	return false;
+}
+
+// ---- Operator !=() ---- \\
+
+bool String::operator!=(const String& _other)
+{
+	if (strcmp(mStr, _other.mStr) == 1)
+	{
+		cout << "\nTrue";
+		return true;
+	}
+	cout << "\nFalse";
+	return false;
+}
+
+// ---- Operator =() ---- \\
+
+String& String::operator=(const String& _str)
+{
+
 	return *this;
 }
 
 /*
-String& String::ReadFromConsole()
-{
-	// TODO: insert return statement here
-}
 
-String& String::WriteToConsole()
-{
-	// TODO: insert return statement here
-}
-
-bool String::operator==(const String& _other)
-{
-	return false;
-}
-
-bool String::operator!=(const String& _other)
-{
-	return false;
-}
-
-String& String::operator=(const String& _str)
-{
-	// TODO: insert return statement here
-}
 
 char& String::operator[](size_t _index)
 {
@@ -203,4 +233,3 @@ const char& String::operator[](size_t _index) const
 	// TODO: insert return statement here
 }
 */
-

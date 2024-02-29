@@ -37,20 +37,20 @@ public:
 
 	String& Replace(const String& _find, const String& _replace);
 
-	/*
-
-	
-
-	
-
 	String& ReadFromConsole();
 	String& WriteToConsole();
 
-public:
 	bool operator ==(const String& _other);
 	bool operator !=(const String& _other);
 
 	String& operator = (const String& _str);
+
+	/*
+
+public:
+	
+
+	
 
 	char& operator [] (size_t _index);
 	const char& operator [] (size_t _index) const;*/
@@ -58,5 +58,5 @@ public:
 private:
 
 	// Private Poiner to a Dymanic Array 
-	char* mStr = new char[1];
+	char* mStr;
 };
