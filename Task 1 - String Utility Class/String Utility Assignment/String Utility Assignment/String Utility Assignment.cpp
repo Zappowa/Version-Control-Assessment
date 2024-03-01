@@ -11,42 +11,39 @@ int main()
 
 	// ----------- Length() ----------- \\
 
-	/*char str_Input[50];
-
-	cout << "Enter: ";
-	cin >> str_Input;
-
+	char str_input[20] = "What is my length";
 	String* fLength = new String();
-	int out = fLength->Length(str_Input);
-	cout << "Your word has a length of " << out << endl;*/
+
+	size_t out = fLength->Length(str_input);
+	cout << "\n-- Length()";
+	cout << "\nThe length of (" << str_input << ") is " << out << "\n";
 
 	// ----------- CharacterAt(Index) ----------- \\
 
-	/*size_t index = 2;
-
-	cout << "Index: ";
-	cin >> index;
-
 	String* fChrt = new String();
-	fChrt->CharacterAt(index);*/
+	size_t index = 2;
+
+	cout << "\n-- CharacterAt()";
+	cout << "\nThe Character at (" << index << ") is '";
+	cout << fChrt->CharacterAt(index) << "'\n";
+	 
 
 	// ----------- EqualTo(str) ----------- \\
 
-	/*String* str01 = new String("Helloo");
+	String* str01 = new String("Hello");
 	String* str02 = new String("Hello");
 
-	cout << "\nI will compare two strings!!\n\n";
-	cout << "1: " << str01->CStr() << "\n2: " << str02->CStr() << endl;
-
-	str01->EqualTo(*str02);*/
+	cout << "\n-- EqualTo()";
+	cout << "\nString 1: " << str01->CStr() << ", String 2: " << str02->CStr();
+	str01->EqualTo(*str02);
 
 	// ----------- Append(str) ----------- \\
 	
-	/*String* phrase01 = new String("Hello");
+	String* phrase01 = new String("Hello");
 	String* phrase02 = new String("World!");
 
 	cout << "\nFirst Phrase: " << phrase01->CStr() << "\nSecond Phrase: " << phrase02->CStr() << endl;
-	phrase01->Append(*phrase02);*/
+	phrase01->Append(*phrase02);
 
 	// ----------- Prepend(str) ----------- \\
 

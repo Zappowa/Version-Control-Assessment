@@ -23,7 +23,7 @@ public:
 	const char& CharacterAt(size_t _index) const;
 	char& CharacterAt(size_t _index);
 	
-	bool EqualTo(const String& _other);
+	bool EqualTo(const String& _other) const;
 
 	String& Append(const String& _str);
 	String& Prepend(const String& _str);
