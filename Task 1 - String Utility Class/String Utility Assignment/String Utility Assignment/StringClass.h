@@ -20,7 +20,8 @@ public:
 
 	size_t Length(char* _str) const;
 	
-	const char& CharacterAt(size_t _index);
+	const char& CharacterAt(size_t _index) const;
+	char& CharacterAt(size_t _index);
 	
 	bool EqualTo(const String& _other);
 
@@ -40,23 +41,26 @@ public:
 	String& ReadFromConsole();
 	String& WriteToConsole();
 
+public:
+
+	// Public Operator Initialisations
+
+	String& operator =(const String& _str);
 	bool operator ==(const String& _other);
 	bool operator !=(const String& _other);
-
-	String& operator = (const String& _str);
-
-	/*
-
-public:
-	
-
-	
+	bool operator <(const String& _other);
 
 	char& operator [] (size_t _index);
-	const char& operator [] (size_t _index) const;*/
+	const char& operator [] (size_t _index) const;
+
+	// Public Optional Initialistions
+
+	String& operator +(const String& _str);
+	String& operator +=(const String& _str);
 
 private:
 
 	// Private Poiner to a Dymanic Array 
+
 	char* mStr;
 };

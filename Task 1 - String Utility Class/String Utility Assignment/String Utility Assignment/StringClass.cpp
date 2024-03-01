@@ -1,23 +1,23 @@
 // Global Includes
-#define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include <string>
 #include "StringClass.h"
 
-using namespace std;
+using namespace std; // Remove need for std::
 
 // Constructor & Destructor Definitions
-String::String() 
+
+String::String() // Constructor
 { 
-	cout << "\n-- Constructor Active --\n";
-	mStr = new char[1];
-	mStr[0] = '\0';
+	cout << "\n-- Constructor Active --\n"; // Prints when Active
+	mStr = new char[1]; // Initialising a new array 
+	mStr[0] = '\0'; // Confirms an Empty Array with Null Terminator
 }
 
-String::~String() 
+String::~String() // Destructor
 { 
-	cout << "\n\n-- Destructor Active --"; 
-	delete[] mStr;
+	cout << "\n\n-- Destructor Active --"; // Prints when Active
+	delete[] mStr; // Deleting the Array (Prevents Memory Leak)
 }
 
 // Overloaded Constructor Definitions 
@@ -48,12 +48,21 @@ size_t String::Length(char* _str) const
 	return chtr;
 }
 
-// ---- CharacterAt() ---- \\
+// ---- Const CharacterAt() ---- \\
 
-const char& String::CharacterAt(size_t _index)
+const char& String::CharacterAt(size_t _index) const
 {
 	char locate[8] = "Morning";
 	cout << "At index " << _index << ", char = " << locate[_index];
+	return locate[_index];
+}
+
+// ---- CharacterAt() ---- \\
+
+char& String::CharacterAt(size_t _index)
+{
+	char locate[8] = "Morning";
+	cout << "At indexs " << _index << ", char = " << locate[_index];
 	return locate[_index];
 }
 
@@ -182,7 +191,16 @@ String& String::ReadFromConsole()
 
 String& String::WriteToConsole()
 {
-	cout << "\n" << mStr;
+	cout << mStr;
+	return *this;
+}
+
+// ---- Operator =() ---- \\
+
+String& String::operator=(const String& _str)
+{
+	cout << "\nLHS: '" << mStr << "' is now equal to RHS: '" << _str.mStr << "'";
+	strcpy(mStr, _str.mStr);
 	return *this;
 }
 
@@ -212,24 +230,65 @@ bool String::operator!=(const String& _other)
 	return false;
 }
 
-// ---- Operator =() ---- \\
+// ---- Operator <() ---- \\
 
-String& String::operator=(const String& _str)
+bool String::operator<(const String& _other)
 {
-
-	return *this;
+	if (strcmp(mStr, _other.mStr) < 0)
+	{
+		cout << "\n'" << mStr << "' is less than '" << _other.mStr << "'\n";
+		return true;
+	}
+	cout << "\n'" << mStr << "' isn't less than '" << _other.mStr << "'\n";
+	return false;
 }
 
-/*
-
+// ---- Operator []() ---- \\
 
 char& String::operator[](size_t _index)
 {
-	// TODO: insert return statement here
+	cout << "\nAt Location '" << _index << "' the char is '" << mStr[_index] << "'\n";
+	return mStr[_index];
 }
 
 const char& String::operator[](size_t _index) const
 {
-	// TODO: insert return statement here
+	cout << "At Location '" << _index << "' the char is '" << mStr[_index] << "'\n";
+	return mStr[_index];
 }
-*/
+
+// ------ Optional Functionality ------ \\
+
+
+// ---- Operator +() ---- \\
+
+String& String::operator+(const String& _str)
+{
+	cout << mStr;
+
+	strcat(mStr, " ");
+	string cat = strcat(mStr, _str.mStr);
+
+	cout << " + " << _str.mStr << " = " << cat;
+	return *this;
+}
+
+// ---- Operator +=() ---- \\
+
+String& String::operator+=(const String& _str)
+{
+	cout << mStr << " += " << _str.mStr;
+
+	size_t mSize = Length(mStr) + Length(_str.mStr);
+	char* new_mStr = new char[mSize + 1];
+	
+	strcpy(new_mStr, mStr);
+	delete[] mStr;
+
+	strcat(new_mStr, " ");
+	strcat(new_mStr, _str.mStr);
+	
+	mStr = new_mStr;
+	cout << " becomes: " << mStr;
+	return *this;
+}

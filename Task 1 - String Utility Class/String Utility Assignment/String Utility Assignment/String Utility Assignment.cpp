@@ -9,7 +9,7 @@ int main()
 	cout << "===========================================\n";
 
 
-	// ------------------ Length()
+	// ----------- Length() ----------- \\
 
 	/*char str_Input[50];
 
@@ -20,9 +20,9 @@ int main()
 	int out = fLength->Length(str_Input);
 	cout << "Your word has a length of " << out << endl;*/
 
-	// ------------------ CharacterAt(Index)
+	// ----------- CharacterAt(Index) ----------- \\
 
-	/*size_t index;
+	/*size_t index = 2;
 
 	cout << "Index: ";
 	cin >> index;
@@ -30,7 +30,7 @@ int main()
 	String* fChrt = new String();
 	fChrt->CharacterAt(index);*/
 
-	// ------------------ EqualTo(str)
+	// ----------- EqualTo(str) ----------- \\
 
 	/*String* str01 = new String("Helloo");
 	String* str02 = new String("Hello");
@@ -40,7 +40,7 @@ int main()
 
 	str01->EqualTo(*str02);*/
 
-	// ------------------ Append(str)
+	// ----------- Append(str) ----------- \\
 	
 	/*String* phrase01 = new String("Hello");
 	String* phrase02 = new String("World!");
@@ -48,7 +48,7 @@ int main()
 	cout << "\nFirst Phrase: " << phrase01->CStr() << "\nSecond Phrase: " << phrase02->CStr() << endl;
 	phrase01->Append(*phrase02);*/
 
-	// ------------------ Prepend(str)
+	// ----------- Prepend(str) ----------- \\
 
 	/*String* word01 = new String("Hello");
 	String* word02 = new String("World!");
@@ -56,7 +56,7 @@ int main()
 	cout << "\nFirst Phrase: " << word01->CStr() << "\nSecond Phrase: " << word02->CStr() << endl;
 	word01->Prepend(*word02);*/
 
-	// ------------------ CStr()
+	// ----------- CStr() ----------- \\
 	
 	/*String* blank = new String();
 	String* contain = new String("Hello");
@@ -64,28 +64,28 @@ int main()
 	cout << "\nI am blank: (" << blank->CStr() << ")";
 	cout << "\nI am not blank: (" << contain->CStr() << ")\n";*/
 
-	// ------------------ ToLower()
+	// ----------- ToLower() ----------- \\
 
-	/*String* upper = new String("I AM UPPERCASE");
+	/*String* upper = new String("I AM UPPERCASE!");
 	
 	cout << "\nOriginal: " << upper->CStr() << endl;
 	upper->ToLower();*/
 	
-	// ------------------ ToUpper()
+	// ----------- ToUpper() ----------- \\
 	
 	/*String* lower = new String("i am lowercase");
 
 	cout << "\nOriginal: " << lower->CStr() << endl;
 	lower->ToUpper();*/
 
-	// ------------------ Find(findString)
+	// ----------- Find(findString) ----------- \\
 	
 	/*String strTest("Please Test This String!");
 	String strFind("T");
 
 	cout << "\n" << "Location - " << strTest.Find(strFind);*/
 
-	// ------------------ Find(startIndex, findString)
+	// ----------- Find(startIndex, findString) ----------- \\
 	
 	/*String* test = new String("Please Test This String!");
 
@@ -94,7 +94,7 @@ int main()
 
 	cout << "\n" << "Location - " << test->Find(Pos, findStr);*/
 
-	// ------------------ Replace(findString, replaceString)
+	// ----------- Replace(findString, replaceString) ----------- \\
 	
 	/*String* testSubject = new String("Replace stuff inside me!");
 	String* find = new String("e");
@@ -102,20 +102,20 @@ int main()
 
 	testSubject->Replace(*find, *change);*/
 
-	// ------------------ ReadFromConsole()
+	// ----------- ReadFromConsole() ----------- \\
 	
 	/*String* input = new String();
 
 	input->ReadFromConsole();
 	cout << input->CStr();*/
 
-	// ------------------ WriteToConsole()
+	// ----------- WriteToConsole() ----------- \\
 	
 	/*String* output = new String("Hello World!");
 
 	output->WriteToConsole();*/
 
-	// ------------------ Equality Operator(==)
+	// ----------- Equality Operator(==) ----------- \\
 	
 	/*String* Eq_lhs = new String("World");
 	String* Eq_rhs = new String("World");
@@ -123,7 +123,7 @@ int main()
 	Eq_lhs->operator==(*Eq_rhs);
 	if (*Eq_lhs == *Eq_rhs) {}*/
 	
-	// ------------------ Subscript Operator([])
+	// ----------- Equality Operator(!=) ----------- \\
 	
 	/*String* Su_lhs = new String("Hello");
 	String* Su_rhs = new String("HelZo");
@@ -131,22 +131,58 @@ int main()
 	Su_lhs->operator!=(*Su_rhs);
 	if (*Su_lhs != *Su_rhs) {}*/
 
-	// ------------------ Assignment Operator(=)
+	// ----------- Assignment Operator(=) ----------- \\
 		
-	String* As_lhs = new String("Left Side");
-	String* As_rhs = new String("Right Side");
+	/*String* As_lhs = new String("Right Side");
+	String* As_rhs = new String("Left Side");
 	String* aux_side = new String();
 	
-	As_rhs = aux_side;
-	As_lhs = As_rhs;
-	As_rhs = aux_side;
-	
+	cout << "\nLHS was: "; As_lhs->WriteToConsole();
+	cout << "\nRHS was: "; As_rhs->WriteToConsole(); cout << "\n";
 
-	// ------------------ LessThan Operator(<)
-	// ------------------ Plus Operator(+)
-	// ------------------ Plus Equals operator (+=)
+	aux_side->operator=(*As_lhs);
+	As_lhs->operator=(*As_rhs);
+	As_rhs->operator=(*aux_side);
+
+	//*aux_side = *As_lhs;
+	//*As_lhs = *As_rhs;
+	//*As_rhs = *aux_side;
+
+	cout << "\n\nLHS is now: "; As_lhs->WriteToConsole();
+	cout << "\nRHS is now: "; As_rhs->WriteToConsole();*/
+
+	// ----------- Subscript Operator([]) ----------- \\
+
+	/*String* data = new String("Index Me!");
+	//String datas("Index MEE");
+	size_t index = 2;
+
+	data->operator[](index);
+	//(*data)[index];*/
+
+	// ----------- LessThan Operator(<) ----------- \\
 	
+	/*String* checkWith = new String("k");
+	String* chr = new String("k");
+
+	checkWith->operator<(*chr);*/
+
+	// ----------- Plus Operator(+) ----------- \\
 	
+	/*String* LHS = new String("Hello");
+	String* RHS = new String("World!");
+
+	LHS->operator+(*RHS);*/
+
+	// ----------- Plus Equals operator (+=) ----------- \\
+	
+	/*String* lhs = new String("Hello");
+	String* rhs = new String("World!");
+
+	lhs->operator+=(*rhs);*/
+
+	// --- End of Code --- \\	
+
 	cout << "\n\n===========================================";
 	cout << "\nEnd of Code!";
 }
