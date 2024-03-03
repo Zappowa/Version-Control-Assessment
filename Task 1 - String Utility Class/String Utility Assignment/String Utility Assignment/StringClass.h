@@ -60,7 +60,7 @@ public:
 
 private:
 
-	// Private Poiner to a Dymanic Array 
+	// Private Pointer to a Dymanic Array 
 
-	char* mStr;
+	char* mStr; // = new char[1];
 };

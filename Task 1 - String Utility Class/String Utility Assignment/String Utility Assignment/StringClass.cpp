@@ -41,7 +41,7 @@ String::String(const String& _other)
 	// Creating an Array of Length(What was passed through)
 	mStr = new char[size + 1];
 	// Copying the Passthrough onto the Char Array
-	strcpy_s(mStr, Length(mStr), _other.mStr); // strcpy_s() Makes the function safe (Has defined storage)
+	memcpy(mStr, _other.mStr, Length(mStr)); // memcpy() Makes the function safe (Has defined storage)
 }
 
 
@@ -95,13 +95,20 @@ bool String::EqualTo(const String& _other) const
 
 String& String::Append(const String& _str)
 {
-	size_t safeSize = Length(mStr) + Length(_str.mStr) + 2;
+	// Setting a Safe Size for the Array with +1 to provide a space for the " "
+	size_t safeSize = (Length(mStr) + 1) + (Length(_str.mStr)) + 1; // Outside + 1 for the Null Terminator '0\'
+	// Temporary Storage with Length of Both Strings
+	char* new_mStr = new char[safeSize];
 
-	// Strcat() Concatenates a space ontop of the first word, then the second word on top of the space.
-	strcat_s(mStr, safeSize, " ");
-	strcat_s(mStr, safeSize + 1, _str.mStr);
+	// Copying old data into a new variable with a safe length
+	strcpy_s(new_mStr, Length(new_mStr), mStr);
 
-	cout << "\nYou're Concatenated Word is: " << mStr << endl; // Printing newly Appended Word
+	// Appending the space and string onto the Array
+	strcat_s(new_mStr, safeSize, " ");
+	strcat_s(new_mStr, safeSize, _str.mStr);
+
+	// Returning local variable is a risk so we give the data back
+	mStr = new_mStr;
 	return *this;
 }
 
@@ -109,14 +116,21 @@ String& String::Append(const String& _str)
 
 String& String::Prepend(const String& _str)
 {
-	// Creating a length to ensure a null terminator in the array
-	size_t safeSize = Length(mStr) + Length(_str.mStr);
+	// Setting a Safe Size for the Array with +1 to provide a space for the " "
+	size_t safeSize = (Length(mStr) + 1) + (Length(_str.mStr)) + 1; // Outside + 1 for the Null Terminator '0\'
+	// Temporary Storage with Length of Both Strings
+	char* new_mStr = new char[safeSize];
 
-	// Strcat() adds a space on the second word, then the first one on top of it
-	strcat_s(_str.mStr, safeSize,  " ");
-	strcat_s(_str.mStr, safeSize, mStr);
+	// Copying old data into a new variable with a safe length
+	strcpy_s(new_mStr, Length(new_mStr), _str.mStr);
 
-	cout << "\nYou're Concatenated Word is: " << _str.mStr << endl; // Printing the newly prepended word
+	// Appending the space and string onto the Array
+	strcat_s(new_mStr, safeSize, " ");
+	strcat_s(new_mStr, safeSize, mStr);
+
+	// Returning local variable is a risk so we give the data back
+	mStr = new_mStr;
+
 	return *this;
 }
 
@@ -160,17 +174,18 @@ String& String::ToUpper()
 
 size_t String::Find(const String& _str)
 {
-	// strstrr() Finds the first occurance of what we pass through in the Array
-	char* founds = strstr(mStr, _str.mStr); // Assigns the first occurance to "founds"
+	//// strstrr() Finds the first occurance of what we pass through in the Array
+	//char* founds = strstr(mStr, _str.mStr); // Assigns the first occurance to "founds"
 
-	// Checks no occurances were found
-	if (founds == nullptr)
-	{
-		cout << "\nNo Instance of '" << _str.mStr << "' found!";
-		return -1;
-	}
-	// If there is an occurance, print it minus the rest of the Array (Only the char)
-	return founds - mStr;
+	//// Checks no occurances were found
+	//if (founds == nullptr)
+	//{
+	//	cout << "\nNo Instance of '" << _str.mStr << "' found!";
+	//	return -1;
+	//}
+	//// If there is an occurance, print it minus the rest of the Array (Only the char)
+	//return founds - mStr;
+	return Find(0, _str);
 }
 
 // ---- Find(w/ Start Index) ---- \\
@@ -206,7 +221,6 @@ String& String::Replace(const String& _find, const String& _replace)
 		sPos = Find(sPos, _find.mStr);
 		mStr[sPos] = *_replace.mStr;
 	}
-	cout << "\n\n" << mStr;
 	return *this;
 }
 
@@ -214,8 +228,21 @@ String& String::Replace(const String& _find, const String& _replace)
 
 String& String::ReadFromConsole()
 {
+	const size_t SIZE = 144;
+	char new_mStr[SIZE];
+
 	// Take an input straight into the Array
-	cin >> mStr;
+	cin.getline(new_mStr, SIZE);
+
+	// Free the existing memory to avoid memory leaks
+	delete[] mStr;
+
+	// Allocate new memory for the updated string
+	mStr = new char[strlen(new_mStr) + 1];
+
+	// Copy the content
+	strcpy_s(mStr, strlen(new_mStr) + 1, new_mStr);
+
 	return *this;
 }
 
@@ -236,8 +263,13 @@ String& String::WriteToConsole()
 
 String& String::operator=(const String& _str)
 {
+	const size_t SAFESIZE = strlen(_str.mStr) + 1;
+
 	cout << "\nLHS: '" << mStr << "' is now equal to RHS: '" << _str.mStr << "'";
-	memcpy(mStr, _str.mStr, Length(_str.mStr));
+	memcpy(mStr, _str.mStr, SAFESIZE);
+	return *this;
+
+	
 	return *this;
 }
 
@@ -247,10 +279,8 @@ bool String::operator==(const String& _other)
 {
 	if (strcmp(mStr, _other.mStr) == 0)
 	{
-		cout << "\nTrue";
 		return true;
 	}
-	cout << "\nFalse";
 	return false;
 }
 
@@ -260,10 +290,8 @@ bool String::operator!=(const String& _other)
 {
 	if (strcmp(mStr, _other.mStr) == 1)
 	{
-		cout << "\nTrue";
 		return true;
 	}
-	cout << "\nFalse";
 	return false;
 }
 
@@ -294,6 +322,7 @@ const char& String::operator[](size_t _index) const
 	return mStr[_index];
 }
 
+
 // ------ Optional Functionality ------ \\
 
 
@@ -309,7 +338,7 @@ String& String::operator+(const String& _str)
 
 	cout << " + " << _str.mStr << " = " << mStr;
 	return *this;
-}
+} 
 
 // ---- Operator +=() ---- \\
 
