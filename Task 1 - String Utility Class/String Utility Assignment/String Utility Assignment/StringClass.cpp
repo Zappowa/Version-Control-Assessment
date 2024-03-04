@@ -174,18 +174,17 @@ String& String::ToUpper()
 
 size_t String::Find(const String& _str)
 {
-	//// strstrr() Finds the first occurance of what we pass through in the Array
-	//char* founds = strstr(mStr, _str.mStr); // Assigns the first occurance to "founds"
+	// strstrr() Finds the first occurance of what we pass through in the Array
+	char* founds = strstr(mStr, _str.mStr); // Assigns the first occurance to "founds"
 
-	//// Checks no occurances were found
-	//if (founds == nullptr)
-	//{
-	//	cout << "\nNo Instance of '" << _str.mStr << "' found!";
-	//	return -1;
-	//}
-	//// If there is an occurance, print it minus the rest of the Array (Only the char)
-	//return founds - mStr;
-	return Find(0, _str);
+	// Checks no occurances were found
+	if (founds == nullptr)
+	{
+		cout << "\nNo Instance of '" << _str.mStr << "' found!";
+		return -1;
+	}
+	// If there is an occurance, print it minus the rest of the Array (Only the char)
+	return founds - mStr;
 }
 
 // ---- Find(w/ Start Index) ---- \\
@@ -301,10 +300,8 @@ bool String::operator<(const String& _other)
 {
 	if (strcmp(mStr, _other.mStr) < 0)
 	{
-		cout << "\n'" << mStr << "' is less than '" << _other.mStr << "'\n";
 		return true;
 	}
-	cout << "\n'" << mStr << "' isn't less than '" << _other.mStr << "'\n";
 	return false;
 }
 
@@ -312,13 +309,11 @@ bool String::operator<(const String& _other)
 
 char& String::operator[](size_t _index)
 {
-	cout << "\nAt Location '" << _index << "' the char is '" << mStr[_index] << "'\n";
 	return mStr[_index];
 }
 
 const char& String::operator[](size_t _index) const
 {
-	cout << "At Location '" << _index << "' the char is '" << mStr[_index] << "'\n";
 	return mStr[_index];
 }
 

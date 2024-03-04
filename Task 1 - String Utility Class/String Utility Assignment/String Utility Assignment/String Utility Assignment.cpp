@@ -12,96 +12,94 @@ int main()
 	
 	// ----------- Length() ----------- \\
 
-	char str_input[20] = "What is my length";
+	/*char str_input[20] = "What is my length";
 	String* fLength = new String();
 
 	size_t out = fLength->Length(str_input);
 	cout << "\n-- Length()";
-	cout << "\nThe length of (" << str_input << ") is " << out << "\n";
+	cout << "\nThe length of (" << str_input << ") is " << out << "\n";*/
 		
 	// ----------- CharacterAt(Index) ----------- \\
 
-	String* fChrt = new String();
+	/*String* fChrt = new String();
 	size_t index = 2;
 
 	cout << "\n-- CharacterAt()";
 	cout << "\nThe Character at (" << index << ") is '";
-	cout << fChrt->CharacterAt(index) << "'\n";
+	cout << fChrt->CharacterAt(index) << "'\n";*/
 
 		// ----------- EqualTo(str) ----------- \\
 
-	String* str01 = new String("Hello");
+	/*String* str01 = new String("Hello");
 	String* str02 = new String("Hello");
 
 	cout << "\n-- EqualTo()";
 	cout << "\nString 1: " << str01->CStr() << ", String 2: " << str02->CStr();
-	str01->EqualTo(*str02);
-	//goNext(next);
+	str01->EqualTo(*str02);*/
 
 	// ----------- Append(str) ----------- \\
 		
-	String* aWord01 = new String("Hello");
+	/*String* aWord01 = new String("Hello");
 	String* aWord02 = new String("World!");
 
 	cout << "\n-- Append()";
 	cout << "\nFirst Phrase: " << aWord01->CStr() << "\nSecond Phrase: " << aWord02->CStr();
 	aWord01->Append(*aWord02);
-	cout << "\nYour Concatenated String is: " << aWord01->CStr() << endl;
+	cout << "\nYour Concatenated String is: " << aWord01->CStr() << endl;*/
 
 	// ----------- Prepend(str) ----------- \\
 
-	String* pWord01 = new String("Hello");
+	/*String* pWord01 = new String("Hello");
 	String* pWord02 = new String("World!");
 
 	cout << "\n-- Prepend()";
 	cout << "\nFirst Phrase: " << pWord01->CStr() << "\nSecond Phrase: " << pWord02->CStr();
 	pWord01->Prepend(*pWord02);
-	cout << "\nYour Concatenated String is: " << pWord01->CStr() << endl;
+	cout << "\nYour Concatenated String is: " << pWord01->CStr() << endl;*/
 
 	// ----------- CStr() ----------- \\
 	
-	String* blank = new String();
+	/*String* blank = new String();
 	String* contain = new String("Hello");
 
 	cout << "\n-- CStr()";
 	cout << "\nI am blank: '" << blank->CStr() << "'";
-	cout << "\nI am not blank: '" << contain->CStr() << "'\n";
+	cout << "\nI am not blank: '" << contain->CStr() << "'\n";*/
 
 	// ----------- ToLower() ----------- \\
 
-	String* upper = new String("I AM LOWERCASE");
+	/*String* upper = new String("I AM LOWERCASE");
 
 	cout << "\n-- ToLower()";
 	cout << "\nOriginal: " << upper->CStr() << endl;
-	upper->ToLower();
+	upper->ToLower();*/
 
 	// ----------- ToUpper() ----------- \\
 	
-	String* lower = new String("i am uppercase");
+	/*String* lower = new String("i am uppercase");
 
 	cout << "\n-- ToUpper()";
 	cout << "\nOriginal: " << lower->CStr() << endl;
-	lower->ToUpper();
+	lower->ToUpper();*/
 
 	// ----------- Find(findString) ----------- \\
 	
-	/*String* strTest = new String("Please Test This String!");
+	String* strTest = new String("Please Test This String!");
 	String* strFind = new String("T");
 
 	cout << "\n-- Find()";
 	cout << "\nIn '" << strTest->CStr() << "' we are looking for '" << strFind->CStr() << "'";
-	cout << "\n" << "Location - " << strTest->Find(*strFind) << endl;*/
+	cout << "\n" << "Location - " << strTest->Find(*strFind) << endl;
 
 	//// ----------- Find(startIndex, findString) ----------- \\
-	//
-	//String* testStr = new String("Please Test This String!");
-	//String* findStr = new String("T");
-	//const int Pos = 0;
-	//
-	//cout << "\n-- Find(w/ Start Index)";
-	//cout << "\nIn '" << testStr->CStr() << "' we are looking for '" << findStr->CStr() << "' starting at " << Pos;
-	//cout << "\n" << "Location - " << testStr->Find(Pos, *findStr) << endl;
-	////goNext(next);
+	
+	String* testStr = new String("Please Test This String!");
+	String* findStr = new String("T");
+	const int Pos = 0;
+	
+	cout << "\n-- Find(w/ Start Index)";
+	cout << "\nIn '" << testStr->CStr() << "' we are looking for '" << findStr->CStr() << "' starting at " << Pos;
+	cout << "\n" << "Location - " << testStr->Find(Pos, *findStr) << endl;
 
 	// ----------- Replace(findString, replaceString) ----------- \\
 	
@@ -117,22 +115,21 @@ int main()
 
 	// ----------- ReadFromConsole() ----------- \\
 	
-	String* input = new String();
+	/*String* input = new String();
 
 	cout << "\n-- ReadFromConsole()"; cout << "\nInput: ";
-	input->ReadFromConsole();
+	input->ReadFromConsole();*/
 
 	// ----------- WriteToConsole() ----------- \\
 	
-	//String* output = new String("Hello World!");
-	cout << "\n-- WriteToConsole()";
+	/*cout << "\n-- WriteToConsole()";
 	cout << "\nYour input was: ";
 	input->WriteToConsole();
-	cout << "\n";
+	cout << "\n";*/
 
 	// ----------- Equality Operator(==) ----------- \\
 	
-	String* Eq_lhs = new String("World");
+	/*String* Eq_lhs = new String("World");
 	String* Eq_rhs = new String("World");
 
 	cout << "\n-- Equality Operator(==)";
@@ -145,11 +142,11 @@ int main()
 	else
 	{
 		cout << "\nThese String are not Equal!\n";
-	}
+	}*/
 
 	// ----------- Equality Operator(!=) ----------- \\
 	
-	String* NEq_lhs = new String("Hello");
+	/*String* NEq_lhs = new String("Hello");
 	String* NEq_rhs = new String("HelZo");
 
 	cout << "\n-- Equality Operator(!=)";
@@ -162,11 +159,11 @@ int main()
 	else
 	{
 		cout << "\nThese Strings are Equal!\n";
-	}
+	}*/
 
 	// ----------- Assignment Operator(=) ----------- \\
 		
-	String* As_lhs = new String("Right Side");
+	/*String* As_lhs = new String("Right Side");
 	String* As_rhs = new String("Left Side");
 	String* aux_side = new String();
 
@@ -180,24 +177,33 @@ int main()
 
 	cout << "\n\nLHS is now: "; As_lhs->WriteToConsole();
 	cout << "\nRHS is now: "; As_rhs->WriteToConsole();
-	cout << "\n";
+	cout << "\n";*/
 
 	// ----------- Subscript Operator([]) ----------- \\
 
-	String* data = new String("Index Me!");
-	size_t subIndex = 2;
+	/*String* data = new String("Index Me!");
+	const size_t SUBINDEX = 2;
 
 	cout << "\n-- Subscript Operator([])";
-	cout << "\nBy Looking through '" << data->CStr() << "'";
-
-	(*data)[index];
+	cout << "\nBy Looking through '" << data->CStr() << "' at location '" << SUBINDEX << "'";
+	cout << "\nThe Characher is '" << (*data)[index] << "'.\n";*/
 
 	// ----------- LessThan Operator(<) ----------- \\
 	
-	String* checkWith = new String("k");
-	String* chr = new String("k");
+	/*String* checkWith = new String("k");
+	String* chr = new String("l");
 
-	checkWith->operator<(*chr);
+	cout << "\n-- LessThan Operator(<)";
+	cout << "\nWe are checking ('" << checkWith->CStr() << "' < '" << chr->CStr() << "')";
+
+	if (*checkWith < *chr)
+	{
+		cout << "\n'" << checkWith->CStr() << "' is less than '" << chr->CStr() << "'\n";
+	}
+	else
+	{
+		cout << "\n'" << checkWith->CStr() << "' isn't less than '" << chr->CStr() << "'\n";
+	}*/
 
 	// ----------- Plus Operator(+) ----------- \\
 	
