@@ -1,2 +1,3 @@
-﻿  String Utility Assignment.cpp
-  String Utility Assignment.vcxproj -> C:\Users\Princ\OneDrive\Desktop\AIE - Version Control Assessment\Version-Control-Assessment\Task 1 - String Utility Class\String Utility Assignment\x64\Debug\String Utility Assignment.exe
+﻿  StringClass.cpp
+C:\Users\Princ\Desktop\Version-Control-Assessment\Task 1 - String Utility Class\String Utility Assignment\String Utility Assignment\StringClass.cpp(221,14): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  String Utility Assignment.vcxproj -> C:\Users\Princ\Desktop\Version-Control-Assessment\Task 1 - String Utility Class\String Utility Assignment\x64\Debug\String Utility Assignment.exe

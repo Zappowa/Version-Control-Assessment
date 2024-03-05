@@ -192,15 +192,15 @@ size_t String::Find(const String& _str)
 size_t String::Find(size_t _startIndex, const String& _str)
 {
 	// Checks if the start index isn't in range of what we are looking through
-	if (_startIndex < 0 || _startIndex >= Length(mStr))
+	if (_startIndex < 0 || _startIndex >= strlen(mStr))
 	{
-		cout << "You've Exceeded the Range Provided! ";
+		cout << "You've Exceeded the Range Provided!";
 		return -1;
 	}
 
 	// strstr() Will start at the given index and skip anything before
 	char* found = strstr(mStr + _startIndex, _str.mStr);
-
+		
 	if (found == nullptr)
 	{
 		//cout << "\nNo Instance of '" << _str.mStr << "' found!";
@@ -214,11 +214,12 @@ size_t String::Find(size_t _startIndex, const String& _str)
 
 String& String::Replace(const String& _find, const String& _replace)
 {
-	size_t sPos = 0;
-	while (sPos != -1)
+	int cPos = 0;
+
+	while (cPos)
 	{
-		sPos = Find(sPos, _find.mStr);
-		mStr[sPos] = *_replace.mStr;
+		cPos = Find(cPos, _find.mStr);
+		mStr[cPos] = *_replace.mStr;
 	}
 	return *this;
 }
@@ -227,6 +228,7 @@ String& String::Replace(const String& _find, const String& _replace)
 
 String& String::ReadFromConsole()
 {
+	// Initialising a size for the array
 	const size_t SIZE = 144;
 	char new_mStr[SIZE];
 
@@ -262,13 +264,13 @@ String& String::WriteToConsole()
 
 String& String::operator=(const String& _str)
 {
+	// Initialising a safe copy size + the Null Terminator
 	const size_t SAFESIZE = strlen(_str.mStr) + 1;
 
+	// Showing steps when copying the Second string to the First string
 	cout << "\nLHS: '" << mStr << "' is now equal to RHS: '" << _str.mStr << "'";
 	memcpy(mStr, _str.mStr, SAFESIZE);
-	return *this;
 
-	
 	return *this;
 }
 
@@ -276,10 +278,12 @@ String& String::operator=(const String& _str)
 
 bool String::operator==(const String& _other)
 {
+	//strcmp() will output 0 if they are equal strings
 	if (strcmp(mStr, _other.mStr) == 0)
 	{
 		return true;
 	}
+	// If not 0 then they aren't equal
 	return false;
 }
 
@@ -287,10 +291,12 @@ bool String::operator==(const String& _other)
 
 bool String::operator!=(const String& _other)
 {
+	//strcmp() will output 1 if they aren't equal strings
 	if (strcmp(mStr, _other.mStr) == 1)
 	{
 		return true;
 	}
+	// If not 1 then they are equal
 	return false;
 }
 
@@ -298,6 +304,7 @@ bool String::operator!=(const String& _other)
 
 bool String::operator<(const String& _other)
 {
+	// strcmp() will return less than 0 if str1 is less than str 2
 	if (strcmp(mStr, _other.mStr) < 0)
 	{
 		return true;
@@ -309,11 +316,15 @@ bool String::operator<(const String& _other)
 
 char& String::operator[](size_t _index)
 {
+	// Returns the character at _index in the mStr array
+	// The Array is already constructed in the constructors
 	return mStr[_index];
 }
 
 const char& String::operator[](size_t _index) const
 {
+	// Returns the character at _index in the mStr array
+	// The Array is already constructed in the constructors
 	return mStr[_index];
 }
 
@@ -325,13 +336,13 @@ const char& String::operator[](size_t _index) const
 
 String& String::operator+(const String& _str)
 {
-	size_t safeSize = Length(mStr) + Length(_str.mStr);
-	cout << mStr;
-
+	// Creating a safe length to strcat() + 1 for Space, + 1 for Null Terminator
+	size_t safeSize = (Length(mStr) +1) + (Length(_str.mStr)) + 1;
+	
+	// Appending
 	strcat_s(mStr, safeSize, " ");
 	strcat_s(mStr, safeSize, _str.mStr);
 
-	cout << " + " << _str.mStr << " = " << mStr;
 	return *this;
 } 
 
@@ -339,18 +350,16 @@ String& String::operator+(const String& _str)
 
 String& String::operator+=(const String& _str)
 {
-	cout << mStr << " += " << _str.mStr;
+	cout << "\n" << mStr << " += " << _str.mStr;
 
-	size_t mSize = Length(mStr) + Length(_str.mStr);
-	char* new_mStr = new char[mSize + 1];
+	size_t safeSize = (Length(mStr) + 1) + (Length(_str.mStr)) + 1;
+	char* new_mStr = new char[safeSize];
 	
-	memcpy(new_mStr, mStr, mSize);
-	delete[] mStr;
-
-	strcat_s(new_mStr, mSize, " ");
-	strcat_s(new_mStr, mSize, _str.mStr);
+	memcpy(new_mStr, mStr, safeSize);
+	
+	strcat_s(new_mStr, safeSize, " ");
+	strcat_s(new_mStr, safeSize, _str.mStr);
 	
 	mStr = new_mStr;
-	cout << " becomes: " << mStr;
 	return *this;
 }
