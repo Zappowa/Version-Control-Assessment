@@ -203,7 +203,7 @@ size_t String::Find(size_t _startIndex, const String& _str)
 		
 	if (found == nullptr)
 	{
-		//cout << "\nNo Instance of '" << _str.mStr << "' found!";
+		cout << "\nNo Instance of '" << _str.mStr << "' found!";
 		return -1;
 	}
 	// If there is an occurance, print it minus the rest of the array (Only the char)

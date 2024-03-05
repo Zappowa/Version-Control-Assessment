@@ -1,3 +1,5 @@
-﻿  StringClass.cpp
-C:\Users\Princ\Desktop\Version-Control-Assessment\Task 1 - String Utility Class\String Utility Assignment\String Utility Assignment\StringClass.cpp(221,14): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-  String Utility Assignment.vcxproj -> C:\Users\Princ\Desktop\Version-Control-Assessment\Task 1 - String Utility Class\String Utility Assignment\x64\Debug\String Utility Assignment.exe
+﻿  String Utility Assignment.cpp
+  StringClass.cpp
+C:\Users\s233264\Desktop\Intro to C++ Assessment Tasks\Version-Control-Assessment\Task 1 - String Utility Class\String Utility Assignment\String Utility Assignment\StringClass.cpp(221,32): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  Generating Code...
+  String Utility Assignment.vcxproj -> C:\Users\s233264\Desktop\Intro to C++ Assessment Tasks\Version-Control-Assessment\Task 1 - String Utility Class\String Utility Assignment\x64\Debug\String Utility Assignment.exe

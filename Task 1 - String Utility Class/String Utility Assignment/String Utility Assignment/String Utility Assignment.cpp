@@ -84,22 +84,22 @@ int main()
 
 	// ----------- Find(findString) ----------- \\
 	
-	/*String* strTest = new String("Please Test This String!");
+	String* strTest = new String("Please Test This String!");
 	String* strFind = new String("T");
 
 	cout << "\n-- Find()";
 	cout << "\nIn '" << strTest->CStr() << "' we are looking for '" << strFind->CStr() << "'";
-	cout << "\n" << "Location - " << strTest->Find(*strFind) << endl;*/
+	cout << "\n" << "Location - " << strTest->Find(*strFind) << endl;
 
 	// ----------- Find(startIndex, findString) ----------- \\
 	
-	/*String* testStr = new String("Please Test This String!");
+	String* testStr = new String("Please Test This String!");
 	String* findStr = new String("e");
 	const int Pos = 6;
 	
 	cout << "\n-- Find(w/ Start Index)";
 	cout << "\nIn '" << testStr->CStr() << "' we are looking for '" << findStr->CStr() << "' starting at " << Pos;
-	cout << "\n" << "Location - " << testStr->Find(Pos, *findStr) << endl;*/
+	cout << "\n" << "Location - " << testStr->Find(Pos, *findStr) << endl;
 
 	// ----------- Replace(findString, replaceString) ----------- \\
 	
@@ -107,10 +107,11 @@ int main()
 	String* find = new String("e");
 	String* replace = new String("u");
 
+	cout << "\n-- Replace()";
 	cout << "\nOriginal: " << testSubject->CStr();
 	cout << "\nReplacing all of '" << find->CStr() << "' with '" << replace->CStr() << "'";
 	testSubject->Replace(*find, *replace); 
-	cout << "\nReplacement: " << testSubject->CStr();
+	cout << "\nReplacement: " << testSubject->CStr() << endl;
 
 	// ----------- ReadFromConsole() ----------- \\
 	
