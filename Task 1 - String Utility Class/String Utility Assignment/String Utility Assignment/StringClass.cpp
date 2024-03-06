@@ -28,10 +28,13 @@ String::String(const char* _str)
 	//cout << "\n-- Overloaded Constructor --\n";
 	size_t size = strlen(_str);
 	// Creating an Array of Length(What was passed through)
-	mStr = new char[size + 1];
-	// Copying the Passthrough onto the Char Array
-	strcpy_s(mStr, Length(mStr), _str); // strcpy_s() Makes the function safe (Has defined storage)
-	
+	if (mStr) delete[] mStr;
+	mStr = new char[size];
+
+	// For loop that copys _str onto our array
+	for (int ii = 0; ii < size; ii++)
+		mStr[ii] = _str[ii];
+	mStr[size] = '\0';
 }
 
 String::String(const String& _other)
@@ -39,9 +42,12 @@ String::String(const String& _other)
 	//cout << "\n-- Overloaded Constructor --\n";
 	size_t size = strlen(_other.mStr);
 	// Creating an Array of Length(What was passed through)
-	mStr = new char[size + 1];
+	mStr = new char[size];
+	for (int ii = 0; ii < size; ii++)
+		mStr[ii] = _other[ii];
+	mStr[size] = '\0';
 	// Copying the Passthrough onto the Char Array
-	memcpy(mStr, _other.mStr, Length(mStr)); // memcpy() Makes the function safe (Has defined storage)
+	//memcpy(mStr, _other.mStr, Length(mStr)); // memcpy() Makes the function safe (Has defined storage)
 }
 
 
@@ -337,8 +343,8 @@ const char& String::operator[](size_t _index) const
 String& String::operator+(const String& _str)
 {
 	// Creating a safe length to strcat() + 1 for Space, + 1 for Null Terminator
-	size_t safeSize = (Length(mStr) +1) + (Length(_str.mStr)) + 1;
-	
+	size_t safeSize = strlen(mStr) + strlen(_str.mStr);
+
 	// Appending
 	strcat_s(mStr, safeSize, " ");
 	strcat_s(mStr, safeSize, _str.mStr);
@@ -363,3 +369,5 @@ String& String::operator+=(const String& _str)
 	mStr = new_mStr;
 	return *this;
 }
+
+

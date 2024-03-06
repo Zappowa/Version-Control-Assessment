@@ -5,8 +5,6 @@ using namespace std;
 
 int main()
 {
-	string next;
-
 	cout << "\nStart of Code!\n";
 	cout << "===========================================\n";
 	
@@ -228,4 +226,76 @@ int main()
 	// --- End of Code --- \\	
 	cout << "\n\n===========================================";
 	cout << "\nEnd of Code!\n\n";
+
+	// ---- Clean Memory ---- \\
+
+	delete fLength;
+	delete fChrt;
+	delete str01;
+	delete str02;
+	delete aWord01;
+	delete aWord02;
+	delete pWord01;
+	delete pWord02;
+	delete blank;
+	delete contain;
+	delete upper;
+	delete lower;
+	delete strTest;
+	delete strFind;
+	delete testStr;
+	delete findStr;
+	delete testSubject;
+	delete find;
+	delete replace;
+	delete input;
+	delete Eq_lhs;
+	delete Eq_rhs;
+	delete NEq_lhs;
+	delete NEq_rhs;
+	delete As_lhs;
+	delete As_rhs;
+	delete aux_side;
+	delete data;
+	delete checkWith;
+	delete chr;
+	delete LHS;
+	delete RHS;
+	delete lhs;
+	delete rhs;
+
+	fLength = nullptr;
+	fChrt = nullptr;
+	str01 = nullptr;
+	str02 = nullptr;
+	aWord01	= nullptr;
+	aWord02 = nullptr;
+	pWord01 = nullptr;
+	pWord02 = nullptr;
+	blank = nullptr;
+	contain	= nullptr;
+	upper = nullptr;
+	lower = nullptr;
+	strTest	= nullptr;
+	strFind	= nullptr;
+	testStr	= nullptr;
+	findStr = nullptr;
+	testSubject = nullptr;
+	find = nullptr;
+	replace = nullptr;
+	input = nullptr;
+	Eq_lhs = nullptr;
+	Eq_rhs = nullptr;
+	NEq_lhs = nullptr;
+	NEq_rhs = nullptr;
+	As_lhs = nullptr;
+	As_rhs = nullptr;
+	aux_side = nullptr;
+	data = nullptr;
+	checkWith = nullptr;
+	chr = nullptr;
+	LHS = nullptr;
+	RHS	= nullptr;
+	lhs	= nullptr;
+	rhs = nullptr;
 }
