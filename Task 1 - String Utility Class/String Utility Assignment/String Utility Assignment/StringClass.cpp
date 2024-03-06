@@ -16,8 +16,9 @@ String::String() // Constructor
 
 String::~String() // Destructor
 { 
-	cout << "\n\n-- Destructor Active --"; // Prints when Active
+	cout << "\n-- Destructor Active --"; // Prints when Active
 	delete[] mStr; // Deleting the Array (Prevents Memory Leak)
+	mStr = nullptr;
 }
 
 // Overloaded/Copy Constructor Definitions 
@@ -211,11 +212,14 @@ size_t String::Find(size_t _startIndex, const String& _str)
 
 String& String::Replace(const String& _find, const String& _replace)
 {
+	// Variable to update
 	size_t cPos = 0;
 
 	while (cPos)
 	{
+		// Sets cPos to the location of the first occurance
 		cPos = Find(cPos, _find.mStr);
+		// Replaces at that location in the array then loops with new location as a starting index
 		mStr[cPos] = *_replace.mStr;
 	}
 	return *this;
@@ -264,10 +268,19 @@ String& String::operator=(const String& _str)
 	// Initialising a safe copy size + the Null Terminator
 	const size_t SAFESIZE = strlen(_str.mStr) + 1;
 
-	// Showing steps when copying the Second string to the First string
-	cout << "\nLHS: '" << mStr << "' is now equal to RHS: '" << _str.mStr << "'";
-	memcpy(mStr, _str.mStr, SAFESIZE);
+	// Making sure the array is empty before using it
+	if (strlen(mStr) > 0)
+	{
+		delete[] mStr;
+		mStr = nullptr;
+	}
 
+	// Recreate the array with proper size
+	mStr = new char[SAFESIZE];
+
+	// Copying the Second string to the First string
+	memcpy(mStr, _str.mStr, SAFESIZE);
+	
 	return *this;
 }
 
@@ -345,14 +358,18 @@ String& String::operator+=(const String& _str)
 {
 	cout << "\n" << mStr << " += " << _str.mStr;
 
+	// Creating a safe size for a new array 
 	size_t safeSize = (strlen(mStr) + 1) + (strlen(_str.mStr)) + 1;
 	char* new_mStr = new char[safeSize];
 	
+	// Copying old data to new array
 	memcpy(new_mStr, mStr, safeSize);
 	
+	// Appending the space and string onto that array
 	strcat_s(new_mStr, safeSize, " ");
 	strcat_s(new_mStr, safeSize, _str.mStr);
-	
+
+	// Assgining it back to the normal variable
 	mStr = new_mStr;
 	return *this;
 }
