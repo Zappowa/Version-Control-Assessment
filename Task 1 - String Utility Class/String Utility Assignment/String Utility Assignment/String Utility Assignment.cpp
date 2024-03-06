@@ -249,6 +249,8 @@ int main()
 	cout << "\n\n===========================================";
 	cout << "\nEnd of Code!\n";
 
+	// ---- Memory Cleanup ---- \\
+
 	delete str01;
 	delete str02;
 	delete aux;

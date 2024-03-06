@@ -373,5 +373,3 @@ String& String::operator+=(const String& _str)
 	mStr = new_mStr;
 	return *this;
 }
-
-
