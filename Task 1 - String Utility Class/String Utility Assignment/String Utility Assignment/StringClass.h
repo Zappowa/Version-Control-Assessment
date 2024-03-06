@@ -18,7 +18,7 @@ public:
 
 	// Public Utility Initialisations 
 
-	size_t Length(char* _str) const;
+	size_t Length() const;
 	
 	const char& CharacterAt(size_t _index) const;
 	char& CharacterAt(size_t _index);

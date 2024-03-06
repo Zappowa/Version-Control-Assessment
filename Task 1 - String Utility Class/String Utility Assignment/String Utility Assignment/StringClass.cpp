@@ -10,7 +10,6 @@ using namespace std; // Remove need for std::
 String::String() // Constructor
 { 
 	// << "\n-- Constructor Active --\n"; // Prints when Active
-
 	mStr = new char[1]; // Initialising a new array 
 	mStr[0] = '\0'; // Confirms an Empty Array with Null Terminator
 }
@@ -26,26 +25,23 @@ String::~String() // Destructor
 String::String(const char* _str)
 {
 	//cout << "\n-- Overloaded Constructor --\n";
-	size_t size = strlen(_str);
+	size_t safeSize = strlen(_str);
 	// Creating an Array of Length(What was passed through)
-	if (mStr) delete[] mStr;
-	mStr = new char[size];
-
-	// For loop that copys _str onto our array
-	for (int ii = 0; ii < size; ii++)
+	mStr = new char[safeSize+1];
+	for (int ii = 0; ii < safeSize; ii++)
 		mStr[ii] = _str[ii];
-	mStr[size] = '\0';
+	mStr[safeSize] = '\0';
 }
 
 String::String(const String& _other)
 {
 	//cout << "\n-- Overloaded Constructor --\n";
-	size_t size = strlen(_other.mStr);
+	size_t safeSize = strlen(_other.mStr);
 	// Creating an Array of Length(What was passed through)
-	mStr = new char[size];
-	for (int ii = 0; ii < size; ii++)
+	mStr = new char[safeSize];
+	for (int ii = 0; ii < safeSize; ii++)
 		mStr[ii] = _other[ii];
-	mStr[size] = '\0';
+	mStr[safeSize] = '\0';
 	// Copying the Passthrough onto the Char Array
 	//memcpy(mStr, _other.mStr, Length(mStr)); // memcpy() Makes the function safe (Has defined storage)
 }
@@ -56,31 +52,26 @@ String::String(const String& _other)
 
 // ---- Length() ---- \\
 
-size_t String::Length(char* _str) const
+size_t String::Length() const
 {
 	// Strlen() to find the length, then returning it
-	size_t chtr = strlen(_str);
-	return chtr;
+	return strlen(mStr);
 }
 
 // ---- Const CharacterAt() ---- \\
 
 const char& String::CharacterAt(size_t _index) const
 {
-	// Creating text to locate an index from
-	char locate[8] = "Morning";
 	// Finding the Char by the using the given index in []
-	return locate[_index]; // Sending the value back
+	return mStr[_index];
 }
 
 // ---- CharacterAt() ---- \\
 
 char& String::CharacterAt(size_t _index)
 {
-	// Creating text to locate an index from
-	char locate[8] = "Morning";
 	// Finding the Char by the using the given index in []
-	return locate[_index]; // Sending the value back
+	return mStr[_index];
 }
 
 // ---- EqualTo() ---- \\
@@ -102,12 +93,12 @@ bool String::EqualTo(const String& _other) const
 String& String::Append(const String& _str)
 {
 	// Setting a Safe Size for the Array with +1 to provide a space for the " "
-	size_t safeSize = (Length(mStr) + 1) + (Length(_str.mStr)) + 1; // Outside + 1 for the Null Terminator '0\'
+	size_t safeSize = (strlen(mStr) + 1) + (strlen(_str.mStr)) + 1; // Outside + 1 for the Null Terminator '0\'
 	// Temporary Storage with Length of Both Strings
 	char* new_mStr = new char[safeSize];
 
 	// Copying old data into a new variable with a safe length
-	strcpy_s(new_mStr, Length(new_mStr), mStr);
+	strcpy_s(new_mStr, safeSize, mStr);
 
 	// Appending the space and string onto the Array
 	strcat_s(new_mStr, safeSize, " ");
@@ -123,12 +114,12 @@ String& String::Append(const String& _str)
 String& String::Prepend(const String& _str)
 {
 	// Setting a Safe Size for the Array with +1 to provide a space for the " "
-	size_t safeSize = (Length(mStr) + 1) + (Length(_str.mStr)) + 1; // Outside + 1 for the Null Terminator '0\'
+	size_t safeSize = (strlen(mStr) + 1) + (strlen(_str.mStr)) + 1; // Outside + 1 for the Null Terminator '0\'
 	// Temporary Storage with Length of Both Strings
 	char* new_mStr = new char[safeSize];
 
 	// Copying old data into a new variable with a safe length
-	strcpy_s(new_mStr, Length(new_mStr), _str.mStr);
+	strcpy_s(new_mStr, safeSize, _str.mStr);
 
 	// Appending the space and string onto the Array
 	strcat_s(new_mStr, safeSize, " ");
@@ -220,7 +211,7 @@ size_t String::Find(size_t _startIndex, const String& _str)
 
 String& String::Replace(const String& _find, const String& _replace)
 {
-	int cPos = 0;
+	size_t cPos = 0;
 
 	while (cPos)
 	{
@@ -311,11 +302,7 @@ bool String::operator!=(const String& _other)
 bool String::operator<(const String& _other)
 {
 	// strcmp() will return less than 0 if str1 is less than str 2
-	if (strcmp(mStr, _other.mStr) < 0)
-	{
-		return true;
-	}
-	return false;
+	return (strcmp(mStr, _other.mStr) < 0);
 }
 
 // ---- Operator []() ---- \\
@@ -343,9 +330,9 @@ const char& String::operator[](size_t _index) const
 String& String::operator+(const String& _str)
 {
 	// Creating a safe length to strcat() + 1 for Space, + 1 for Null Terminator
-	size_t safeSize = strlen(mStr) + strlen(_str.mStr);
+	size_t safeSize = (strlen(mStr)+ 1) + (strlen(_str.mStr)) + 1;
 
-	// Appending
+	// Appending the space and string onto the Array
 	strcat_s(mStr, safeSize, " ");
 	strcat_s(mStr, safeSize, _str.mStr);
 
@@ -358,7 +345,7 @@ String& String::operator+=(const String& _str)
 {
 	cout << "\n" << mStr << " += " << _str.mStr;
 
-	size_t safeSize = (Length(mStr) + 1) + (Length(_str.mStr)) + 1;
+	size_t safeSize = (strlen(mStr) + 1) + (strlen(_str.mStr)) + 1;
 	char* new_mStr = new char[safeSize];
 	
 	memcpy(new_mStr, mStr, safeSize);
