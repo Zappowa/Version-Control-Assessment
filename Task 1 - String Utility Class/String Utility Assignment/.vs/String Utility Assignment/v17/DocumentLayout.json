@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Princ\\Desktop\\Version-Control-Assessment\\Task 1 - String Utility Class\\String Utility Assignment\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D749F806-E0D4-4C79-A596-F1E492076137}|String Utility Assignment\\String Utility Assignment.vcxproj|C:\\Users\\Princ\\Desktop\\Version-Control-Assessment\\Task 1 - String Utility Class\\String Utility Assignment\\String Utility Assignment\\StringClass.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{D749F806-E0D4-4C79-A596-F1E492076137}|String Utility Assignment\\String Utility Assignment.vcxproj|solutionrelative:String Utility Assignment\\StringClass.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D749F806-E0D4-4C79-A596-F1E492076137}|String Utility Assignment\\String Utility Assignment.vcxproj|C:\\Users\\Princ\\Desktop\\Version-Control-Assessment\\Task 1 - String Utility Class\\String Utility Assignment\\String Utility Assignment\\String Utility Assignment.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{D749F806-E0D4-4C79-A596-F1E492076137}|String Utility Assignment\\String Utility Assignment.vcxproj|solutionrelative:String Utility Assignment\\String Utility Assignment.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D749F806-E0D4-4C79-A596-F1E492076137}|String Utility Assignment\\String Utility Assignment.vcxproj|C:\\Users\\Princ\\Desktop\\Version-Control-Assessment\\Task 1 - String Utility Class\\String Utility Assignment\\String Utility Assignment\\StringClass.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{D749F806-E0D4-4C79-A596-F1E492076137}|String Utility Assignment\\String Utility Assignment.vcxproj|solutionrelative:String Utility Assignment\\StringClass.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D749F806-E0D4-4C79-A596-F1E492076137}|String Utility Assignment\\String Utility Assignment.vcxproj|C:\\Users\\Princ\\Desktop\\Version-Control-Assessment\\Task 1 - String Utility Class\\String Utility Assignment\\String Utility Assignment\\StringClass.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -38,13 +38,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "StringClass.cpp",
               "DocumentMoniker": "C:\\Users\\Princ\\Desktop\\Version-Control-Assessment\\Task 1 - String Utility Class\\String Utility Assignment\\String Utility Assignment\\StringClass.cpp",
               "RelativeDocumentMoniker": "String Utility Assignment\\StringClass.cpp",
               "ToolTip": "C:\\Users\\Princ\\Desktop\\Version-Control-Assessment\\Task 1 - String Utility Class\\String Utility Assignment\\String Utility Assignment\\StringClass.cpp",
               "RelativeToolTip": "String Utility Assignment\\StringClass.cpp",
-              "ViewState": "AQIAAKwAAAAAAAAAAAAwwNEAAAAVAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAANEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-03-02T03:53:58.647Z",
               "EditorCaption": ""
@@ -57,13 +57,13 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "String Utility Assignment.cpp",
               "DocumentMoniker": "C:\\Users\\Princ\\Desktop\\Version-Control-Assessment\\Task 1 - String Utility Class\\String Utility Assignment\\String Utility Assignment\\String Utility Assignment.cpp",
               "RelativeDocumentMoniker": "String Utility Assignment\\String Utility Assignment.cpp",
               "ToolTip": "C:\\Users\\Princ\\Desktop\\Version-Control-Assessment\\Task 1 - String Utility Class\\String Utility Assignment\\String Utility Assignment\\String Utility Assignment.cpp",
               "RelativeToolTip": "String Utility Assignment\\String Utility Assignment.cpp",
-              "ViewState": "AQIAAEgAAAAAAAAAAAAwwG0AAAASAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-03-02T03:53:58.807Z",
               "EditorCaption": ""

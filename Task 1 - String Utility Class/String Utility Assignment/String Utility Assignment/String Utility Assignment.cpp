@@ -5,10 +5,27 @@ using namespace std;
 
 int main()
 {
+	// This Main Function is full of organisation and built to have a clean output to the console
+    // Start and End Code Section, headers for each function.
+	
+	/* 
+	To save lines of code and repetitive commenting I will comment on the code generally which will still cover everything.
+
+	At the top of each function I assign new String() to my pointers so I don't have to recreate them and have a huge amount of pointers at the end to delete.
+	I use max 3 at once and give them strings or leave blank based on the function.
+	Most of the time I will use size_t for numbers because a lot of the code is based around lengths and sizes
+
+	Underneath most of the code is just for show and making it look nice, showing how it works.
+	To access the String Variables before I call a function I will use the cStr() or WriteToConsole()
+	These access the Variable from the private class and print it out, the value will change if called after a function.
+
+	At the end I delete all the pointers creating and set them to nullptr to prevent any memory leaks.
+	*/
+
 	cout << "\nStart of Code!\n";
 	cout << "===========================================\n";
 	
-	// Pointer String() Variables 
+	// Main String Pointer Variables 
 	String* str01 = new String();
 	String* str02 = new String();
 	String* aux = new String();
@@ -17,6 +34,7 @@ int main()
 
 	str01 = new String("What is my length?");
 	size_t out = str01->Length();
+	
 	
 	cout << "\n-- Length()";
 	cout << "\nThe length of (" << str01->CStr() << ") is " << out << "\n";
