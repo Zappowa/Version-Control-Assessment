@@ -4,29 +4,28 @@
 #include <fstream> // Using and Creating Files
 #include <vector> // Allows usage of vectors
 #include <chrono> // Allows us to access time and date
+
 using namespace std;
 
 // Function we can call and print to the text file
 void testResults(vector<bool>& vec, vector<string>& name)
 {
+	// Integer Variables for SuccessRate and Iterations
 	int run = 0;
 	int Success = 0;
-	int Failure = 0;
 
 	// Open a file (txtIO) for writing test results
 	ofstream txtIO;
-	txtIO.open("String Utility Results", ios_base::app);
+	txtIO.open("String Utility Results", ios_base::app); // io_base:app Allows multiple runs to be saved onto the file
 
-	if (txtIO.is_open())
+	if (txtIO.is_open()) // Reassuring the file is open before writing
 	{
-		txtIO << "\n\n";
-
-		// Find the Local Date and Time
+	    // Find the Local Date and Time
 		auto now = chrono::system_clock::now();
 		auto now_c = chrono::system_clock::to_time_t(now); // Converting to time_t
 		
 		// Organised Output of the Date/Time
-		struct tm timeInfo; // 
+		struct tm timeInfo; 
 		localtime_s(&timeInfo, &now_c); // Conversion to Local Time
 
 		char Date[15]; // Buffer
@@ -36,29 +35,35 @@ void testResults(vector<bool>& vec, vector<string>& name)
 		strftime(Time, sizeof(Time), "%H:%M:%S", &timeInfo);
 
 		// Calculating Success Percentage
-		for (int i = 0; i < size(vec); i++)
+		for (bool check : vec)
 		{
-			if (vec[i] == true) { Success += 1; }
-			else { Failure += 1; }
+			if (check) { Success += 1; } // Find how many tests were successful
 		}
 
-		int successRate = (Success * 100) / size(vec);
+		// Static Cast size(vec) because we want both numbers to be ints before calculating and size will make it a size_t
+		int successRate = (Success * 100) / (static_cast<int>(size(vec)) - 1);
 
 
-		// Printing out the Date and Time
+		// Printing out the Date, Time, Success Rate
 		txtIO << "Date: " << Date << ", Time: " << Time << ", Success Rate: " << successRate << "%";
-
+	
+		// We want to make sure we are iterating through it properly
 		while (run < size(vec) && run < size(name))
 		{
+			// Outputing to file so we use txtIO << instead of cout <<
 			txtIO << "\nTest " << run << ": " << name[run] << " ";
 
+			// Goes through vector to find corresponding test results
 			if (vec[run] == true) { txtIO << "Successful"; }
 			else { txtIO << "Failed"; }
 
 			run++;
 		}
+		// New lines between results and closing the file when we are done
+		txtIO << "\n\n";
 		txtIO.close();
 	}
+	// Just in case file doesn't open when we try outputting
 	else { cout << "Error! Text File Broken"; }
 }
 
@@ -67,6 +72,23 @@ int main()
 {
 	cout << "\nStart of Code!\n";
 	cout << "===========================================\n";
+
+	/*
+	Summarising the Main Function - Talking about whats been changed from the previous assignments
+
+	We first create two vectors because we want to be able to put as many results as we need without having to allocate space.
+	Everything runs the same in the Functions but we want to check is they are correct so we will run if statements to find if that function is doing what it is supposed to, some of them will directly
+	reference its expected output or it might use another method with && to check if the function gets the same answer as a different method.
+
+	We first push_back(name) so we can easily find its corresponding value when printing out to the file.
+	If the trial results in true or it working we will push_back a true value on the same location as the name meaning both the name and bool will be on the same location to access.
+	If the trial results in false or it doesnt work we will push_back a false value with its corresponding name and we can detect that in our testResults() function.
+
+	At the bottom of the code we call our function and pass through both vectors which will have stored all the results of the functions that have been pushed back and sent to our void function that will
+	create a new file and append the data onto it by using a while loop to iterate through the vectors on the same location. The Date, Time, Success Rate is all calculated and prints out at that time so we can have
+	different history of running the tests.
+	
+	*/
 
 	//Main String Pointer Variables 
 	String* str01 = new String();
@@ -203,7 +225,7 @@ int main()
 	// ----------- Equality Operator(!=) ----------- \\
 	
 	str01 = new String("Hello");
-	str02 = new String("HelZo");
+	str02 = new String("Hezlo");
 
 	names.push_back("Equality Operator(!=)");
 	if (*str01 != *str02) { values.push_back(true); }

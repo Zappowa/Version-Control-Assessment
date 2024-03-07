@@ -1,7 +1,51 @@
-Date: 08/03/2024, Time: 09:24:59, Success Rate: 95%
+Date: 08/03/2024, Time: 10:08:43, Success Rate: 73%
 Test 0: Length() Successful
 Test 1: CharacterAt() Successful
 Test 2: EqualTo() Failed
+Test 3: Append() Failed
+Test 4: Prepend() Failed
+Test 5: CStr() Successful
+Test 6: ToLower() Successful
+Test 7: ToUpper() Successful
+Test 8: Find() Successful
+Test 9: Find(w/ index) Successful
+Test 10: Replace() Successful
+Test 11: ReadFromConsole() Successful
+Test 12: WriteToConsole() Failed
+Test 13: Equality Operator(==) Failed
+Test 14: Equality Operator(!=) Failed
+Test 15: Assignment Operator(=) Successful
+Test 16: Subscript([]) Successful
+Test 17: LessThan Operator(<) Successful
+Test 18: Plus Operator(+) Successful
+Test 19: Plus Equals Operator(+=) Successful
+
+Date: 08/03/2024, Time: 10:09:35, Success Rate: 84%
+Test 0: Length() Successful
+Test 1: CharacterAt() Successful
+Test 2: EqualTo() Successful
+Test 3: Append() Failed
+Test 4: Prepend() Failed
+Test 5: CStr() Successful
+Test 6: ToLower() Successful
+Test 7: ToUpper() Successful
+Test 8: Find() Successful
+Test 9: Find(w/ index) Successful
+Test 10: Replace() Successful
+Test 11: ReadFromConsole() Successful
+Test 12: WriteToConsole() Successful
+Test 13: Equality Operator(==) Failed
+Test 14: Equality Operator(!=) Failed
+Test 15: Assignment Operator(=) Successful
+Test 16: Subscript([]) Successful
+Test 17: LessThan Operator(<) Successful
+Test 18: Plus Operator(+) Successful
+Test 19: Plus Equals Operator(+=) Successful
+
+Date: 08/03/2024, Time: 10:10:01, Success Rate: 94%
+Test 0: Length() Successful
+Test 1: CharacterAt() Successful
+Test 2: EqualTo() Successful
 Test 3: Append() Successful
 Test 4: Prepend() Successful
 Test 5: CStr() Successful
@@ -12,15 +56,15 @@ Test 9: Find(w/ index) Successful
 Test 10: Replace() Successful
 Test 11: ReadFromConsole() Successful
 Test 12: WriteToConsole() Successful
-Test 13: Equality Operator(==) Successful
-Test 14: Equality Operator(!=) Successful
+Test 13: Equality Operator(==) Failed
+Test 14: Equality Operator(!=) Failed
 Test 15: Assignment Operator(=) Successful
 Test 16: Subscript([]) Successful
 Test 17: LessThan Operator(<) Successful
 Test 18: Plus Operator(+) Successful
 Test 19: Plus Equals Operator(+=) Successful
 
-Date: 08/03/2024, Time: 09:25:57, Success Rate: 100%
+Date: 08/03/2024, Time: 10:10:36, Success Rate: 100%
 Test 0: Length() Successful
 Test 1: CharacterAt() Successful
 Test 2: EqualTo() Successful
@@ -35,9 +79,76 @@ Test 10: Replace() Successful
 Test 11: ReadFromConsole() Successful
 Test 12: WriteToConsole() Successful
 Test 13: Equality Operator(==) Successful
-Test 14: Equality Operator(!=) Successful
+Test 14: Equality Operator(!=) Failed
 Test 15: Assignment Operator(=) Successful
 Test 16: Subscript([]) Successful
 Test 17: LessThan Operator(<) Successful
 Test 18: Plus Operator(+) Successful
 Test 19: Plus Equals Operator(+=) Successful
+
+Date: 08/03/2024, Time: 10:14:06, Success Rate: 100%
+Test 0: Length() Successful
+Test 1: CharacterAt() Successful
+Test 2: EqualTo() Successful
+Test 3: Append() Successful
+Test 4: Prepend() Successful
+Test 5: CStr() Successful
+Test 6: ToLower() Successful
+Test 7: ToUpper() Successful
+Test 8: Find() Successful
+Test 9: Find(w/ index) Successful
+Test 10: Replace() Successful
+Test 11: ReadFromConsole() Successful
+Test 12: WriteToConsole() Successful
+Test 13: Equality Operator(==) Successful
+Test 14: Equality Operator(!=) Failed
+Test 15: Assignment Operator(=) Successful
+Test 16: Subscript([]) Successful
+Test 17: LessThan Operator(<) Successful
+Test 18: Plus Operator(+) Successful
+Test 19: Plus Equals Operator(+=) Successful
+
+Date: 08/03/2024, Time: 10:14:35, Success Rate: 89%
+Test 0: Length() Successful
+Test 1: CharacterAt() Successful
+Test 2: EqualTo() Successful
+Test 3: Append() Successful
+Test 4: Prepend() Successful
+Test 5: CStr() Successful
+Test 6: ToLower() Successful
+Test 7: ToUpper() Successful
+Test 8: Find() Successful
+Test 9: Find(w/ index) Successful
+Test 10: Replace() Successful
+Test 11: ReadFromConsole() Successful
+Test 12: WriteToConsole() Failed
+Test 13: Equality Operator(==) Failed
+Test 14: Equality Operator(!=) Failed
+Test 15: Assignment Operator(=) Successful
+Test 16: Subscript([]) Successful
+Test 17: LessThan Operator(<) Successful
+Test 18: Plus Operator(+) Successful
+Test 19: Plus Equals Operator(+=) Successful
+
+Date: 08/03/2024, Time: 10:23:57, Success Rate: 100%
+Test 0: Length() Successful
+Test 1: CharacterAt() Successful
+Test 2: EqualTo() Successful
+Test 3: Append() Successful
+Test 4: Prepend() Successful
+Test 5: CStr() Successful
+Test 6: ToLower() Successful
+Test 7: ToUpper() Successful
+Test 8: Find() Successful
+Test 9: Find(w/ index) Successful
+Test 10: Replace() Successful
+Test 11: ReadFromConsole() Successful
+Test 12: WriteToConsole() Successful
+Test 13: Equality Operator(==) Successful
+Test 14: Equality Operator(!=) Failed
+Test 15: Assignment Operator(=) Successful
+Test 16: Subscript([]) Successful
+Test 17: LessThan Operator(<) Successful
+Test 18: Plus Operator(+) Successful
+Test 19: Plus Equals Operator(+=) Successful
+

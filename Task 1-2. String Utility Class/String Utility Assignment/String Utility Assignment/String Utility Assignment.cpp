@@ -223,7 +223,7 @@ int main()
 	// ----------- LessThan Operator(<) ----------- \\
 	
 	str01 = new String("k");
-	str02 = new String("j");
+	str02 = new String("l");
 
 	cout << "\n-- LessThan Operator(<)";
 	cout << "\nWe are checking ('" << str01->CStr() << "' < '" << str02->CStr() << "')";
