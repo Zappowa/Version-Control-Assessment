@@ -15,10 +15,12 @@ void testResults(vector<bool>& vec, vector<string>& name)
 
 	// Open a file (txtIO) for writing test results
 	ofstream txtIO;
-	txtIO.open("String Utility Results");
+	txtIO.open("String Utility Results", ios_base::app);
 
 	if (txtIO.is_open())
 	{
+		txtIO << "\n\n";
+
 		// Find the Local Date and Time
 		auto now = chrono::system_clock::now();
 		auto now_c = chrono::system_clock::to_time_t(now); // Converting to time_t
@@ -28,7 +30,7 @@ void testResults(vector<bool>& vec, vector<string>& name)
 		localtime_s(&timeInfo, &now_c); // Conversion to Local Time
 
 		char Date[15]; // Buffer
-		strftime(Date, sizeof(Date), "%m/%d/%Y", &timeInfo);
+		strftime(Date, sizeof(Date), "%d/%m/%Y", &timeInfo);
 
 		char Time[15]; // Buffer
 		strftime(Time, sizeof(Time), "%H:%M:%S", &timeInfo);
@@ -95,7 +97,7 @@ int main()
 	// ----------- EqualTo(str) ----------- \\
 	
 	str01 = new String("Hello");
-	str02 = new String("Hellz");
+	str02 = new String("Hello");
 
 	names.push_back("EqualTo()");
 	if (str01->EqualTo(*str02) == true) { values.push_back(true); }
