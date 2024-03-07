@@ -2,38 +2,62 @@
 #include <iostream>
 #include "StringClass.h" // Using our Custom String Class
 #include <fstream> // Using and Creating Files
-#include <vector>
-
+#include <vector> // Allows usage of vectors
+#include <chrono> // Allows us to access time and date
 using namespace std;
 
+// Function we can call and print to the text file
 void testResults(vector<bool>& vec, vector<string>& name)
 {
+	int run = 0;
+	int Success = 0;
+	int Failure = 0;
+
+	// Open a file (txtIO) for writing test results
 	ofstream txtIO;
-	txtIO.open("Test Results!");
+	txtIO.open("String Utility Results");
 
 	if (txtIO.is_open())
 	{
-		int run = 0;
-		bool success = false;
+		// Find the Local Date and Time
+		auto now = chrono::system_clock::now();
+		auto now_c = chrono::system_clock::to_time_t(now); // Converting to time_t
+		
+		// Organised Output of the Date/Time
+		struct tm timeInfo; // 
+		localtime_s(&timeInfo, &now_c); // Conversion to Local Time
+
+		char Date[15]; // Buffer
+		strftime(Date, sizeof(Date), "%m/%d/%Y", &timeInfo);
+
+		char Time[15]; // Buffer
+		strftime(Time, sizeof(Time), "%H:%M:%S", &timeInfo);
+
+		// Calculating Success Percentage
+		for (int i = 0; i < size(vec); i++)
+		{
+			if (vec[i] == true) { Success += 1; }
+			else { Failure += 1; }
+		}
+
+		int successRate = (Success * 100) / size(vec);
+
+
+		// Printing out the Date and Time
+		txtIO << "Date: " << Date << ", Time: " << Time << ", Success Rate: " << successRate << "%";
 
 		while (run < size(vec) && run < size(name))
 		{
-			cout << "\n";
-			cout << "Test " << run << ": " << name[run] << " ";
-			
-			if (vec[run] == true)
-				cout << "Successful";
-			if (vec[run] == false)
-				cout << "Failed";
+			txtIO << "\nTest " << run << ": " << name[run] << " ";
+
+			if (vec[run] == true) { txtIO << "Successful"; }
+			else { txtIO << "Failed"; }
 
 			run++;
 		}
 		txtIO.close();
 	}
-	else
-	{
-		cout << "Error! File 'txtIO' is not opened.";
-	}
+	else { cout << "Error! Text File Broken"; }
 }
 
 //Main Function
@@ -46,7 +70,6 @@ int main()
 	String* str01 = new String();
 	String* str02 = new String();
 	String* aux = new String();
-	String* baux = new String();
 
 	vector<bool> values;
 	vector<string> names;
@@ -60,7 +83,6 @@ int main()
 	if (out == strlen(str01->CStr())) { values.push_back(true); }
 	else { values.push_back(false); }
 		
-
 	// ----------- CharacterAt(Index) ----------- \\
 
 	str01 = new String("Hello");
@@ -70,11 +92,10 @@ int main()
 	if (str01->CharacterAt(index) == str01->CStr()[index]) { values.push_back(true); }
 	else { values.push_back(false); }
 
-
 	// ----------- EqualTo(str) ----------- \\
 	
 	str01 = new String("Hello");
-	str02 = new String("Hello");
+	str02 = new String("Hellz");
 
 	names.push_back("EqualTo()");
 	if (str01->EqualTo(*str02) == true) { values.push_back(true); }
@@ -104,7 +125,7 @@ int main()
 	str02 = new String("Hello");
 
 	names.push_back("CStr()");
-	if (str02->CStr()) { values.push_back(true); }
+	if (strcmp(str02->CStr(), "") != 0 && strcmp(str01->CStr(), "") == 0) { values.push_back(true); }
 	else { values.push_back(false); }
 
 	// ----------- ToLower() ----------- \\
@@ -165,7 +186,7 @@ int main()
 	// ----------- WriteToConsole() ----------- \\
 	
 	names.push_back("WriteToConsole()");
-	if (str01->CStr()) { values.push_back(true); }
+	if (strcmp(str01->CStr(), "") != 0) { values.push_back(true); }
 	else { values.push_back(false); }
 
 	// ----------- Equality Operator(==) ----------- \\
@@ -173,6 +194,7 @@ int main()
 	str01 = new String("World");
 	str02 = new String("World");
 
+	names.push_back("Equality Operator(==)");
 	if (*str01 == *str02) { values.push_back(true); }
 	else { values.push_back(false); }
 	
@@ -181,6 +203,7 @@ int main()
 	str01 = new String("Hello");
 	str02 = new String("HelZo");
 
+	names.push_back("Equality Operator(!=)");
 	if (*str01 != *str02) { values.push_back(true); }
 	else { values.push_back(false); }
 
@@ -188,41 +211,45 @@ int main()
 		
 	str01 = new String("Right Side");
 	str02 = new String("Left Side");
-	aux = new String();
-
-	*aux = *str01;
+	
+	
+	String temp = *str01;
 	*str01 = *str02;
-	*str02 = *aux;
+	*str02 = temp;
 
-	/*names.push_back("Assignment Operator(=)");
-	if (str01->CStr() == "Left Side" && str02->CStr() == "Right Side") { values.push_back(true); }
-	else { values.push_back(false); }*/
+	names.push_back("Assignment Operator(=)");
+	if (strcmp(str01->CStr(), "Left Side") == 0 
+		&& strcmp(str02->CStr(), "Right Side") == 0) { values.push_back(true); }
+	else { values.push_back(false); }
 
 	// ----------- Subscript Operator([]) ----------- \\
 
 	str01 = new String("Index Me!");
 	const size_t SUBINDEX = 2;
 
+	names.push_back("Subscript([])");
 	if ((*str01)[SUBINDEX] == str01->CStr()[2]) { values.push_back(true); }
 	else { values.push_back(false); }
 
 	// ----------- LessThan Operator(<) ----------- \\
 	
 	str01 = new String("k");
-	str02 = new String("j");
+	str02 = new String("l");
 
 	names.push_back("LessThan Operator(<)");
-	if (*str01 < *str02 && str01->CStr() < str02->CStr()) { values.push_back(true); }
+	if (*str01 < *str02 && strcmp(str01->CStr(), str02->CStr()) < 0) { values.push_back(true); }
 	else { values.push_back(false); }
+
 
 	// ----------- Plus Operator(+) ----------- \\
 	
 	str01 = new String("Hello");
 	str02 = new String("World!");
 
-	*str01 + *str02;
+	String result = *str01 + *str02;
 
-	if (str01->CStr() == "Hello World!") { values.push_back(true); }
+	names.push_back("Plus Operator(+)");
+	if (result == "Hello World!") { values.push_back(true); }
 	else { values.push_back(false); }
 
 	//----------- Plus Equals Operator (+=) ----------- \\
@@ -230,24 +257,21 @@ int main()
 	str01 = new String("Hello");
 	str02 = new String("World!");
 
-	*str01 += *str02;
+	String assign = *str01;
+	assign += *str02;
 
 	names.push_back("Plus Equals Operator(+=)");
-	if (str01->CStr() == "Hello World!") { values.push_back(true); }
+	if (strcmp(assign.CStr(), "Hello World!") == 0) { values.push_back(true); }
 	else { values.push_back(false); }
 
 	// ---- TXT File IO ---- \\
 
 	testResults(values, names);
 
-
-
 	// --- End of Code --- \\	
 
 	cout << "\n\n===========================================";
 	cout << "\nEnd of Code!\n";
-
-
 
 	// ---- Memory Cleanup ---- \\
 

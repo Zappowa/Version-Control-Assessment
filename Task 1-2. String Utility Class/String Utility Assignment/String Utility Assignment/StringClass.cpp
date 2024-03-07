@@ -40,7 +40,7 @@ String::String(const String& _other)
 	//cout << "\n-- Overloaded Constructor --\n";
 	size_t safeSize = strlen(_other.mStr);
 	// Creating an Array of Length(What was passed through)
-	mStr = new char[safeSize];
+	mStr = new char[safeSize +1 ]; // Add 1 for the Null Terminator
 	// For Loop to Add Passthrough onto array
 	for (int ii = 0; ii < safeSize; ii++)
 		mStr[ii] = _other[ii];
@@ -135,8 +135,10 @@ String& String::Prepend(const String& _str)
 const char* String::CStr() const
 {
 	// Sending back the private pointer to the char array
-	return mStr;
+	return (mStr != nullptr) ? mStr : "";
+	//return mStr;
 }
+
 
 // ---- ToLower() ---- \\
 
@@ -280,6 +282,7 @@ bool String::operator==(const String& _other)
 	}
 	// If not 0 then they aren't equal
 	return false;
+	
 }
 
 // ---- Operator !=() ---- \\
@@ -346,7 +349,7 @@ String& String::operator+=(const String& _str)
 	char* new_mStr = new char[safeSize];
 	
 	// Copying old data to new array
-	memcpy(new_mStr, mStr, safeSize);
+	strcpy_s(new_mStr, safeSize, mStr);
 	
 	// Appending the space and string onto that array
 	strcat_s(new_mStr, safeSize, " ");

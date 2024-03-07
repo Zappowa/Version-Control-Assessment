@@ -1,2 +1,3 @@
-﻿  StringClass.cpp
-  Text File IO.vcxproj -> C:\Users\s233264\Desktop\Version-Control-Assessment\Task 3. Text Result File IO\Text File IO\x64\Debug\Text File IO.exe
+﻿  Text File IO.cpp
+C:\Users\Princ\Desktop\Version-Control-Assessment\Task 3. Text Result File IO\Text File IO\Text File IO\Text File IO.cpp(43,19): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Text File IO.vcxproj -> C:\Users\Princ\Desktop\Version-Control-Assessment\Task 3. Text Result File IO\Text File IO\x64\Debug\Text File IO.exe
