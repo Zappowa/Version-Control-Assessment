@@ -1,4 +1,2 @@
 ﻿  Text File IO.cpp
-C:\Users\s233264\Desktop\Version-Control-Assessment\Task 3. Text Result File IO\Text File IO\Text File IO\Text File IO.cpp(271,2): error C2660: 'testResults': function does not take 1 arguments
-C:\Users\s233264\Desktop\Version-Control-Assessment\Task 3. Text Result File IO\Text File IO\Text File IO\Text File IO.cpp(9,6): message : see declaration of 'testResults'
-C:\Users\s233264\Desktop\Version-Control-Assessment\Task 3. Text Result File IO\Text File IO\Text File IO\Text File IO.cpp(271,2): message : while trying to match the argument list '(std::vector<bool,std::allocator<bool>>)'
+  Text File IO.vcxproj -> C:\Users\s233264\Desktop\Version-Control-Assessment\Task 3. Text Result File IO\Text File IO\x64\Debug\Text File IO.exe

@@ -6,27 +6,29 @@
 
 using namespace std;
 
-void testResults(vector<bool>& vec, /*string& name*/)
+void testResults(vector<bool>& vec, vector<string>& name)
 {
 	ofstream txtIO;
 	txtIO.open("Test Results!");
-	
 
 	if (txtIO.is_open())
 	{
 		int run = 0;
 		bool success = false;
 
-		while (run < size(vec))
+		while (run < size(vec) && run < size(name))
 		{
-			cout << "Test " << run << ": " << name << " ";
+			cout << "\n";
+			cout << "\nTest " << run << ": " << name[run] << " ";
 			
 			if (vec[run] == true)
 				cout << "Successful";
-			cout << "Failed";
+			if (vec[run] == false)
+				cout << "Failed";
 
 			run++;
 		}
+		txtIO.close();
 	}
 	else
 	{
@@ -52,81 +54,82 @@ int main()
 
 	str01 = new String("What is my length?");
 	size_t out = str01->Length();
-
-	cout << "\n-- Length()";
-	cout << "\nThe length of (" << str01->CStr() << ") is " << out << "\n";
+	
+	names.push_back("Length()");
+	if (out == strlen(str01->CStr())) { values.push_back(true); }
+	else { values.push_back(false); }
+		
 
 	// ----------- CharacterAt(Index) ----------- \\
 
 	str01 = new String("Hello");
 	size_t index = 2;
 
-	cout << "\n-- CharacterAt()";
-	cout << "\nThe Character at (" << index << ") in '" << str01->CStr() << "' is '";
-	cout << str01->CharacterAt(index) << "'\n";
+	names.push_back("CharacterAt()");
+	if (str01->CharacterAt(index) == str01->CStr()[index]) { values.push_back(true); }
+	else { values.push_back(false); }
+
 
 	// ----------- EqualTo(str) ----------- \\
 	
 	str01 = new String("Hello");
 	str02 = new String("Hello");
 
-	cout << "\n-- EqualTo()";
-	cout << "\nString 1: " << str01->CStr() << ", String 2: " << str02->CStr();
-	str01->EqualTo(*str02);
+	names.push_back("EqualTo()");
+	if (str01->EqualTo(*str02) == true) { values.push_back(true); }
+	else { values.push_back(false); }
 
 	// ----------- Append(str) ----------- \\
 		
 	str01 = new String("Hello");
 	str02 = new String("World!");
 
-	cout << "\n-- Append()";
-	cout << "\nFirst Phrase: " << str01->CStr() << "\nSecond Phrase: " << str02->CStr();
-	str01->Append(*str02);
-	cout << "\nYour Concatenated String is: " << str01->CStr() << endl;
+	names.push_back("Append()");
+	if (str01->Append(*str02) == "Hello World!") { values.push_back(true); }
+	else { values.push_back(false); }
 
 	// ----------- Prepend(str) ----------- \\
 	
 	str01 = new String("Hello");
 	str02 = new String("World!");
 
-	cout << "\n-- Prepend()";
-	cout << "\nFirst Phrase: " << str01->CStr() << "\nSecond Phrase: " << str02->CStr();
-	str01->Prepend(*str02);
-	cout << "\nYour Concatenated String is: " << str01->CStr() << endl;
+	names.push_back("Prepend()");
+	if (str01->Prepend(*str02) == "World! Hello") { values.push_back(true); }
+	else { values.push_back(false); }
 
 	// ----------- CStr() ----------- \\
 	
 	str01 = new String();
 	str02 = new String("Hello");
 
-	cout << "\n-- CStr()";
-	cout << "\nI am blank: '" << str01->CStr() << "'";
-	cout << "\nI am not blank: '" << str02->CStr() << "'\n";
+	names.push_back("CStr()");
+	if (str02->CStr() == "Hello") { values.push_back(true); }
+	else { values.push_back(false); }
 
 	// ----------- ToLower() ----------- \\
 
 	str01 = new String("I AM LOWERCASE");
 
-	cout << "\n-- ToLower()";
-	cout << "\nOriginal: " << str01->CStr() << endl;
-	str01->ToLower();
+	names.push_back("ToLower()");
+	if (str01->ToLower() == "i am lowercase") { values.push_back(true); }
+	else { values.push_back(false); }
 
 	// ----------- ToUpper() ----------- \\
 	
 	str01 = new String("i am uppercase");
 
-	cout << "\n-- ToUpper()";
-	cout << "\nOriginal: " << str01->CStr() << endl;
-	str01->ToUpper();
+	names.push_back("ToUpper()");
+	if (str01->ToUpper() == "I AM UPPERCASE") { values.push_back(true); }
+	else { values.push_back(false); }
 
 	// ----------- Find(findString) ----------- \\
 	
 	str01 = new String("Please Test This String!");
 	str02 = new String("T");
 
-	cout << "\n-- Find()";
-	cout << "\nIn '" << str01->CStr() << "' we are looking for '" << str02->CStr() << "'";
-	cout << "\n" << "Location - " << str01->Find(*str02) << endl;
+	names.push_back("Find()");
+	if (str01->Find(*str02) == 7) { values.push_back(true); }
+	else { values.push_back(false); }
 
 	// ----------- Find(startIndex, findString) ----------- \\
 	
@@ -134,9 +137,9 @@ int main()
 	str02 = new String("e");
 	const int Pos = 6;
 
-	cout << "\n-- Find(w/ Start Index)";
-	cout << "\nIn '" << str01->CStr() << "' we are looking for '" << str01->CStr() << "' starting at " << Pos;
-	cout << "\n" << "Location - " << str01->Find(Pos, *str02) << endl;
+	names.push_back("Find(w/ index)");
+	if (str01->Find(Pos, *str02) == 8) { values.push_back(true); }
+	else { values.push_back(false); }
 
 	// ----------- Replace(findString, replaceString) ----------- \\
 	
@@ -149,6 +152,9 @@ int main()
 	cout << "\nReplacing all of '" << str02->CStr() << "' with '" << aux->CStr() << "'";
 	str01->Replace(*str02, *aux);
 	cout << "\nReplacement: " << str01->CStr() << endl;
+	
+	//names.push_back("Replace()");
+	//if (str01->Replace(*str02, *aux) == "Changu Mu")
 
 	// ----------- ReadFromConsole() ----------- \\
 	
@@ -156,6 +162,7 @@ int main()
 
 	cout << "\n-- ReadFromConsole()"; cout << "\nInput: ";
 	str01->ReadFromConsole();
+	names.push_back("ReadFromConsole()");
 
 	// ----------- WriteToConsole() ----------- \\
 	
@@ -163,40 +170,24 @@ int main()
 	cout << "\nYour input was: ";
 	str01->WriteToConsole();
 	cout << "\n";
+	names.push_back("WriteToConsole()");
+	//if (str01->WriteToConsole())
 
 	// ----------- Equality Operator(==) ----------- \\
 	
 	str01 = new String("World");
 	str02 = new String("World");
 
-	cout << "\n-- Equality Operator(==)";
-	cout << "\nPhrase: " << str01->CStr();
-	cout << "\nPhrase: " << str02->CStr();
-	if (*str01 == *str02)
-	{
-		cout << "\nThese Strings are Equal!\n";
-	}
-	else
-	{
-		cout << "\nThese String are not Equal!\n";
-	}
-
+	if (*str01 == *str02) { values.push_back(true); }
+	else { values.push_back(false); }
+	
 	// ----------- Equality Operator(!=) ----------- \\
 	
 	str01 = new String("Hello");
 	str02 = new String("HelZo");
 
-	cout << "\n-- Equality Operator(!=)";
-	cout << "\nPhrase: " << str01->CStr();
-	cout << "\nPhrase: " << str02->CStr();
-	if (*str01 != *str02)
-	{
-		cout << "\nThese String are not Equal!\n";
-	}
-	else
-	{
-		cout << "\nThese Strings are Equal!\n";
-	}
+	if (*str01 != *str02) { values.push_back(true); }
+	else { values.push_back(false); }
 
 	// ----------- Assignment Operator(=) ----------- \\
 		
@@ -204,43 +195,30 @@ int main()
 	str02 = new String("Left Side");
 	aux = new String();
 
-	cout << "\n-- Assignment Operator(=)";
-	cout << "\nLHS was: "; str01->WriteToConsole();
-	cout << "\nRHS was: "; str02->WriteToConsole(); cout << "\n";
-
 	*aux = *str01;
 	*str01 = *str02;
 	*str02 = *aux;
-
-	cout << "\n\nLHS is now: "; str01->WriteToConsole();
-	cout << "\nRHS is now: "; str02->WriteToConsole();
-	cout << "\n";
+	
+	names.push_back("Assignment Operator(=)");
+	if (str01->CStr() == "Left Side" && str02->CStr() == "Right Side") { values.push_back(true); }
+	else { values.push_back(false); }
 
 	// ----------- Subscript Operator([]) ----------- \\
 
 	str01 = new String("Index Me!");
 	const size_t SUBINDEX = 2;
 
-	cout << "\n-- Subscript Operator([])";
-	cout << "\nBy Looking through '" << str01->CStr() << "' at location '" << SUBINDEX << "'";
-	cout << "\nThe Characher is '" << (*str01)[SUBINDEX] << "'.\n";
+	if ((*str01)[SUBINDEX] == str01->CStr()[2]) { values.push_back(true); }
+	else { values.push_back(false); }
 
 	// ----------- LessThan Operator(<) ----------- \\
 	
 	str01 = new String("k");
 	str02 = new String("j");
 
-	cout << "\n-- LessThan Operator(<)";
-	cout << "\nWe are checking ('" << str01->CStr() << "' < '" << str02->CStr() << "')";
-
-	if (*str01 < *str02)
-	{
-		cout << "\n'" << str01->CStr() << "' is less than '" << str02->CStr() << "'\n";
-	}
-	else
-	{
-		cout << "\n'" << str01->CStr() << "' isn't less than '" << str02->CStr() << "'\n";
-	}
+	names.push_back("LessThan Operator(<)");
+	if (*str01 < *str02 && str01->CStr() < str02->CStr()) { values.push_back(true); }
+	else { values.push_back(false); }
 
 	// ----------- Plus Operator(+) ----------- \\
 	
@@ -251,24 +229,30 @@ int main()
 	cout << str01->CStr() << " + " << str02->CStr() << " = ";
 	*str01 + *str02;
 	cout << str01->CStr() << endl;
+	//push_back("Plus Operator(+)");
+	//if (str01->CStr())
 
 	//----------- Plus Equals Operator (+=) ----------- \\
 	
 	str01 = new String("Hello");
 	str02 = new String("World!");
 
-	cout << "\n-- Plus Equals Operator (+=)";
-	cout << "\nLeft Side = " << str01->CStr() << ", Right Side = " << str02->CStr();
-	*str01 += *str02;
-	cout << "\nModified Left Side = " << str01->CStr();
-
-	// --- End of Code --- \\	
-	cout << "\n\n===========================================";
-	cout << "\nEnd of Code!\n";
+	names.push_back("Plus Equals Operator(+=)");
+	if (str01->CStr() ==  "Hello World!") { values.push_back(true); }
+	else { values.push_back(false); }
 
 	// ---- TXT File IO ---- \\
 
-	testResults(values);
+	testResults(values, names);
+
+
+
+	// --- End of Code --- \\	
+
+	cout << "\n\n===========================================";
+	cout << "\nEnd of Code!\n";
+
+
 
 	// ---- Memory Cleanup ---- \\
 

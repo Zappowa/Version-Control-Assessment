@@ -16,7 +16,7 @@ String::String() // Constructor
 
 String::~String() // Destructor
 { 
-	cout << "\n-- Destructor Active --"; // Prints when Active
+	//cout << "\n-- Destructor Active --"; // Prints when Active
 	delete[] mStr; // Deleting the Array (Prevents Memory Leak)
 	mStr = nullptr;
 }
@@ -82,10 +82,8 @@ bool String::EqualTo(const String& _other) const
 	// Strcmp() will take both inputs and determine if they are equal or not
 	if (strcmp(mStr, _other.mStr) == 0) // If '0' then return true, Else '1' and return false
 	{
-		cout << "\nIt's a Match!!\n";
 		return true;
 	}
-	cout << "\nError! These Strings Don't Match\n";
 	return false;
 }
 
@@ -150,7 +148,6 @@ String& String::ToLower()
 		// For each letter in the Array, it'll set them to a lowered version 
 		mStr[i] = tolower(mStr[i]);
 	}
-	cout << "Lowered: " << mStr << endl; // Print out the lowered Array
 	return *this;
 }
 
@@ -164,7 +161,6 @@ String& String::ToUpper()
 		// For each letter in the array, it'll set them to a uppered version 
 		mStr[i] = toupper(mStr[i]);
 	}
-	cout << "Uppered: " << mStr << endl; // Print out the lowered array
 	return *this;
 }
 
