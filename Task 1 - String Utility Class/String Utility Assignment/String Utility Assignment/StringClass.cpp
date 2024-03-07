@@ -16,7 +16,7 @@ String::String() // Constructor
 
 String::~String() // Destructor
 { 
-	cout << "\n-- Destructor Active --"; // Prints when Active
+	//cout << "\n-- Destructor Active --"; // Prints when Active
 	delete[] mStr; // Deleting the Array (Prevents Memory Leak)
 	mStr = nullptr;
 }
@@ -29,9 +29,10 @@ String::String(const char* _str)
 	size_t safeSize = strlen(_str);
 	// Creating an Array of Length(What was passed through)
 	mStr = new char[safeSize+1];
+	// For Loop to Add Passthrough onto array
 	for (int ii = 0; ii < safeSize; ii++)
 		mStr[ii] = _str[ii];
-	mStr[safeSize] = '\0';
+	mStr[safeSize] = '\0'; // Set last value to Null Terminator
 }
 
 String::String(const String& _other)
@@ -40,11 +41,10 @@ String::String(const String& _other)
 	size_t safeSize = strlen(_other.mStr);
 	// Creating an Array of Length(What was passed through)
 	mStr = new char[safeSize];
+	// For Loop to Add Passthrough onto array
 	for (int ii = 0; ii < safeSize; ii++)
 		mStr[ii] = _other[ii];
-	mStr[safeSize] = '\0';
-	// Copying the Passthrough onto the Char Array
-	//memcpy(mStr, _other.mStr, Length(mStr)); // memcpy() Makes the function safe (Has defined storage)
+	mStr[safeSize] = '\0'; // Set last value to Null Terminator
 }
 
 
@@ -82,10 +82,8 @@ bool String::EqualTo(const String& _other) const
 	// Strcmp() will take both inputs and determine if they are equal or not
 	if (strcmp(mStr, _other.mStr) == 0) // If '0' then return true, Else '1' and return false
 	{
-		cout << "\nIt's a Match!!\n";
 		return true;
 	}
-	cout << "\nError! These Strings Don't Match\n";
 	return false;
 }
 
@@ -192,7 +190,6 @@ size_t String::Find(size_t _startIndex, const String& _str)
 	// Checks if the start index isn't in range of what we are looking through
 	if (_startIndex < 0 || _startIndex >= strlen(mStr))
 	{
-		cout << "You've Exceeded the Range Provided!";
 		return -1;
 	}
 
@@ -201,7 +198,6 @@ size_t String::Find(size_t _startIndex, const String& _str)
 		
 	if (found == nullptr)
 	{
-		cout << "\nNo Instance of '" << _str.mStr << "' found!";
 		return -1;
 	}
 	// If there is an occurance, print it minus the rest of the array (Only the char)
@@ -215,7 +211,7 @@ String& String::Replace(const String& _find, const String& _replace)
 	// Variable to update
 	size_t cPos = 0;
 
-	while (cPos)
+	while (cPos != -1)
 	{
 		// Sets cPos to the location of the first occurance
 		cPos = Find(cPos, _find.mStr);

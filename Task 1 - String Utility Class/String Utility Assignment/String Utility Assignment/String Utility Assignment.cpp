@@ -6,9 +6,9 @@ using namespace std;
 int main()
 {
 	// This Main Function is full of organisation and built to have a clean output to the console
-    // Start and End Code Section, headers for each function.
-	
-	/* 
+	// Start and End Code Section, headers for each function.
+
+	/*
 	To save lines of code and repetitive commenting I will comment on the code generally which will still cover everything.
 
 	At the top of each function I assign new String() to my pointers so I don't have to recreate them and have a huge amount of pointers at the end to delete.
@@ -24,21 +24,21 @@ int main()
 
 	cout << "\nStart of Code!\n";
 	cout << "===========================================\n";
-	
+
 	// Main String Pointer Variables 
 	String* str01 = new String();
 	String* str02 = new String();
 	String* aux = new String();
-	
+
 	// ----------- Length() ----------- \\
 
 	str01 = new String("What is my length?");
 	size_t out = str01->Length();
-	
-	
+
+
 	cout << "\n-- Length()";
 	cout << "\nThe length of (" << str01->CStr() << ") is " << out << "\n";
-		
+
 	// ----------- CharacterAt(Index) ----------- \\
 
 	str01 = new String("Hello");
@@ -50,12 +50,13 @@ int main()
 
 	// ----------- EqualTo(str) ----------- \\
 	
-    str01 = new String("Hello");
+	str01 = new String("Hello");
 	str02 = new String("Hello");
 
 	cout << "\n-- EqualTo()";
 	cout << "\nString 1: " << str01->CStr() << ", String 2: " << str02->CStr();
-	str01->EqualTo(*str02);
+	if (str01->EqualTo(*str02) == true) { cout << "\nIt's a Match!!\n"; }
+	else { cout << "\nError! These Strings Don't Match\n"; }
 
 	// ----------- Append(str) ----------- \\
 		
@@ -71,7 +72,7 @@ int main()
 	
 	str01 = new String("Hello");
 	str02 = new String("World!");
-	
+
 	cout << "\n-- Prepend()";
 	cout << "\nFirst Phrase: " << str01->CStr() << "\nSecond Phrase: " << str02->CStr();
 	str01->Prepend(*str02);
@@ -109,17 +110,25 @@ int main()
 
 	cout << "\n-- Find()";
 	cout << "\nIn '" << str01->CStr() << "' we are looking for '" << str02->CStr() << "'";
-	cout << "\n" << "Location - " << str01->Find(*str02) << endl;
+
+	size_t location = str01->Find(*str02);
+	if (location == -1) { cout << "\nNo Instance of '" << str02->CStr() << "' found!\n"; }
+	else { cout << "\n" << "Location - " << location << endl; }
 
 	// ----------- Find(startIndex, findString) ----------- \\
 	
 	str01 = new String("Please Test This String!");
 	str02 = new String("e");
 	const int Pos = 6;
-	
+
 	cout << "\n-- Find(w/ Start Index)";
 	cout << "\nIn '" << str01->CStr() << "' we are looking for '" << str01->CStr() << "' starting at " << Pos;
-	cout << "\n" << "Location - " << str01->Find(Pos, *str02) << endl;
+
+	size_t found = str01->Find(Pos, *str02);
+	if (Pos < 0 || Pos >= strlen(str01->CStr())) { cout << "\nYou've Exceeded the Range Provided!\n"; }
+	else if (found == -1) { cout << "\nNo Instance of '" << str02->CStr() << "' found!\n"; }
+	else { cout << "\n" << "Location - " << found << endl; }
+	
 
 	// ----------- Replace(findString, replaceString) ----------- \\
 	
