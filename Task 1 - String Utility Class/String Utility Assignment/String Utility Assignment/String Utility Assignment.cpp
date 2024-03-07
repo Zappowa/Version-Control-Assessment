@@ -204,7 +204,7 @@ int main()
 	*str01 = *str02;
 	*str02 = *aux;
 
-	cout << "\n\nLHS is now: "; str01->WriteToConsole();
+	cout << "\nLHS is now: "; str01->WriteToConsole();
 	cout << "\nRHS is now: "; str02->WriteToConsole();
 	cout << "\n";
 

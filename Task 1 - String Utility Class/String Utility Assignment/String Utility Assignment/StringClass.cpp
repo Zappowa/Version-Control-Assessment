@@ -174,11 +174,8 @@ size_t String::Find(const String& _str)
 	char* founds = strstr(mStr, _str.mStr); // Assigns the first occurance to "founds"
 
 	// Checks no occurances were found
-	if (founds == nullptr)
-	{
-		cout << "\nNo Instance of '" << _str.mStr << "' found!";
-		return -1;
-	}
+	if (founds == nullptr) { return -1; }
+
 	// If there is an occurance, print it minus the rest of the Array (Only the char)
 	return founds - mStr;
 }
@@ -188,18 +185,12 @@ size_t String::Find(const String& _str)
 size_t String::Find(size_t _startIndex, const String& _str)
 {
 	// Checks if the start index isn't in range of what we are looking through
-	if (_startIndex < 0 || _startIndex >= strlen(mStr))
-	{
-		return -1;
-	}
+	if (_startIndex < 0 || _startIndex >= strlen(mStr)) { return -1; }
 
 	// strstr() Will start at the given index and skip anything before
 	char* found = strstr(mStr + _startIndex, _str.mStr);
-		
-	if (found == nullptr)
-	{
-		return -1;
-	}
+
+	if (found == nullptr) { return -1; }
 	// If there is an occurance, print it minus the rest of the array (Only the char)
 	return found - mStr;
 }
