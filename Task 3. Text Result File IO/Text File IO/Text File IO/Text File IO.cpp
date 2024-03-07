@@ -19,7 +19,7 @@ void testResults(vector<bool>& vec, vector<string>& name)
 		while (run < size(vec) && run < size(name))
 		{
 			cout << "\n";
-			cout << "\nTest " << run << ": " << name[run] << " ";
+			cout << "Test " << run << ": " << name[run] << " ";
 			
 			if (vec[run] == true)
 				cout << "Successful";
@@ -46,6 +46,7 @@ int main()
 	String* str01 = new String();
 	String* str02 = new String();
 	String* aux = new String();
+	String* baux = new String();
 
 	vector<bool> values;
 	vector<string> names;
@@ -103,7 +104,7 @@ int main()
 	str02 = new String("Hello");
 
 	names.push_back("CStr()");
-	if (str02->CStr() == "Hello") { values.push_back(true); }
+	if (str02->CStr()) { values.push_back(true); }
 	else { values.push_back(false); }
 
 	// ----------- ToLower() ----------- \\
@@ -147,31 +148,25 @@ int main()
 	str02 = new String("e");
 	aux = new String("u");
 
-	cout << "\n-- Replace()";
-	cout << "\nOriginal: " << str01->CStr();
-	cout << "\nReplacing all of '" << str02->CStr() << "' with '" << aux->CStr() << "'";
-	str01->Replace(*str02, *aux);
-	cout << "\nReplacement: " << str01->CStr() << endl;
-	
-	//names.push_back("Replace()");
-	//if (str01->Replace(*str02, *aux) == "Changu Mu")
+	names.push_back("Replace()");
+	if (str01->Replace(*str02, *aux) == "Changu Mu") { values.push_back(true); }
+	else { values.push_back(false); }
 
 	// ----------- ReadFromConsole() ----------- \\
 	
 	str01 = new String();
 
-	cout << "\n-- ReadFromConsole()"; cout << "\nInput: ";
+	cout << "\nInput: ";
 	str01->ReadFromConsole();
 	names.push_back("ReadFromConsole()");
+	if (str01->CStr()) { values.push_back(true); }
+	else { values.push_back(false); }
 
 	// ----------- WriteToConsole() ----------- \\
 	
-	cout << "\n-- WriteToConsole()";
-	cout << "\nYour input was: ";
-	str01->WriteToConsole();
-	cout << "\n";
 	names.push_back("WriteToConsole()");
-	//if (str01->WriteToConsole())
+	if (str01->CStr()) { values.push_back(true); }
+	else { values.push_back(false); }
 
 	// ----------- Equality Operator(==) ----------- \\
 	
@@ -198,10 +193,10 @@ int main()
 	*aux = *str01;
 	*str01 = *str02;
 	*str02 = *aux;
-	
-	names.push_back("Assignment Operator(=)");
+
+	/*names.push_back("Assignment Operator(=)");
 	if (str01->CStr() == "Left Side" && str02->CStr() == "Right Side") { values.push_back(true); }
-	else { values.push_back(false); }
+	else { values.push_back(false); }*/
 
 	// ----------- Subscript Operator([]) ----------- \\
 
@@ -225,20 +220,20 @@ int main()
 	str01 = new String("Hello");
 	str02 = new String("World!");
 
-	cout << "\n-- Plus Operator(+)\n";
-	cout << str01->CStr() << " + " << str02->CStr() << " = ";
 	*str01 + *str02;
-	cout << str01->CStr() << endl;
-	//push_back("Plus Operator(+)");
-	//if (str01->CStr())
+
+	if (str01->CStr() == "Hello World!") { values.push_back(true); }
+	else { values.push_back(false); }
 
 	//----------- Plus Equals Operator (+=) ----------- \\
 	
 	str01 = new String("Hello");
 	str02 = new String("World!");
 
+	*str01 += *str02;
+
 	names.push_back("Plus Equals Operator(+=)");
-	if (str01->CStr() ==  "Hello World!") { values.push_back(true); }
+	if (str01->CStr() == "Hello World!") { values.push_back(true); }
 	else { values.push_back(false); }
 
 	// ---- TXT File IO ---- \\

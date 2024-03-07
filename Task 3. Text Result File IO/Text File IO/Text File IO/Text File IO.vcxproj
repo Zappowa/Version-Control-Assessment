@@ -127,11 +127,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="StringClass.cpp" />
+    <ClCompile Include="..\..\..\Task 1-2. String Utility Class\String Utility Assignment\String Utility Assignment\StringClass.cpp" />
     <ClCompile Include="Text File IO.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="StringClass.h" />
+    <ClInclude Include="..\..\..\Task 1-2. String Utility Class\String Utility Assignment\String Utility Assignment\StringClass.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -29,9 +29,10 @@ String::String(const char* _str)
 	size_t safeSize = strlen(_str);
 	// Creating an Array of Length(What was passed through)
 	mStr = new char[safeSize+1];
+	// For Loop to Add Passthrough onto array
 	for (int ii = 0; ii < safeSize; ii++)
 		mStr[ii] = _str[ii];
-	mStr[safeSize] = '\0';
+	mStr[safeSize] = '\0'; // Set last value to Null Terminator
 }
 
 String::String(const String& _other)
@@ -40,11 +41,10 @@ String::String(const String& _other)
 	size_t safeSize = strlen(_other.mStr);
 	// Creating an Array of Length(What was passed through)
 	mStr = new char[safeSize];
+	// For Loop to Add Passthrough onto array
 	for (int ii = 0; ii < safeSize; ii++)
 		mStr[ii] = _other[ii];
-	mStr[safeSize] = '\0';
-	// Copying the Passthrough onto the Char Array
-	//memcpy(mStr, _other.mStr, Length(mStr)); // memcpy() Makes the function safe (Has defined storage)
+	mStr[safeSize] = '\0'; // Set last value to Null Terminator
 }
 
 
@@ -172,11 +172,8 @@ size_t String::Find(const String& _str)
 	char* founds = strstr(mStr, _str.mStr); // Assigns the first occurance to "founds"
 
 	// Checks no occurances were found
-	if (founds == nullptr)
-	{
-		cout << "\nNo Instance of '" << _str.mStr << "' found!";
-		return -1;
-	}
+	if (founds == nullptr) { return -1; }
+
 	// If there is an occurance, print it minus the rest of the Array (Only the char)
 	return founds - mStr;
 }
@@ -186,20 +183,12 @@ size_t String::Find(const String& _str)
 size_t String::Find(size_t _startIndex, const String& _str)
 {
 	// Checks if the start index isn't in range of what we are looking through
-	if (_startIndex < 0 || _startIndex >= strlen(mStr))
-	{
-		cout << "You've Exceeded the Range Provided!";
-		return -1;
-	}
+	if (_startIndex < 0 || _startIndex >= strlen(mStr)) { return -1; }
 
 	// strstr() Will start at the given index and skip anything before
 	char* found = strstr(mStr + _startIndex, _str.mStr);
-		
-	if (found == nullptr)
-	{
-		cout << "\nNo Instance of '" << _str.mStr << "' found!";
-		return -1;
-	}
+
+	if (found == nullptr) { return -1; }
 	// If there is an occurance, print it minus the rest of the array (Only the char)
 	return found - mStr;
 }
@@ -211,7 +200,7 @@ String& String::Replace(const String& _find, const String& _replace)
 	// Variable to update
 	size_t cPos = 0;
 
-	while (cPos)
+	while (cPos != -1)
 	{
 		// Sets cPos to the location of the first occurance
 		cPos = Find(cPos, _find.mStr);
