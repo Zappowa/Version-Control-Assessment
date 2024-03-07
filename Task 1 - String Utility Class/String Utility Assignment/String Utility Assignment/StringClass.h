@@ -62,5 +62,5 @@ private:
 
 	// Private Pointer to a Dymanic Array 
 
-	char* mStr; // = new char[1];
+	char* mStr;
 };
