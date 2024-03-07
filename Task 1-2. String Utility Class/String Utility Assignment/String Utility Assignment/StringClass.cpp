@@ -341,8 +341,6 @@ String& String::operator+(const String& _str)
 
 String& String::operator+=(const String& _str)
 {
-	cout << "\n" << mStr << " += " << _str.mStr;
-
 	// Creating a safe size for a new array 
 	size_t safeSize = (strlen(mStr) + 1) + (strlen(_str.mStr)) + 1;
 	char* new_mStr = new char[safeSize];
