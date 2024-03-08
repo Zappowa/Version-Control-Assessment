@@ -95,6 +95,8 @@ int main()
 	String* str02 = new String();
 	String* aux = new String();
 
+
+	//Vectors for txtIO Results
 	vector<bool> values;
 	vector<string> names;
 
@@ -103,7 +105,9 @@ int main()
 	str01 = new String("What is my length?");
 	size_t out = str01->Length();
 	
+	// Push the function name into the vector
 	names.push_back("Length()");
+	// Check if function result is the same as another method
 	if (out == strlen(str01->CStr())) { values.push_back(true); }
 	else { values.push_back(false); }
 		
@@ -112,7 +116,9 @@ int main()
 	str01 = new String("Hello");
 	size_t index = 2;
 
+	// Push the function name into the vector
 	names.push_back("CharacterAt()");
+	// Check if function result is the same as another method
 	if (str01->CharacterAt(index) == str01->CStr()[index]) { values.push_back(true); }
 	else { values.push_back(false); }
 
@@ -121,7 +127,9 @@ int main()
 	str01 = new String("Hello");
 	str02 = new String("Hello");
 
+	// Push the function name into the vector
 	names.push_back("EqualTo()");
+	// Checking if the function runs as expected
 	if (str01->EqualTo(*str02) == true) { values.push_back(true); }
 	else { values.push_back(false); }
 
@@ -130,7 +138,9 @@ int main()
 	str01 = new String("Hello");
 	str02 = new String("World!");
 
+	// Push the function name into the vector
 	names.push_back("Append()");
+	// Checking if the function runs as expected
 	if (str01->Append(*str02) == "Hello World!") { values.push_back(true); }
 	else { values.push_back(false); }
 
@@ -139,7 +149,9 @@ int main()
 	str01 = new String("Hello");
 	str02 = new String("World!");
 
+	// Push the function name into the vector
 	names.push_back("Prepend()");
+	// Checking if the function runs as expected
 	if (str01->Prepend(*str02) == "World! Hello") { values.push_back(true); }
 	else { values.push_back(false); }
 
@@ -148,7 +160,9 @@ int main()
 	str01 = new String();
 	str02 = new String("Hello");
 
+	// Push the function name into the vector
 	names.push_back("CStr()");
+	// Checking if str02 isn't empty and str01 is empty
 	if (strcmp(str02->CStr(), "") != 0 && strcmp(str01->CStr(), "") == 0) { values.push_back(true); }
 	else { values.push_back(false); }
 
@@ -156,7 +170,9 @@ int main()
 
 	str01 = new String("I AM LOWERCASE");
 
+	// Push the function name into the vector
 	names.push_back("ToLower()");
+	// Checking if the function runs as expected
 	if (str01->ToLower() == "i am lowercase") { values.push_back(true); }
 	else { values.push_back(false); }
 
@@ -164,7 +180,9 @@ int main()
 	
 	str01 = new String("i am uppercase");
 
+	// Push the function name into the vector
 	names.push_back("ToUpper()");
+	// Checking if the function runs as expected
 	if (str01->ToUpper() == "I AM UPPERCASE") { values.push_back(true); }
 	else { values.push_back(false); }
 
@@ -173,7 +191,9 @@ int main()
 	str01 = new String("Please Test This String!");
 	str02 = new String("T");
 
+	// Push the function name into the vector
 	names.push_back("Find()");
+	// Checking if the function runs as expected
 	if (str01->Find(*str02) == 7) { values.push_back(true); }
 	else { values.push_back(false); }
 
@@ -183,7 +203,9 @@ int main()
 	str02 = new String("e");
 	const int Pos = 6;
 
+	// Push the function name into the vector
 	names.push_back("Find(w/ index)");
+	// Checking if the function runs as expected
 	if (str01->Find(Pos, *str02) == 8) { values.push_back(true); }
 	else { values.push_back(false); }
 
@@ -193,7 +215,9 @@ int main()
 	str02 = new String("e");
 	aux = new String("u");
 
+	// Push the function name into the vector
 	names.push_back("Replace()");
+	// Checking if the function runs as expected
 	if (str01->Replace(*str02, *aux) == "Changu Mu") { values.push_back(true); }
 	else { values.push_back(false); }
 
@@ -203,13 +227,18 @@ int main()
 
 	cout << "\nInput: ";
 	str01->ReadFromConsole();
+
+	// Push the function name into the vector
 	names.push_back("ReadFromConsole()");
+	// If there is an input 
 	if (str01->CStr()) { values.push_back(true); }
 	else { values.push_back(false); }
 
 	// ----------- WriteToConsole() ----------- \\
 	
+	// Push the function name into the vector
 	names.push_back("WriteToConsole()");
+	// Looking for an input
 	if (strcmp(str01->CStr(), "") != 0) { values.push_back(true); }
 	else { values.push_back(false); }
 
@@ -218,7 +247,9 @@ int main()
 	str01 = new String("World");
 	str02 = new String("World");
 
+	// Push the function name into the vector
 	names.push_back("Equality Operator(==)");
+	// Checking if the function returns true
 	if (*str01 == *str02) { values.push_back(true); }
 	else { values.push_back(false); }
 	
@@ -227,7 +258,9 @@ int main()
 	str01 = new String("Hello");
 	str02 = new String("Hezlo");
 
+	// Push the function name into the vector
 	names.push_back("Equality Operator(!=)");
+	// We want the function to return it as being not equal
 	if (*str01 != *str02) { values.push_back(true); }
 	else { values.push_back(false); }
 
@@ -241,7 +274,9 @@ int main()
 	*str01 = *str02;
 	*str02 = temp;
 
+	// Push the function name into the vector
 	names.push_back("Assignment Operator(=)");
+	// Checking both variables for whats inside
 	if (strcmp(str01->CStr(), "Left Side") == 0 
 		&& strcmp(str02->CStr(), "Right Side") == 0) { values.push_back(true); }
 	else { values.push_back(false); }
@@ -251,7 +286,9 @@ int main()
 	str01 = new String("Index Me!");
 	const size_t SUBINDEX = 2;
 
+	// Push the function name into the vector
 	names.push_back("Subscript([])");
+	// Checking if we get the result from two different methods
 	if ((*str01)[SUBINDEX] == str01->CStr()[2]) { values.push_back(true); }
 	else { values.push_back(false); }
 
@@ -260,7 +297,9 @@ int main()
 	str01 = new String("k");
 	str02 = new String("l");
 
+	// Push the function name into the vector
 	names.push_back("LessThan Operator(<)");
+	// Checking through two methods
 	if (*str01 < *str02 && strcmp(str01->CStr(), str02->CStr()) < 0) { values.push_back(true); }
 	else { values.push_back(false); }
 
@@ -272,7 +311,9 @@ int main()
 
 	String result = *str01 + *str02;
 
+	// Push the function name into the vector
 	names.push_back("Plus Operator(+)");
+	// Checking if we get expected result
 	if (result == "Hello World!") { values.push_back(true); }
 	else { values.push_back(false); }
 
@@ -284,12 +325,15 @@ int main()
 	String assign = *str01;
 	assign += *str02;
 
+	// Push the function name into the vector
 	names.push_back("Plus Equals Operator(+=)");
+	// Looking for expected result
 	if (strcmp(assign.CStr(), "Hello World!") == 0) { values.push_back(true); }
 	else { values.push_back(false); }
 
 	// ---- TXT File IO ---- \\
 
+	// Calling out void function with parameters of our two vectors which hold the function names and if they worked or not
 	testResults(values, names);
 
 	// --- End of Code --- \\	

@@ -152,3 +152,25 @@ Test 17: LessThan Operator(<) Successful
 Test 18: Plus Operator(+) Successful
 Test 19: Plus Equals Operator(+=) Successful
 
+Date: 08/03/2024, Time: 11:46:17, Success Rate: 100%
+Test 0: Length() Successful
+Test 1: CharacterAt() Successful
+Test 2: EqualTo() Successful
+Test 3: Append() Successful
+Test 4: Prepend() Successful
+Test 5: CStr() Successful
+Test 6: ToLower() Successful
+Test 7: ToUpper() Successful
+Test 8: Find() Successful
+Test 9: Find(w/ index) Successful
+Test 10: Replace() Successful
+Test 11: ReadFromConsole() Successful
+Test 12: WriteToConsole() Successful
+Test 13: Equality Operator(==) Successful
+Test 14: Equality Operator(!=) Failed
+Test 15: Assignment Operator(=) Successful
+Test 16: Subscript([]) Successful
+Test 17: LessThan Operator(<) Successful
+Test 18: Plus Operator(+) Successful
+Test 19: Plus Equals Operator(+=) Successful
+
