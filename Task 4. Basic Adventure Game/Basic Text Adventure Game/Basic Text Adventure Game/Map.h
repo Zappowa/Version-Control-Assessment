@@ -10,8 +10,6 @@ public:
 	void buildMap();
 
 public:
-
-
 	
 private:
 	

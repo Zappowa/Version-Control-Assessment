@@ -1,8 +1,6 @@
 ﻿// Main Funcion Includes
 #include <iostream>
-
-#include "StringClass.h" // Accessing String Class
-#include "Map.h"
+#include "GameController.h"
 
 #include <conio.h> // Used for getch() - Grabs Input without pressing enter
 using namespace std;
@@ -21,24 +19,37 @@ int main()
 
 ---------------------------------------------------------------------------------------
 
-The Lost Realm (Guide)
+// -- Controls - \\
 
-Player Should be able to move (NESW)
-Each Room should have Description() and an item or empty. Should print whats in the room when entered
-Interact with item Use()
-Desctiption of Items
-Player Class hold spells 
+Movement:
+- (W) To move North
+- (D) To move East
+- (S) To move South
+- (A) To move West
 
-Map:
-ASCII Map w/ Borders
-Positions of each space
-Player cannot move past borders
-Player += / -=
-		  
+
+For ME
+
+Show Title & Controls
+
+We give two options, (Play, leave)
+
+Build Map and Borders
+Asks for input which the player can now do anything they want
+
+
 )";
 
 	// ---- Game Code ---- \\
 
+	GameController* game = new GameController();
+
+	
+
+
+
+
+	/*
 	char input;
 	Map play;
 
@@ -46,13 +57,13 @@ Player += / -=
 	{
 		input = _getch();
 		cout << "\nInput: " << input;
-		if (input == 's')
-		{
-			play.buildMap();
-		}
+		if (input == 's') { play.buildMap(); }
 	}
+	*/
 
 
+	// -- Memory Cleanup -- \\
 
-
+	delete game;
+	game = nullptr;
 }
