@@ -1,13 +1,10 @@
-﻿// Main Funcion Includes
-#include <iostream>
-#include "GameController.h"
-
-#include <conio.h> // Used for getch() - Grabs Input without pressing enter
-using namespace std;
+﻿#include <iostream> // Reading/Writing to streams
+#include "GameController.h" // Accessing Game Functins
+using namespace std; // No need for std::
 
 int main()
 {
-	// -- ASCII TITLE -- \\
+	// -- ASCII Title & Controls -- \\
 
 	cout << R"( 
  _____ _            _               _    ______           _           
@@ -22,48 +19,42 @@ int main()
 // -- Controls - \\
 
 Movement:
-- (W) To move North
-- (D) To move East
-- (S) To move South
-- (A) To move West
+- ("move north") To move Up
+- ("move east") To move Right
+- ("move south") To move Down
+- ("move west") To move Left
 
+// Personal Todo
 
-For ME
+Show Title & Controls - Done
+We give two options, (Play, leave) - Done
+Looped Player Input - Done
 
-Show Title & Controls
+Build Map and Borders - 
+ 
 
-We give two options, (Play, leave)
-
-Build Map and Borders
-Asks for input which the player can now do anything they want
-
+--
 
 )";
 
 	// ---- Game Code ---- \\
 
 	GameController* game = new GameController();
+	Map* map = new Map();
 
-	
-
-
-
-
-	/*
-	char input;
-	Map play;
-
-	while (true)
+	while (game->gameStatus())
 	{
-		input = _getch();
-		cout << "\nInput: " << input;
-		if (input == 's') { play.buildMap(); }
+		game->buildMap();
+		game->userInput();
 	}
-	*/
 
+	cout << "\nMaybe we will cross paths again!\n";
 
 	// -- Memory Cleanup -- \\
 
 	delete game;
+	delete map;
+
 	game = nullptr;
+	map = nullptr;
 }

@@ -7,10 +7,5 @@ Map::Map(){}
 
 Map::~Map(){}
 
-void Map::buildMap()
-{
-			
-}
-
 
 
