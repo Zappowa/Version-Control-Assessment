@@ -4,7 +4,7 @@ using namespace std; // No need for std::
 
 int main()
 {
-	// -- ASCII Title & Controls -- \\
+	// -- ASCII Title & Intructions -- \\
 
 	cout << R"( 
  _____ _            _               _    ______           _           
@@ -16,22 +16,16 @@ int main()
 
 ---------------------------------------------------------------------------------------
 
-// -- Controls - \\
+// -- Commands -- \\
+
+- ("y/n" or "yes/no") To Answer Game Master
+- ("run") To exit the game
 
 Movement:
-- ("move north") To move Up
-- ("move east") To move Right
-- ("move south") To move Down
-- ("move west") To move Left
-
-// Personal Todo
-
-Show Title & Controls - Done
-We give two options, (Play, leave) - Done
-Looped Player Input - Done
-
-Build Map and Borders - 
- 
+- ("w", "move north") To move Up
+- ("d", "move east") To move Right
+- ("s", "move south") To move Down
+- ("a", "move west") To move Left
 
 --
 
@@ -42,13 +36,15 @@ Build Map and Borders -
 	GameController* game = new GameController();
 	Map* map = new Map();
 
+	// Game Loop
 	while (game->gameStatus())
 	{
 		game->buildMap();
 		game->userInput();
 	}
 
-	cout << "\nMaybe we will cross paths again!\n";
+	// Exit Message
+	cout << "\n(Game Master) May we cross paths again!\n";
 
 	// -- Memory Cleanup -- \\
 

@@ -12,16 +12,18 @@ public:
 	bool gameStatus() { return gameOver; };
 	
 	void userInput();
+	void userMove(int PosX, int PosY);
 	void buildMap();
 
 
 private:
 
-	const int MAPSIZE = 10;
-	char map[10][10] = {};
+	const int GAMESIZE = 13;
+	const int MAPSIZE = 12;
+	char map[13][13] = {};
 
-	int PlayerPosX = 0; 
-	int PlayerPosY = 0;
+	int PlayerPosX = 1; 
+	int PlayerPosY = 1;
 
 	bool gameOver = false;
 	String* command = nullptr;

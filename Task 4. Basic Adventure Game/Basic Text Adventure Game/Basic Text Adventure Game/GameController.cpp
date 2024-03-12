@@ -6,20 +6,15 @@ GameController::GameController()
 {
 	command = new String("");
 
-	std::cout << "Howdy Adventurer!! Would you like to play a game? ";
+	std::cout << "(Game Master) Howdy Adventurer!! Would you like to play a game? ";
 	command->ReadFromConsole();
 	command->ToLower();
 
-	for (int col = 0; col < MAPSIZE; col++)
+	for (int row = 0; row < GAMESIZE; row++)
 	{
-		for (int row = 0; row < MAPSIZE; row++)
+		for (int col = 0; col < GAMESIZE; col++)
 		{
-			if (col == 0 || col == MAPSIZE-1)
-				map[col][row] = '-';
-			else if (row == 0 || row == MAPSIZE-1)
-				map[col][row] = '|';
-			else
-				map[col][row] = '.';
+				map[row][col] = '.';
 		}
 	}
 
@@ -34,30 +29,68 @@ GameController::~GameController()
 
 void GameController::userInput()
 {
-	std::cout << "\nAdventurer: ";
+	cout << "\nAdventurer: ";
 	command->ReadFromConsole();
 	command->ToLower();
 
 	if (command->EqualTo("run")) { gameOver = false; }
 
-	if (command->EqualTo("w")) { PlayerPosY--; }
-	if (command->EqualTo("a")) { PlayerPosX--; }
-	if (command->EqualTo("s")) { PlayerPosY++; }
-	if (command->EqualTo("d")) { PlayerPosX++; }
+	if (command->EqualTo("w") || command->EqualTo("move north")) { userMove(0, -1); }
+	if (command->EqualTo("a") || command->EqualTo("move west")) { userMove(-1, 0); }
+	if (command->EqualTo("s") || command->EqualTo("move south")) { userMove(0, 1); }
+	if (command->EqualTo("d") || command->EqualTo("move east")) { userMove(1, 0); }
+}
+
+void GameController::userMove(int PosX, int PosY)
+{
+	int tempX = PlayerPosX + PosX;
+	int tempY = PlayerPosY + PosY;
+
+	if (tempX < 1 || tempX > 11 || tempY < 1 || tempY > 11)
+	{
+		cout << "\nThat's a wall dumby\n";
+	}
+	else
+	{
+		PlayerPosX = tempX;
+		PlayerPosY = tempY;
+	}
 }
 
 void GameController::buildMap()
 {
-	for (int col = 0; col < MAPSIZE; col++)
+	for (int row = 0; row < GAMESIZE; row++)
 	{
-		for (int row = 0; row < MAPSIZE; row++)
+		for (int col = 0; col < GAMESIZE; col++)
 		{
-			if (col == PlayerPosY && row == PlayerPosX)
-				map[col][row] = '$';
+			if (row == 0 || row == MAPSIZE)
+				map[row][col] = '-';
+			else if (col == 0 || col == MAPSIZE)
+				map[row][col] = '|';
+			else
+				map[row][col] = '.';
+		}
+	}
 
-			cout << map[col][row];
+	map[PlayerPosY][PlayerPosX] = '$';
+
+	for (int row = 0; row < GAMESIZE; row++)
+	{
+		for (int col = 0; col < GAMESIZE; col++)
+		{
+			cout << map[row][col];	
+
+			if (row == 0 && col < MAPSIZE || row == MAPSIZE && col < MAPSIZE)
+			{
+				cout << '-';
+			}
+			else if (col > 1 || col < 12)
+			{
+				cout << ' ';
+			}
 		}
 		cout << endl;
 	}
+	
 }
 
