@@ -3,28 +3,40 @@
   "WorkspaceRootPath": "C:\\Users\\Princ\\Desktop\\Version-Control-Assessment\\Task 4. Basic Adventure Game\\Basic Text Adventure Game\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E1D335A2-2E47-4811-9E47-4D209A2C63ED}|Basic Text Adventure Game\\Basic Text Adventure Game.vcxproj|C:\\Users\\Princ\\Desktop\\Version-Control-Assessment\\Task 4. Basic Adventure Game\\Basic Text Adventure Game\\Basic Text Adventure Game\\GameController.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{E1D335A2-2E47-4811-9E47-4D209A2C63ED}|Basic Text Adventure Game\\Basic Text Adventure Game.vcxproj|solutionrelative:Basic Text Adventure Game\\GameController.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{E1D335A2-2E47-4811-9E47-4D209A2C63ED}|Basic Text Adventure Game\\Basic Text Adventure Game.vcxproj|C:\\Users\\Princ\\Desktop\\Version-Control-Assessment\\Task 4. Basic Adventure Game\\Basic Text Adventure Game\\Basic Text Adventure Game\\Room.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{E1D335A2-2E47-4811-9E47-4D209A2C63ED}|Basic Text Adventure Game\\Basic Text Adventure Game.vcxproj|solutionrelative:Basic Text Adventure Game\\Room.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E1D335A2-2E47-4811-9E47-4D209A2C63ED}|Basic Text Adventure Game\\Basic Text Adventure Game.vcxproj|C:\\Users\\Princ\\Desktop\\Version-Control-Assessment\\Task 4. Basic Adventure Game\\Basic Text Adventure Game\\Basic Text Adventure Game\\GameController.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{E1D335A2-2E47-4811-9E47-4D209A2C63ED}|Basic Text Adventure Game\\Basic Text Adventure Game.vcxproj|solutionrelative:Basic Text Adventure Game\\GameController.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{E1D335A2-2E47-4811-9E47-4D209A2C63ED}|Basic Text Adventure Game\\Basic Text Adventure Game.vcxproj|C:\\Users\\Princ\\Desktop\\Version-Control-Assessment\\Task 4. Basic Adventure Game\\Basic Text Adventure Game\\Basic Text Adventure Game\\Items.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{E1D335A2-2E47-4811-9E47-4D209A2C63ED}|Basic Text Adventure Game\\Basic Text Adventure Game.vcxproj|solutionrelative:Basic Text Adventure Game\\Items.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D335A2-2E47-4811-9E47-4D209A2C63ED}|Basic Text Adventure Game\\Basic Text Adventure Game.vcxproj|C:\\Users\\Princ\\Desktop\\Version-Control-Assessment\\Task 4. Basic Adventure Game\\Basic Text Adventure Game\\Basic Text Adventure Game\\GameController.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{E1D335A2-2E47-4811-9E47-4D209A2C63ED}|Basic Text Adventure Game\\Basic Text Adventure Game.vcxproj|solutionrelative:Basic Text Adventure Game\\GameController.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E1D335A2-2E47-4811-9E47-4D209A2C63ED}|Basic Text Adventure Game\\Basic Text Adventure Game.vcxproj|C:\\Users\\Princ\\Desktop\\Version-Control-Assessment\\Task 4. Basic Adventure Game\\Basic Text Adventure Game\\Basic Text Adventure Game\\Basic Text Adventure Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{E1D335A2-2E47-4811-9E47-4D209A2C63ED}|Basic Text Adventure Game\\Basic Text Adventure Game.vcxproj|solutionrelative:Basic Text Adventure Game\\Basic Text Adventure Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E1D335A2-2E47-4811-9E47-4D209A2C63ED}|Basic Text Adventure Game\\Basic Text Adventure Game.vcxproj|C:\\Users\\Princ\\Desktop\\Version-Control-Assessment\\Task 4. Basic Adventure Game\\Basic Text Adventure Game\\Basic Text Adventure Game\\Map.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{E1D335A2-2E47-4811-9E47-4D209A2C63ED}|Basic Text Adventure Game\\Basic Text Adventure Game.vcxproj|solutionrelative:Basic Text Adventure Game\\Map.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1D335A2-2E47-4811-9E47-4D209A2C63ED}|Basic Text Adventure Game\\Basic Text Adventure Game.vcxproj|C:\\Users\\Princ\\Desktop\\Version-Control-Assessment\\Task 4. Basic Adventure Game\\Basic Text Adventure Game\\Basic Text Adventure Game\\Map.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{E1D335A2-2E47-4811-9E47-4D209A2C63ED}|Basic Text Adventure Game\\Basic Text Adventure Game.vcxproj|solutionrelative:Basic Text Adventure Game\\Map.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{E1D335A2-2E47-4811-9E47-4D209A2C63ED}|Basic Text Adventure Game\\Basic Text Adventure Game.vcxproj|C:\\Users\\Princ\\Desktop\\Version-Control-Assessment\\Task 4. Basic Adventure Game\\Basic Text Adventure Game\\Basic Text Adventure Game\\Items.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{E1D335A2-2E47-4811-9E47-4D209A2C63ED}|Basic Text Adventure Game\\Basic Text Adventure Game.vcxproj|solutionrelative:Basic Text Adventure Game\\Items.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E1D335A2-2E47-4811-9E47-4D209A2C63ED}|Basic Text Adventure Game\\Basic Text Adventure Game.vcxproj|C:\\Users\\Princ\\Desktop\\Version-Control-Assessment\\Task 4. Basic Adventure Game\\Basic Text Adventure Game\\Basic Text Adventure Game\\StringClass.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{E1D335A2-2E47-4811-9E47-4D209A2C63ED}|Basic Text Adventure Game\\Basic Text Adventure Game.vcxproj|solutionrelative:Basic Text Adventure Game\\StringClass.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D335A2-2E47-4811-9E47-4D209A2C63ED}|Basic Text Adventure Game\\Basic Text Adventure Game.vcxproj|C:\\Users\\Princ\\Desktop\\Version-Control-Assessment\\Task 4. Basic Adventure Game\\Basic Text Adventure Game\\Basic Text Adventure Game\\Room.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{E1D335A2-2E47-4811-9E47-4D209A2C63ED}|Basic Text Adventure Game\\Basic Text Adventure Game.vcxproj|solutionrelative:Basic Text Adventure Game\\Room.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D335A2-2E47-4811-9E47-4D209A2C63ED}|Basic Text Adventure Game\\Basic Text Adventure Game.vcxproj|C:\\Users\\Princ\\Desktop\\Version-Control-Assessment\\Task 4. Basic Adventure Game\\Basic Text Adventure Game\\Basic Text Adventure Game\\GameController.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{E1D335A2-2E47-4811-9E47-4D209A2C63ED}|Basic Text Adventure Game\\Basic Text Adventure Game.vcxproj|solutionrelative:Basic Text Adventure Game\\GameController.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D335A2-2E47-4811-9E47-4D209A2C63ED}|Basic Text Adventure Game\\Basic Text Adventure Game.vcxproj|C:\\Users\\Princ\\Desktop\\Version-Control-Assessment\\Task 4. Basic Adventure Game\\Basic Text Adventure Game\\Basic Text Adventure Game\\Spells.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{E1D335A2-2E47-4811-9E47-4D209A2C63ED}|Basic Text Adventure Game\\Basic Text Adventure Game.vcxproj|solutionrelative:Basic Text Adventure Game\\Spells.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E1D335A2-2E47-4811-9E47-4D209A2C63ED}|Basic Text Adventure Game\\Basic Text Adventure Game.vcxproj|C:\\Users\\Princ\\Desktop\\Version-Control-Assessment\\Task 4. Basic Adventure Game\\Basic Text Adventure Game\\Basic Text Adventure Game\\StringClass.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -38,70 +50,107 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Basic Text Adventure Game.cpp",
               "DocumentMoniker": "C:\\Users\\Princ\\Desktop\\Version-Control-Assessment\\Task 4. Basic Adventure Game\\Basic Text Adventure Game\\Basic Text Adventure Game\\Basic Text Adventure Game.cpp",
               "RelativeDocumentMoniker": "Basic Text Adventure Game\\Basic Text Adventure Game.cpp",
               "ToolTip": "C:\\Users\\Princ\\Desktop\\Version-Control-Assessment\\Task 4. Basic Adventure Game\\Basic Text Adventure Game\\Basic Text Adventure Game\\Basic Text Adventure Game.cpp",
               "RelativeToolTip": "Basic Text Adventure Game\\Basic Text Adventure Game.cpp",
-              "ViewState": "AQIAABUAAAAAAAAAAAAAACkAAAATAAAA",
+              "ViewState": "AQIAABgAAAAAAAAAAAAAADIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-03-09T04:12:10.796Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
               "Title": "GameController.h",
               "DocumentMoniker": "C:\\Users\\Princ\\Desktop\\Version-Control-Assessment\\Task 4. Basic Adventure Game\\Basic Text Adventure Game\\Basic Text Adventure Game\\GameController.h",
               "RelativeDocumentMoniker": "Basic Text Adventure Game\\GameController.h",
               "ToolTip": "C:\\Users\\Princ\\Desktop\\Version-Control-Assessment\\Task 4. Basic Adventure Game\\Basic Text Adventure Game\\Basic Text Adventure Game\\GameController.h",
               "RelativeToolTip": "Basic Text Adventure Game\\GameController.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAUAAAA",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAACYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-03-11T16:02:45.419Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-11T16:02:45.419Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "GameController.cpp",
               "DocumentMoniker": "C:\\Users\\Princ\\Desktop\\Version-Control-Assessment\\Task 4. Basic Adventure Game\\Basic Text Adventure Game\\Basic Text Adventure Game\\GameController.cpp",
               "RelativeDocumentMoniker": "Basic Text Adventure Game\\GameController.cpp",
               "ToolTip": "C:\\Users\\Princ\\Desktop\\Version-Control-Assessment\\Task 4. Basic Adventure Game\\Basic Text Adventure Game\\Basic Text Adventure Game\\GameController.cpp",
               "RelativeToolTip": "Basic Text Adventure Game\\GameController.cpp",
-              "ViewState": "AQIAAC0AAAAAAAAAAAAAAD0AAAApAAAA",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAgwBkAAAACAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-03-09T06:19:06.688Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Map.h",
-              "DocumentMoniker": "C:\\Users\\Princ\\Desktop\\Version-Control-Assessment\\Task 4. Basic Adventure Game\\Basic Text Adventure Game\\Basic Text Adventure Game\\Map.h",
-              "RelativeDocumentMoniker": "Basic Text Adventure Game\\Map.h",
-              "ToolTip": "C:\\Users\\Princ\\Desktop\\Version-Control-Assessment\\Task 4. Basic Adventure Game\\Basic Text Adventure Game\\Basic Text Adventure Game\\Map.h",
-              "RelativeToolTip": "Basic Text Adventure Game\\Map.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAJAAAA",
+              "DocumentIndex": 0,
+              "Title": "Room.h",
+              "DocumentMoniker": "C:\\Users\\Princ\\Desktop\\Version-Control-Assessment\\Task 4. Basic Adventure Game\\Basic Text Adventure Game\\Basic Text Adventure Game\\Room.h",
+              "RelativeDocumentMoniker": "Basic Text Adventure Game\\Room.h",
+              "ToolTip": "C:\\Users\\Princ\\Desktop\\Version-Control-Assessment\\Task 4. Basic Adventure Game\\Basic Text Adventure Game\\Basic Text Adventure Game\\Room.h",
+              "RelativeToolTip": "Basic Text Adventure Game\\Room.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-03-09T04:12:10.676Z"
+              "WhenOpened": "2024-03-12T12:21:17.333Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Room.cpp",
+              "DocumentMoniker": "C:\\Users\\Princ\\Desktop\\Version-Control-Assessment\\Task 4. Basic Adventure Game\\Basic Text Adventure Game\\Basic Text Adventure Game\\Room.cpp",
+              "RelativeDocumentMoniker": "Basic Text Adventure Game\\Room.cpp",
+              "ToolTip": "C:\\Users\\Princ\\Desktop\\Version-Control-Assessment\\Task 4. Basic Adventure Game\\Basic Text Adventure Game\\Basic Text Adventure Game\\Room.cpp",
+              "RelativeToolTip": "Basic Text Adventure Game\\Room.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-03-12T12:21:30.795Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Spells.h",
+              "DocumentMoniker": "C:\\Users\\Princ\\Desktop\\Version-Control-Assessment\\Task 4. Basic Adventure Game\\Basic Text Adventure Game\\Basic Text Adventure Game\\Spells.h",
+              "RelativeDocumentMoniker": "Basic Text Adventure Game\\Spells.h",
+              "ToolTip": "C:\\Users\\Princ\\Desktop\\Version-Control-Assessment\\Task 4. Basic Adventure Game\\Basic Text Adventure Game\\Basic Text Adventure Game\\Spells.h",
+              "RelativeToolTip": "Basic Text Adventure Game\\Spells.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-03-12T12:15:55.992Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Items.h",
+              "DocumentMoniker": "C:\\Users\\Princ\\Desktop\\Version-Control-Assessment\\Task 4. Basic Adventure Game\\Basic Text Adventure Game\\Basic Text Adventure Game\\Items.h",
+              "RelativeDocumentMoniker": "Basic Text Adventure Game\\Items.h",
+              "ToolTip": "C:\\Users\\Princ\\Desktop\\Version-Control-Assessment\\Task 4. Basic Adventure Game\\Basic Text Adventure Game\\Basic Text Adventure Game\\Items.h",
+              "RelativeToolTip": "Basic Text Adventure Game\\Items.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-03-12T12:15:38.668Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Map.cpp",
-              "DocumentMoniker": "C:\\Users\\Princ\\Desktop\\Version-Control-Assessment\\Task 4. Basic Adventure Game\\Basic Text Adventure Game\\Basic Text Adventure Game\\Map.cpp",
-              "RelativeDocumentMoniker": "Basic Text Adventure Game\\Map.cpp",
-              "ToolTip": "C:\\Users\\Princ\\Desktop\\Version-Control-Assessment\\Task 4. Basic Adventure Game\\Basic Text Adventure Game\\Basic Text Adventure Game\\Map.cpp",
-              "RelativeToolTip": "Basic Text Adventure Game\\Map.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAGAAAA",
+              "Title": "Items.cpp",
+              "DocumentMoniker": "C:\\Users\\Princ\\Desktop\\Version-Control-Assessment\\Task 4. Basic Adventure Game\\Basic Text Adventure Game\\Basic Text Adventure Game\\Items.cpp",
+              "RelativeDocumentMoniker": "Basic Text Adventure Game\\Items.cpp",
+              "ToolTip": "C:\\Users\\Princ\\Desktop\\Version-Control-Assessment\\Task 4. Basic Adventure Game\\Basic Text Adventure Game\\Basic Text Adventure Game\\Items.cpp",
+              "RelativeToolTip": "Basic Text Adventure Game\\Items.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-03-09T04:12:10.793Z"
+              "WhenOpened": "2024-03-12T13:04:38.665Z"
             },
             {
               "$type": "Document",
@@ -117,7 +166,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "StringClass.cpp",
               "DocumentMoniker": "C:\\Users\\Princ\\Desktop\\Version-Control-Assessment\\Task 4. Basic Adventure Game\\Basic Text Adventure Game\\Basic Text Adventure Game\\StringClass.cpp",
               "RelativeDocumentMoniker": "Basic Text Adventure Game\\StringClass.cpp",

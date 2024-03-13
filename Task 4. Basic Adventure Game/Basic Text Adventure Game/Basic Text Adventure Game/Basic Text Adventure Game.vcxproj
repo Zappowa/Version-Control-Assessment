@@ -129,12 +129,16 @@
   <ItemGroup>
     <ClCompile Include="Basic Text Adventure Game.cpp" />
     <ClCompile Include="GameController.cpp" />
-    <ClCompile Include="Map.cpp" />
+    <ClCompile Include="Items.cpp" />
+    <ClCompile Include="Room.cpp" />
+    <ClCompile Include="Spells.cpp" />
     <ClCompile Include="StringClass.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameController.h" />
-    <ClInclude Include="Map.h" />
+    <ClInclude Include="Items.h" />
+    <ClInclude Include="Room.h" />
+    <ClInclude Include="Spells.h" />
     <ClInclude Include="StringClass.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

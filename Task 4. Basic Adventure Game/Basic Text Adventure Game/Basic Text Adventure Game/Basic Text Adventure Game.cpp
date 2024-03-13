@@ -19,7 +19,6 @@ int main()
 // -- Commands -- \\
 
 - ("y/n" or "yes/no") To Answer Game Master
-- ("run") To exit the game
 
 Movement:
 - ("w", "move north") To move Up
@@ -27,20 +26,22 @@ Movement:
 - ("s", "move south") To move Down
 - ("a", "move west") To move Left
 
+- ("run") To exit the game
+
 --
 
 )";
 
 	// ---- Game Code ---- \\
 
-	GameController* game = new GameController();
-	Map* map = new Map();
+	// Class Variable to Access Functions
+	GameController* gameMaster = new GameController();
 
 	// Game Loop
-	while (game->gameStatus())
+	while (gameMaster->gameStatus())
 	{
-		game->buildMap();
-		game->userInput();
+		gameMaster->buildMap(); // Map Construction
+		gameMaster->userInput(); // Control Inputs
 	}
 
 	// Exit Message
@@ -48,9 +49,6 @@ Movement:
 
 	// -- Memory Cleanup -- \\
 
-	delete game;
-	delete map;
-
-	game = nullptr;
-	map = nullptr;
+	delete gameMaster;
+	gameMaster = nullptr;
 }
