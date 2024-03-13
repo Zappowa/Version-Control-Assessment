@@ -1,29 +1,33 @@
+// Prevents Multiple File Includes
 #pragma once
 class Items
 {
+public:
 	Items();
 
 	~Items();
 
-	virtual void Learnt() = 0;
-};
-
-/*
-class itemLamp : public Items
-{
-public:
-	void Learnt(){}
+	virtual void UseItem() = 0;
+	virtual void Description() const = 0;
 };
 
 class itemCat : public Items
 {
-public:
-	void Learnt() {}
+	void UseItem();
+	void Description();
+
+};
+
+class itemLamp : public Items
+{
+	void UseItem();
+	void Description() const;
 };
 
 class itemBoxofDonuts : public Items
 {
-public:
-	void Learnt() {}
+	void UseItem();
+	void Description() const;
 };
-*/
+
+

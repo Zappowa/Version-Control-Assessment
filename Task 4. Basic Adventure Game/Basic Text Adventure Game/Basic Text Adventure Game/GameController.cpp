@@ -1,6 +1,7 @@
-﻿// Includes
+﻿#include "GameController.h" // Link to the header
 #include <iostream>
-#include "GameController.h" 
+#include <random> // Creating Random Numbers
+
 using namespace std;
 
 // Constructor 
@@ -24,6 +25,35 @@ GameController::GameController()
 			rooms[row][col] = Room();
 		}
 	}
+
+	// Randomly Generating Number in Range of Map
+	random_device rng;
+	uniform_int_distribution<int> dist(2, 11);
+
+	// While Loop Condition
+	bool run = true;
+	
+	// Assigning the Random Number to Variables for use
+	exitX = dist(rng);
+	exitY = dist(rng);
+
+	// Making sure our random numbers aren't the same as an already used room
+	while (run)
+	{
+		if (exitY == 2 && exitX == 3 || exitY == 8 && exitX == 5 || exitY == 3 && exitX == 10 || exitY == 11 && exitX == 6)
+		{
+			exitX = dist(rng);
+			exitY = dist(rng);
+		}
+		else { run = false; }
+	}
+
+	// Assigning Rooms with Descriptions of whats in it
+	rooms[2][3] = Room("Cat", new itemCat());
+	rooms[8][5] = Room("BoxOfDonuts");
+	rooms[3][10] = Room("Lamp");
+	rooms[11][6] = Room("Totally Empty Roomm *wink*");
+	rooms[exitY][exitX] = Room("Door");
 
 	// The Game Status will be decided based on user input
 	if (command->EqualTo("yes") || command->EqualTo("y")) { gameOver = true; cout << "\n"; }
@@ -75,6 +105,9 @@ void GameController::userMove(int PosX, int PosY)
 		// Confirms the location if it's inside the range
 		PlayerPosX = tempX;
 		PlayerPosY = tempY;
+
+		// Printing the Description of the room after moving 
+		rooms[PlayerPosY][PlayerPosX].Description();
 	}
 }
 
@@ -95,8 +128,16 @@ void GameController::buildMap()
 		}
 	}
 
-	// Setting Players Position on Map
+	// Temporary Locations to Spot Rooms
 	
+	map[2][3]  = 'c';
+	map[8][5]  = 'b';
+	map[3][10] = 'l';
+	map[11][6] = 'e';
+	map[exitY][exitX] = 'X';
+
+	// Setting Players Position on Map
+
 	map[PlayerPosY][PlayerPosX] = '$';
 
 	// Printing the Map out to Console

@@ -3,6 +3,8 @@
 
 // Header Includes
 #include "Room.h"
+#include "Items.h"
+#include "Spells.h"
 #include "StringClass.h"
 
 class GameController
@@ -35,11 +37,16 @@ private:
 	char map[13][13] = {};
 
 	// Room Variable of Map
-	Room rooms[12][12];
+	Items* item;
+	Room rooms[13][13] = {};
 
 	// Interger Player Position
 	int PlayerPosX = 1; 
 	int PlayerPosY = 1;
+
+	// Exit Door Position
+	int exitX = 0;
+	int exitY = 0;
 
 	// Game Status
 	bool gameOver = false;

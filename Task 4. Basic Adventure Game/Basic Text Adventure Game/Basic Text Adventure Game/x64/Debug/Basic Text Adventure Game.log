@@ -1,24 +1,2 @@
-﻿  Basic Text Adventure Game.cpp
-C:\Users\Princ\Desktop\Version-Control-Assessment\Task 4. Basic Adventure Game\Basic Text Adventure Game\Basic Text Adventure Game\Room.h(16,9): error C3646: 'description': unknown override specifier
-  (compiling source file 'Basic%20Text%20Adventure%20Game.cpp')
-  
-C:\Users\Princ\Desktop\Version-Control-Assessment\Task 4. Basic Adventure Game\Basic Text Adventure Game\Basic Text Adventure Game\Room.h(16,20): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  (compiling source file 'Basic%20Text%20Adventure%20Game.cpp')
-  
-  GameController.cpp
-C:\Users\Princ\Desktop\Version-Control-Assessment\Task 4. Basic Adventure Game\Basic Text Adventure Game\Basic Text Adventure Game\Room.h(16,9): error C3646: 'description': unknown override specifier
-  (compiling source file 'GameController.cpp')
-  
-C:\Users\Princ\Desktop\Version-Control-Assessment\Task 4. Basic Adventure Game\Basic Text Adventure Game\Basic Text Adventure Game\Room.h(16,20): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  (compiling source file 'GameController.cpp')
-  
-  Items.cpp
-  Room.cpp
-C:\Users\Princ\Desktop\Version-Control-Assessment\Task 4. Basic Adventure Game\Basic Text Adventure Game\Basic Text Adventure Game\Room.h(16,9): error C3646: 'description': unknown override specifier
-  (compiling source file 'Room.cpp')
-  
-C:\Users\Princ\Desktop\Version-Control-Assessment\Task 4. Basic Adventure Game\Basic Text Adventure Game\Basic Text Adventure Game\Room.h(16,20): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  (compiling source file 'Room.cpp')
-  
-  Spells.cpp
-  Generating Code...
+﻿  Room.cpp
+  Basic Text Adventure Game.vcxproj -> C:\Users\Princ\Desktop\Version-Control-Assessment\Task 4. Basic Adventure Game\Basic Text Adventure Game\x64\Debug\Basic Text Adventure Game.exe
