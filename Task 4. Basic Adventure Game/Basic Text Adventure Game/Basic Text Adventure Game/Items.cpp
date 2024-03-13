@@ -76,10 +76,10 @@ void itemBoxofDonuts::Description() const
 // Door Class
 void itemDoor::UseItem()
 {
-
+	std::cout << "\n(Game Master) It looks like only a spell can be used on this door!\n";
 }
 
 void itemDoor::Description() const
 {
-	std::cout << "\nA bold red door that's trimmed with white accents, and a circular paned window towards the top.\n";
+	std::cout << "\n(Game Master) A locked bold red door that's trimmed with white accents, and a circular paned window towards the top.\n";
 }

@@ -2,9 +2,10 @@
 #pragma once
 
 // Header Includes
+#include "StringClass.h"
+#include "Player.h"
 #include "Room.h"
 #include "Items.h"
-#include "StringClass.h"
 
 class GameController
 {
@@ -35,9 +36,12 @@ private:
 	const int MAPSIZE = 12;
 	char map[13][13] = {};
 
+	// Player Pointer 
+	Player* player = nullptr;
+
 	// Initialiser List (Without this you get errors)
 	Items* item[4] = {new itemCat(), new itemLamp(), new itemBoxofDonuts(), new itemDoor()};
-	
+
 	// Room Variable of Map
 	Room rooms[13][13] = {};
 

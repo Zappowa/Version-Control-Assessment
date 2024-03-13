@@ -130,12 +130,14 @@
     <ClCompile Include="Basic Text Adventure Game.cpp" />
     <ClCompile Include="GameController.cpp" />
     <ClCompile Include="Items.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="Room.cpp" />
     <ClCompile Include="StringClass.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameController.h" />
     <ClInclude Include="Items.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="Room.h" />
     <ClInclude Include="StringClass.h" />
   </ItemGroup>

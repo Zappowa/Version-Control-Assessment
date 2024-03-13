@@ -9,6 +9,7 @@ GameController::GameController()
 {
 	// Initialising the String Variable
 	command = new String("");
+	player = new Player();
 
 	// Start Game Text
 	cout << "(Game Master) Howdy Adventurer!! Would you like to play a game? ";
@@ -40,7 +41,7 @@ GameController::GameController()
 	// Making sure our random numbers aren't the same as an already used room
 	while (run)
 	{
-		if (exitY == 2 && exitX == 3 || exitY == 8 && exitX == 5 || exitY == 3 && exitX == 10/*|| exitY == 11 && exitX == 6*/)
+		if (exitY == 2 && exitX == 3 || exitY == 8 && exitX == 5 || exitY == 3 && exitX == 10)
 		{
 			exitX = dist(rng);
 			exitY = dist(rng);
@@ -53,8 +54,6 @@ GameController::GameController()
 	rooms[3][10] = Room("Lamp", item[1]);
 	rooms[8][5] = Room("BoxOfDonuts", item[2]);
 	rooms[exitY][exitX] = Room("Door", item[3]);
-
-	//rooms[11][6] = Room("Totally Empty Roomm *wink*"); Spell??
 
 	// The Game Status will be decided based on user input
 	if (command->EqualTo("yes") || command->EqualTo("y")) { gameOver = true; cout << "\n"; }
@@ -82,7 +81,7 @@ void GameController::userInput()
 	if (command->EqualTo("run")) { gameOver = false; }
 	
 	// User Commands
-	if (command->EqualTo("use")) { rooms[PlayerPosY][PlayerPosX].UseItem(); }
+	if (command->EqualTo("use")) { rooms[PlayerPosY][PlayerPosX].UseItem(); } 
 	if (command->EqualTo("info")) { rooms[PlayerPosY][PlayerPosX].InfoItem(); }
 
 	// Player Movement
@@ -90,6 +89,31 @@ void GameController::userInput()
 	if (command->EqualTo("a") || command->EqualTo("move west")) { userMove(-1, 0); }
 	if (command->EqualTo("s") || command->EqualTo("move south")) { userMove(0, 1); }
 	if (command->EqualTo("d") || command->EqualTo("move east")) { userMove(1, 0); }
+
+	// Player Abilities
+
+	if (command->EqualTo("spells")) { player->SpellList(); }
+	
+	if (command->Find(0, "cast ") == 0)
+	{
+		// Create a new String with the extracted spell name
+		size_t castIndex = 5;
+		String spellName = *command;
+
+		// Check if the player knows the spell
+		if (player->FindSpell(spellName.CStr()) + castIndex) { cout << "You cast the spell: " << spellName.CStr() << "\n"; }
+		else { cout << "You don't know the spell: " << spellName.CStr() << endl; }
+
+		// Implementation for Spells
+		if (strcmp(spellName.CStr() + castIndex, "levitate") == 0) { cout << "\n(Game Master) You levitate off the ground!\n"; }
+		if (strcmp(spellName.CStr() + castIndex, "invisibility") == 0) { cout << "\n(Game Master) You turn invisible!\n"; }
+		if ((strcmp(spellName.CStr() + castIndex, "teleport") == 0) && PlayerPosY == exitY && PlayerPosX == exitX)
+		{ 
+				cout << "\n(Game Master) You've teleported through the locked door!\n";
+				cout << "\n(Game Master) You find yourself in a dark room... The floor drops and you plummet to your Deathh!\n";
+				gameOver = false;
+		}
+	}
 
 }
 
@@ -139,7 +163,6 @@ void GameController::buildMap()
 	map[2][3]  = 'c';
 	map[8][5]  = 'b';
 	map[3][10] = 'l';
-	//map[11][6] = 'e'; Spell?
 	map[exitY][exitX] = 'X';
 
 	// Setting Players Position on Map

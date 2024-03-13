@@ -16,7 +16,7 @@ int main()
 
 ---------------------------------------------------------------------------------------
 
-// -- Commands -- \\
+// -- Console Commands -- \\
 
 - ("y/n" or "yes/no") To Answer Game Master
 
@@ -26,6 +26,11 @@ Movement:
 - ("s", "move south") To move Down
 - ("a", "move west") To move Left
 
+Abilities:
+- ("spells") See list of spells
+- ("cast") To cast a spell
+
+Game Commands:
 - ("use") To use an item in a room
 - ("info") To learn more about the item
 - ("run") To exit the game
