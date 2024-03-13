@@ -17,6 +17,10 @@ public:
 	
 	~Room(); // Destructor
 
+	// Item Linked Functions
+	void InfoItem() const;
+	void UseItem() const;
+
 	// Const Function for Description
 	void Description() const;
 
@@ -26,7 +30,7 @@ private:
 
 	// Used to define whats in our room
 	std::string description;
-	Items* item;
+	Items* item = nullptr;
 
 };
 

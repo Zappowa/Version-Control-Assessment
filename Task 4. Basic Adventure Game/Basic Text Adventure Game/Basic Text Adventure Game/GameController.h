@@ -4,7 +4,6 @@
 // Header Includes
 #include "Room.h"
 #include "Items.h"
-#include "Spells.h"
 #include "StringClass.h"
 
 class GameController
@@ -36,8 +35,10 @@ private:
 	const int MAPSIZE = 12;
 	char map[13][13] = {};
 
+	// Initialiser List (Without this you get errors)
+	Items* item[4] = {new itemCat(), new itemLamp(), new itemBoxofDonuts(), new itemDoor()};
+	
 	// Room Variable of Map
-	Items* item;
 	Room rooms[13][13] = {};
 
 	// Interger Player Position

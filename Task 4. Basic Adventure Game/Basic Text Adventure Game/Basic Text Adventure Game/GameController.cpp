@@ -40,7 +40,7 @@ GameController::GameController()
 	// Making sure our random numbers aren't the same as an already used room
 	while (run)
 	{
-		if (exitY == 2 && exitX == 3 || exitY == 8 && exitX == 5 || exitY == 3 && exitX == 10 || exitY == 11 && exitX == 6)
+		if (exitY == 2 && exitX == 3 || exitY == 8 && exitX == 5 || exitY == 3 && exitX == 10/*|| exitY == 11 && exitX == 6*/)
 		{
 			exitX = dist(rng);
 			exitY = dist(rng);
@@ -49,16 +49,16 @@ GameController::GameController()
 	}
 
 	// Assigning Rooms with Descriptions of whats in it
-	rooms[2][3] = Room("Cat", new itemCat());
-	rooms[8][5] = Room("BoxOfDonuts");
-	rooms[3][10] = Room("Lamp");
-	rooms[11][6] = Room("Totally Empty Roomm *wink*");
-	rooms[exitY][exitX] = Room("Door");
+	rooms[2][3] = Room("Cat", item[0]);
+	rooms[3][10] = Room("Lamp", item[1]);
+	rooms[8][5] = Room("BoxOfDonuts", item[2]);
+	rooms[exitY][exitX] = Room("Door", item[3]);
+
+	//rooms[11][6] = Room("Totally Empty Roomm *wink*"); Spell??
 
 	// The Game Status will be decided based on user input
 	if (command->EqualTo("yes") || command->EqualTo("y")) { gameOver = true; cout << "\n"; }
 }
-
 
 // Destructor
 GameController::~GameController()
@@ -66,8 +66,10 @@ GameController::~GameController()
 	// Memory Clean Up
 	delete command;
 	command = nullptr;
-}
 
+	for (int i = 0; i < 3; i++)
+		delete item[i];
+}
 
 // Checks User Input
 void GameController::userInput()
@@ -78,6 +80,10 @@ void GameController::userInput()
 
 	// Game Ends if User Inputs "run"
 	if (command->EqualTo("run")) { gameOver = false; }
+	
+	// User Commands
+	if (command->EqualTo("use")) { rooms[PlayerPosY][PlayerPosX].UseItem(); }
+	if (command->EqualTo("info")) { rooms[PlayerPosY][PlayerPosX].InfoItem(); }
 
 	// Player Movement
 	if (command->EqualTo("w") || command->EqualTo("move north")) { userMove(0, -1); }
@@ -133,7 +139,7 @@ void GameController::buildMap()
 	map[2][3]  = 'c';
 	map[8][5]  = 'b';
 	map[3][10] = 'l';
-	map[11][6] = 'e';
+	//map[11][6] = 'e'; Spell?
 	map[exitY][exitX] = 'X';
 
 	// Setting Players Position on Map

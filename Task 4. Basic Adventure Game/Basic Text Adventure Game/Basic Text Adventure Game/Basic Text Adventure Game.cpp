@@ -26,6 +26,8 @@ Movement:
 - ("s", "move south") To move Down
 - ("a", "move west") To move Left
 
+- ("use") To use an item in a room
+- ("info") To learn more about the item
 - ("run") To exit the game
 
 --
