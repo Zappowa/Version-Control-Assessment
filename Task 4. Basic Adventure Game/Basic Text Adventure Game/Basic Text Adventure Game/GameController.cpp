@@ -111,7 +111,11 @@ void GameController::userInput()
 		{ 
 				cout << "\n(Game Master) You've teleported through the locked door!\n";
 				cout << "\n(Game Master) You find yourself in a dark room... The floor drops and you plummet to your Deathh!\n";
-				gameOver = false;
+				
+				cout << "\nThe End: ";
+				command->ReadFromConsole().ToLower();
+				if (command)
+					gameOver = false;
 		}
 	}
 
